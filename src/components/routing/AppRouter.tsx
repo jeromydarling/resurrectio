@@ -73,6 +73,9 @@ import Activities from '@/pages/organize/Activities';
 import Territories from '@/pages/organize/Territories';
 import Templates from '@/pages/organize/Templates';
 
+// App pages — Government Compliance
+import GovernmentCompliance from '@/pages/GovernmentCompliance';
+
 // App pages — Intelligence
 import NriSignals from '@/pages/intelligence/NriSignals';
 import Reports from '@/pages/intelligence/Reports';
@@ -165,6 +168,7 @@ export function AppRouter() {
       <Route path="/reports" element={<AppPage title="Reports" subtitle="Impact reporting"><Reports /></AppPage>} />
       <Route path="/presentation" element={<AppPage title="Presentation Mode" subtitle="For funder meetings"><PresentationMode /></AppPage>} />
       <Route path="/garden-pulse" element={<AppPage title="Garden Pulse" subtitle="Ecosystem health"><GardenPulse /></AppPage>} />
+      <Route path="/government-reports" element={<AppPage title="Government Compliance" subtitle="Federal & state reporting exports"><GovernmentCompliance /></AppPage>} />
 
       {/* Detail views (CROS infrastructure) */}
       <Route path="/people/:id" element={<AppPage title="Person Detail" subtitle="Journey profile"><PersonDetail /></AppPage>} />

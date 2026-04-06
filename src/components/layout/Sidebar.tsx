@@ -131,6 +131,7 @@ const navGroups: NavGroup[] = [
       { label: 'Garden Pulse', href: '/garden-pulse', icon: Sprout },
       { label: 'Testimonium', href: '/testimonium', icon: BookOpen },
       { label: 'Impact Journal', href: '/impulsus', icon: PenSquare },
+      { label: 'Government Reports', href: '/government-reports', icon: Building2 },
     ],
   },
 ];

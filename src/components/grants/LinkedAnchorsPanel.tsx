@@ -80,7 +80,7 @@ export function LinkedAnchorsPanel({ grantId, grantName }: LinkedAnchorsPanelPro
       <div className="flex items-center justify-between">
         <h4 className="font-medium flex items-center gap-2">
           <Anchor className="w-4 h-4" />
-          Linked Anchors
+          Linked Partners
         </h4>
         <Button 
           variant="outline" 
@@ -89,7 +89,7 @@ export function LinkedAnchorsPanel({ grantId, grantName }: LinkedAnchorsPanelPro
           disabled={availableAnchors.length === 0}
         >
           <Plus className="w-4 h-4 mr-1" />
-          Link Anchor
+          Link Partner
         </Button>
       </div>
       
@@ -144,8 +144,8 @@ export function LinkedAnchorsPanel({ grantId, grantName }: LinkedAnchorsPanelPro
       ) : (
         <div className="text-center py-6 text-sm text-muted-foreground">
           <Link2 className="w-8 h-8 mx-auto mb-2 opacity-50" />
-          <p>No anchors linked to this grant yet.</p>
-          <p className="text-xs mt-1">Link anchors to track grant impact on production.</p>
+          <p>No partners linked to this grant yet.</p>
+          <p className="text-xs mt-1">Link partners to track grant impact on placements.</p>
         </div>
       )}
       
@@ -153,18 +153,18 @@ export function LinkedAnchorsPanel({ grantId, grantName }: LinkedAnchorsPanelPro
       <Dialog open={isAddModalOpen} onOpenChange={setIsAddModalOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Link Anchor to Grant</DialogTitle>
+            <DialogTitle>Link Partner to Grant</DialogTitle>
             <DialogDescription>
-              Connect an anchor to track how this grant impacts their production.
+              Connect a partner to track how this grant impacts their placements.
             </DialogDescription>
           </DialogHeader>
           
           <div className="space-y-4 py-4">
             <div className="space-y-2">
-              <Label>Select Anchor</Label>
+              <Label>Select Partner</Label>
               <Select value={selectedAnchorId} onValueChange={setSelectedAnchorId}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Choose an anchor..." />
+                  <SelectValue placeholder="Choose a partner..." />
                 </SelectTrigger>
                 <SelectContent>
                   {availableAnchors.map((anchor) => (
@@ -195,7 +195,7 @@ export function LinkedAnchorsPanel({ grantId, grantName }: LinkedAnchorsPanelPro
               <Textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="How does this grant relate to the anchor?"
+                placeholder="How does this grant relate to the partner?"
                 rows={2}
               />
             </div>
@@ -209,7 +209,7 @@ export function LinkedAnchorsPanel({ grantId, grantName }: LinkedAnchorsPanelPro
               onClick={handleAddLink} 
               disabled={!selectedAnchorId || createLink.isPending}
             >
-              Link Anchor
+              Link Partner
             </Button>
           </DialogFooter>
         </DialogContent>
