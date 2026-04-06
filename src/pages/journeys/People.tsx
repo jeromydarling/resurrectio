@@ -76,7 +76,7 @@ export default function People() {
             <Users className="h-4 w-4" />
             {filtered.length} {filtered.length === 1 ? 'person' : 'people'}
           </span>
-          <Link to="/quick-add">
+          <Link to="/intake">
             <Button className="bg-red-900 hover:bg-red-950">
               <UserPlus className="mr-2 h-4 w-4" />
               Add Person

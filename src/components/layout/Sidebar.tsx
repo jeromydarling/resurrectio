@@ -74,6 +74,7 @@ const navGroups: NavGroup[] = [
       { label: 'Case Notes', href: '/case-notes', icon: FileText },
       { label: 'Milestones', href: '/milestones', icon: Award },
       { label: 'Family', href: '/family', icon: UserPlus },
+      { label: 'New Intake', href: '/intake', icon: ClipboardList },
     ],
   },
   {
@@ -84,6 +85,7 @@ const navGroups: NavGroup[] = [
       { label: 'Housing', href: '/housing', icon: Home },
       { label: 'Employment', href: '/employment', icon: Building2 },
       { label: 'Compliance', href: '/compliance', icon: Scale },
+      { label: 'Parole Scheduler', href: '/parole-scheduler', icon: CalendarDays },
       { label: 'Programs', href: '/programs', icon: GraduationCap },
       { label: 'Provisions', href: '/provisions', icon: Package },
     ],
@@ -93,6 +95,7 @@ const navGroups: NavGroup[] = [
     icon: Users,
     items: [
       { label: 'Mentors', href: '/mentors', icon: HandHeart },
+      { label: 'Mentor Matching', href: '/mentor-matching', icon: Users },
       { label: 'Stories', href: '/stories', icon: BookOpen },
       { label: 'Volunteers', href: '/volunteers', icon: Users },
       { label: 'Events', href: '/events', icon: Calendar },

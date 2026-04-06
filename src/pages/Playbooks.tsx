@@ -40,8 +40,8 @@ import { cn } from '@/lib/utils';
 
 const CATEGORIES = [
   { value: 'general', label: 'General', icon: Folder, description: 'Best practices and guides' },
-  { value: 'metro', label: 'Metro', icon: MapPin, description: 'Region-specific playbooks' },
-  { value: 'anchor_type', label: 'Anchor Type', icon: Target, description: 'By partner tier' },
+  { value: 'metro', label: 'Territory', icon: MapPin, description: 'Region-specific playbooks' },
+  { value: 'anchor_type', label: 'Partner Type', icon: Target, description: 'By partner tier' },
   { value: 'grant_type', label: 'Grant Type', icon: FileText, description: 'Grant-specific guides' }
 ];
 

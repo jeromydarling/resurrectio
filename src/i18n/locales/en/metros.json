@@ -1,53 +1,53 @@
 {
   "metros": {
-    "title": "Metros",
-    "subtitle": "Market readiness and expansion planning",
-    "searchPlaceholder": "Search metros...",
-    "addMetro": "Add Metro",
-    "noMetrosFound": "No metros found",
+    "title": "Territories",
+    "subtitle": "Service area readiness and expansion planning",
+    "searchPlaceholder": "Search territories...",
+    "addMetro": "Add Territory",
+    "noMetrosFound": "No territories found",
     "filters": {
       "allStatuses": "All Statuses",
       "allRegions": "All Regions",
       "unassigned": "Unassigned",
       "expansionReady": "Expansion Ready",
-      "anchorBuild": "Anchor Build",
+      "anchorBuild": "Partner Build",
       "ecosystemDev": "Ecosystem Dev"
     },
     "card": {
       "readinessIndex": "Readiness Index",
-      "anchor": "Anchor",
+      "anchor": "Partner",
       "demand": "Demand",
       "ops": "Ops",
-      "anchors": "anchors",
+      "anchors": "partners",
       "pipeline": "pipeline",
       "recommendation": "Recommendation"
     },
     "deleteDialog": {
-      "title": "Delete Metro",
+      "title": "Delete Territory",
       "description": "Are you sure you want to delete \"{{name}}\"? This action cannot be undone.",
       "cancel": "Cancel",
       "delete": "Delete"
     },
     "addDialog": {
-      "title": "Add Metro",
-      "description": "Create a new metro area",
-      "metroName": "Metro Name",
+      "title": "Add Territory",
+      "description": "Create a new service area",
+      "metroName": "Territory Name",
       "metroNamePlaceholder": "e.g. Kansas City",
       "region": "Region",
       "regionPlaceholder": "Select a region (optional)",
       "noRegion": "No region assigned",
       "cancel": "Cancel",
       "creating": "Creating…",
-      "create": "Create Metro"
+      "create": "Create Territory"
     },
-    "regionCount": "({{count}} metros)"
+    "regionCount": "({{count}} territories)"
   },
   "metroDetail": {
     "loading": "Loading…",
-    "notFound": "Metro Not Found",
-    "notFoundMessage": "This metro could not be found.",
-    "backToMetros": "Back to Metros",
-    "subtitle": "Metro details and intelligence",
+    "notFound": "Territory Not Found",
+    "notFoundMessage": "This territory could not be found.",
+    "backToMetros": "Back to Territories",
+    "subtitle": "Territory details and intelligence",
     "save": "Save",
     "tabs": {
       "details": "Details",
@@ -63,7 +63,7 @@
       "region": "Region",
       "regionUnassigned": "Unassigned",
       "scores": {
-        "anchorScore": "Anchor Score",
+        "anchorScore": "Partner Score",
         "demandScore": "Demand Score",
         "opsScore": "Ops Score"
       },
@@ -78,7 +78,7 @@
       "recommendation": "Recommendation",
       "recommendations": {
         "invest": "Invest",
-        "buildAnchors": "Build Anchors",
+        "buildAnchors": "Build Partnerships",
         "hold": "Hold",
         "triage": "Triage"
       }
@@ -99,22 +99,22 @@
       "storageReadyDesc": "Storage facilities are available",
       "quarterlyTarget": "Quarterly Target (devices/month)",
       "quarterlyTargetHint": "Monthly device volume target used in the Friday Scorecard funnel tracking",
-      "activeAnchors": "Active Anchors",
+      "activeAnchors": "Active Partners",
       "inPipeline": "In Pipeline"
     },
     "notes": {
       "label": "General Notes",
-      "placeholder": "Add notes about this metro...",
+      "placeholder": "Add notes about this territory...",
       "charCount": "{{count}}/2000"
     },
     "readiness": "Readiness: "
   },
   "metroNews": {
-    "title": "Metro Narratives",
-    "subtitle": "Community stories and emerging patterns across metros",
-    "allMetros": "All Metros",
+    "title": "Territory Narratives",
+    "subtitle": "Community stories and emerging patterns across territories",
+    "allMetros": "All Territories",
     "noStories": "No stories yet",
-    "noStoriesMessage": "Metro narratives will appear here once generated.",
+    "noStoriesMessage": "Territory narratives will appear here once generated.",
     "card": {
       "emergingPatterns": "Emerging Patterns",
       "partnerResponses": "Partner Responses",
