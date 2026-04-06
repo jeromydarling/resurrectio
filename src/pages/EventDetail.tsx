@@ -366,7 +366,7 @@ export default function EventDetail() {
                     className="text-primary hover:underline flex items-center gap-1"
                   >
                     {event.host_organization || t('detail.linkedPartner')}
-                    <Badge variant="outline" className="text-[10px] px-1 py-0 ml-1">Partner</Badge>
+                    <Badge variant="outline" className="text-[10px] px-1 py-0 ml-1">{t('detail.partner')}</Badge>
                   </Link>
                 ) : (
                   <span className={event.host_organization ? '' : 'text-muted-foreground italic'}>

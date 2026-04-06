@@ -79,6 +79,11 @@ import Reports from '@/pages/intelligence/Reports';
 import PresentationMode from '@/pages/intelligence/PresentationMode';
 import GardenPulse from '@/pages/intelligence/GardenPulse';
 
+// Workflow pages
+import IntakeForm from '@/pages/IntakeForm';
+import MentorMatching from '@/pages/MentorMatching';
+import ParoleScheduler from '@/pages/ParoleScheduler';
+
 // Settings & Help
 import Settings from '@/pages/Settings';
 import Help from '@/pages/Help';
@@ -128,16 +133,19 @@ export function AppRouter() {
       <Route path="/case-notes" element={<AppPage title="Case Notes" subtitle="Narrative records"><CaseNotes /></AppPage>} />
       <Route path="/milestones" element={<AppPage title="Milestones" subtitle="Progress markers"><Milestones /></AppPage>} />
       <Route path="/family" element={<AppPage title="Family" subtitle="Reconnection tracking"><Family /></AppPage>} />
+      <Route path="/intake" element={<AppPage title="New Person Intake" subtitle="Begin a restoration journey"><IntakeForm /></AppPage>} />
 
       {/* Services */}
       <Route path="/services" element={<AppPage title="Service Coordination" subtitle="Provider matrix"><ServiceCoordination /></AppPage>} />
       <Route path="/housing" element={<AppPage title="Housing" subtitle="Placement tracking"><Housing /></AppPage>} />
       <Route path="/employment" element={<AppPage title="Employment" subtitle="Job readiness & retention"><Employment /></AppPage>} />
       <Route path="/compliance" element={<AppPage title="Compliance" subtitle="Court dates & requirements"><Compliance /></AppPage>} />
+      <Route path="/parole-scheduler" element={<AppPage title="Parole Scheduler" subtitle="Compliance calendar"><ParoleScheduler /></AppPage>} />
       <Route path="/programs" element={<AppPage title="Programs" subtitle="Cohort management"><Programs /></AppPage>} />
 
       {/* Community */}
       <Route path="/mentors" element={<AppPage title="Mentors" subtitle="Volunteer directory"><Mentors /></AppPage>} />
+      <Route path="/mentor-matching" element={<AppPage title="Mentor Matching" subtitle="Pair returning citizens with mentors"><MentorMatching /></AppPage>} />
       <Route path="/stories" element={<AppPage title="Stories" subtitle="Transformation narratives"><Stories /></AppPage>} />
       <Route path="/events" element={<AppPage title="Events" subtitle="Ministry calendar"><Events /></AppPage>} />
       <Route path="/blog" element={<AppPage title="Blog" subtitle="Ministry updates"><Blog /></AppPage>} />

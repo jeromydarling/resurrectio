@@ -184,7 +184,7 @@ export default function Grants() {
       { key: 'stage', label: 'Stage' },
       { key: 'status', label: 'Status' },
       { key: 'star_rating', label: 'Star Rating' },
-      { key: 'metro', label: 'Metro' },
+      { key: 'metro', label: 'Territory' },
       { key: 'organization', label: 'Linked Organization' },
       { key: 'amount_requested', label: 'Amount Requested' },
       { key: 'amount_awarded', label: 'Amount Awarded' },

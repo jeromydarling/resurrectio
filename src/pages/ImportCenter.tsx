@@ -30,11 +30,11 @@ import {
 } from '@/components/ui/alert-dialog';
 
 const IMPORT_TYPES = [
-  { value: 'organizations', label: 'Organizations / Partners' },
+  { value: 'organizations', label: 'Organizations / Placements' },
   { value: 'people', label: 'People / Contacts' },
   { value: 'activities', label: 'Activities / Notes' },
   { value: 'tasks', label: 'Tasks' },
-  { value: 'deals', label: 'Deals / Pipeline Stages' },
+  { value: 'deals', label: 'Deals / Journey Stages' },
   { value: 'volunteers', label: 'Volunteers' },
 ];
 

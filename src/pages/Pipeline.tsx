@@ -67,9 +67,9 @@ export default function Pipeline() {
     'Found': 'Target Identified',
     'First Conversation': 'Contacted',
     'Discovery': 'Discovery Held',
-    'Pricing Shared': 'Proposal Sent',
-    'Account Setup': 'Agreement Pending',
-    'First Devices': 'First Volume',
+    'Proposal Shared': 'Proposal Sent',
+    'Onboarding': 'Agreement Pending',
+    'First Placement': 'First Volume',
     'Growing Together': 'Stable Producer',
     'Not the Right Time': 'Closed - Not a Fit',
   };
@@ -293,7 +293,7 @@ export default function Pipeline() {
                           <Clock className="w-3.5 h-3.5" />
                         )}
                         <span className="font-medium">{t('pipeline.daysCount', { count: item.daysInStage })}</span>
-                        <span>{t('pipeline.daysInChapter')}</span>
+                        <span>{t('pipeline.daysInStage')}</span>
                       </div>
 
                       {/* Owner + Actions */}
@@ -333,7 +333,7 @@ export default function Pipeline() {
                           </DropdownMenu>
 
                           {/* Convert to Anchor Button */}
-                          {(item.stage === 'Agreement Signed' || (item.stage as string) === 'Account Setup') && (
+                          {(item.stage === 'Agreement Signed' || (item.stage as string) === 'Onboarding') && (
                             <Button
                               data-tour="pipeline-convert"
                               size="sm"

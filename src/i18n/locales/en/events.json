@@ -91,7 +91,7 @@
   },
   "eventCard": {
     "noType": "No Type",
-    "noMetro": "No metro",
+    "noMetro": "No territory",
     "attended": "Attended",
     "expected": "Expected",
     "staff": "Staff"
@@ -130,15 +130,15 @@
     "tooltipWhy": "Track community engagement per event"
   },
   "homeTerritory": {
-    "changeTitle": "Change your home territory",
-    "chooseTitle": "Choose your home territory",
+    "changeTitle": "Change your home service area",
+    "chooseTitle": "Choose your home service area",
     "currently": "Currently: ",
-    "description": "Your home territory determines which local community events are discovered for you each week.",
-    "selectPlaceholder": "Select a territory…",
+    "description": "Your home service area determines which local community events are discovered for you each week.",
+    "selectPlaceholder": "Select a service area…",
     "set": "Set",
-    "successToast": "Home territory set — discovering community events…",
-    "errorPermission": "It looks like your account doesn't have permission to set a home territory yet. Please reach out to your organization steward for help.",
-    "errorGeneric": "We could not save your home territory right now. Please try again in a moment."
+    "successToast": "Home service area set — discovering community events…",
+    "errorPermission": "It looks like your account doesn't have permission to set a home service area yet. Please reach out to your program lead for help.",
+    "errorGeneric": "We could not save your home service area right now. Please try again in a moment."
   },
   "crawlStatus": {
     "lastCrawlDetails": "Last Crawl Details",
@@ -172,8 +172,8 @@
     "dismiss": "Dismiss"
   },
   "localPulse": {
-    "selectMetro": "Select metro…",
-    "changeHomeTitle": "Click to change home territory",
+    "selectMetro": "Select territory…",
+    "changeHomeTitle": "Click to change home service area",
     "upcoming": "Upcoming",
     "all": "All",
     "sources": "Sources",
@@ -204,7 +204,7 @@
     "import": "Import",
     "export": "Export",
     "addEvent": "Add Event",
-    "allMetros": "All Metros",
+    "allMetros": "All Territories",
     "filterByType": "Filter by type",
     "allTypes": "All Types",
     "filterByDate": "Filter by date",
@@ -234,7 +234,7 @@
     "enriching": "Enriching…",
     "enrichTooltip": "Auto-fill event details from this URL",
     "noLink": "No link added",
-    "noMetro": "No metro assigned",
+    "noMetro": "No territory assigned",
     "noAddress": "No address added",
     "map": "Map",
     "linkedPartner": "Linked partner",
@@ -253,9 +253,9 @@
     "strategicLane": "Strategic Lane",
     "goals": "Goals",
     "staffDeployed": "Staff Deployed:",
-    "anchorIdentified": "Anchor Identified:",
+    "anchorIdentified": "Foundation Partner Identified:",
     "grantNarrative": "Grant Narrative:",
-    "anchorPotential": "Anchor Potential:",
+    "anchorPotential": "Partner Potential:",
     "tabAttendees": "Attendees",
     "tabTargets": "Targets",
     "tabConferencePlan": "Conference Plan",
