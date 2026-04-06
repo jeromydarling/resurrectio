@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Home, Briefcase, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { mockPeople } from '@/data/mockData';
 import type { Person, JourneyStage } from '@/types/resurrectio';
 import { STAGE_LABELS, STAGE_BADGE_CLASSES } from '@/types/resurrectio';
@@ -64,15 +65,9 @@ export default function JourneyMap() {
 
   return (
     <div className="space-y-8 pb-12">
-      {/* Header */}
-      <div>
-        <h1 className="font-serif text-3xl font-bold text-red-950">
-          Journey Map
-        </h1>
-        <p className="mt-1 text-muted-foreground">
-          Where each person stands on the path from release to restoration.
-        </p>
-      </div>
+      <p className="text-muted-foreground">
+        Where each person stands on the path from release to restoration.
+      </p>
 
       {/* Kanban Board */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 overflow-x-auto">
@@ -97,12 +92,12 @@ export default function JourneyMap() {
               {/* Cards */}
               <div className="flex flex-col gap-2 min-h-[120px]">
                 {people.map((person) => (
+                  <Link key={person.id} to={`/people/${person.id}`}>
                   <Card
-                    key={person.id}
                     className="cursor-pointer border border-red-200 shadow-sm transition-shadow hover:shadow-md"
                   >
                     <CardContent className="p-4 space-y-3">
-                      <p className="font-medium text-sm text-red-950">
+                      <p className="font-medium text-sm text-red-900 hover:text-red-700 hover:underline">
                         {person.firstName} {person.lastName}
                       </p>
 
@@ -127,6 +122,7 @@ export default function JourneyMap() {
                       </div>
                     </CardContent>
                   </Card>
+                  </Link>
                 ))}
 
                 {people.length === 0 && (

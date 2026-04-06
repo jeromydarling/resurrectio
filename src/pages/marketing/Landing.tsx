@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import heroImage from '@/assets/Firefly_Gemini Flash_Empty two-lane highway stretching toward the horizon at golden hour dawn, Route 66 st 897378.png';
+import AppPreview from '@/components/marketing/AppPreview';
 import { Badge } from '@/components/ui/badge';
 import {
   ArrowRight,
@@ -62,15 +63,15 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                 Start Your Ministry <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-            <a href="#features">
+            <Link to="/demo">
               <Button
                 variant="outline"
                 size="lg"
                 className="rounded-full border-red-300 text-red-900 hover:bg-red-50 px-8 h-12 text-base"
               >
-                See How It Works
+                Try the Demo
               </Button>
-            </a>
+            </Link>
           </div>
           <p className="mt-8 text-sm text-red-950/40">
             Trusted by prison ministries and reentry organizations nationwide
@@ -211,6 +212,20 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                   <p className="text-sm text-red-950/60 leading-relaxed">{item.desc}</p>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+
+          {/* App Preview screenshots */}
+          <div className="grid sm:grid-cols-3 gap-6 mt-12">
+            {([
+              { variant: 'dashboard' as const, caption: 'Dashboard' },
+              { variant: 'signals' as const, caption: 'NRI Signals' },
+              { variant: 'journey' as const, caption: 'Journey Map' },
+            ]).map((item) => (
+              <div key={item.variant} className="flex flex-col items-center">
+                <AppPreview variant={item.variant} className="w-full" />
+                <p className="mt-2 text-xs text-red-950/40 font-medium">{item.caption}</p>
+              </div>
             ))}
           </div>
         </div>

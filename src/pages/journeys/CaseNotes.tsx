@@ -19,6 +19,7 @@ import {
   PhoneCall,
   ArrowRightLeft,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { mockCaseNotes } from '@/data/mockData';
 import type { CaseNote } from '@/types/resurrectio';
 
@@ -75,15 +76,9 @@ export default function CaseNotes() {
 
   return (
     <div className="space-y-8 pb-12">
-      {/* Header */}
-      <div>
-        <h1 className="font-serif text-3xl font-bold text-red-950">
-          Case Notes
-        </h1>
-        <p className="mt-1 text-muted-foreground">
-          A living record of encounters, milestones, and moments that matter.
-        </p>
-      </div>
+      <p className="text-muted-foreground">
+        A living record of encounters, milestones, and moments that matter.
+      </p>
 
       {/* Filters */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -136,9 +131,9 @@ export default function CaseNotes() {
                       <Icon className="mr-1 h-3 w-3" />
                       {TYPE_LABELS[note.type]}
                     </Badge>
-                    <span className="text-sm font-medium text-red-900">
+                    <Link to={`/people/${note.personId}`} className="text-sm font-medium text-red-900 hover:text-red-700 hover:underline">
                       {note.personName}
-                    </span>
+                    </Link>
                     <span className="text-xs text-muted-foreground">
                       {new Date(note.date).toLocaleDateString('en-US', {
                         month: 'long',
@@ -164,6 +159,7 @@ export default function CaseNotes() {
 
         {filtered.length === 0 && (
           <div className="py-12 text-center text-muted-foreground">
+            <MessageCircle className="mx-auto mb-2 h-8 w-8 text-muted-foreground/40" />
             No case notes match your filters.
           </div>
         )}

@@ -55,15 +55,9 @@ export default function People() {
 
   return (
     <div className="space-y-8 pb-12">
-      {/* Header */}
-      <div>
-        <h1 className="font-serif text-3xl font-bold text-red-950">
-          Returning Citizens
-        </h1>
-        <p className="mt-1 text-muted-foreground">
-          Every person here is on a journey toward restoration.
-        </p>
-      </div>
+      <p className="text-muted-foreground">
+        Every person here is on a journey toward restoration.
+      </p>
 
       {/* Toolbar */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

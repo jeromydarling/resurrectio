@@ -63,15 +63,9 @@ export default function Family() {
 
   return (
     <div className="space-y-8 pb-12">
-      {/* Header */}
-      <div>
-        <h1 className="font-serif text-3xl font-bold text-red-950">
-          Family Connections
-        </h1>
-        <p className="mt-1 text-muted-foreground">
-          Restoration is not complete without the people who matter most.
-        </p>
-      </div>
+      <p className="text-muted-foreground">
+        Restoration is not complete without the people who matter most.
+      </p>
 
       {/* Summary */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">

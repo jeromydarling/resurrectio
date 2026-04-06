@@ -14,6 +14,7 @@ import {
   Clock,
   Trophy,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { mockMilestones } from '@/data/mockData';
 import type { Milestone } from '@/types/resurrectio';
 
@@ -88,15 +89,9 @@ export default function Milestones() {
 
   return (
     <div className="space-y-8 pb-12">
-      {/* Header */}
-      <div>
-        <h1 className="font-serif text-3xl font-bold text-red-950">
-          Milestones
-        </h1>
-        <p className="mt-1 text-muted-foreground">
-          Each milestone marks a step forward in someone's restoration journey.
-        </p>
-      </div>
+      <p className="text-muted-foreground">
+        Each milestone marks a step forward in someone's restoration journey.
+      </p>
 
       {/* Stats Row */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-4">
@@ -194,7 +189,7 @@ export default function Milestones() {
                         </Badge>
                       )}
                     </div>
-                    <p className="text-sm text-muted-foreground">{ms.personName}</p>
+                    <Link to={`/people/${ms.personId}`} className="text-sm text-red-900 hover:text-red-700 hover:underline">{ms.personName}</Link>
                     <p className="text-xs text-muted-foreground/70">
                       {new Date(ms.date).toLocaleDateString('en-US', {
                         month: 'long',

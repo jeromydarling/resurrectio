@@ -10,6 +10,7 @@ import Landing from '@/pages/marketing/Landing';
 import Login from '@/pages/Login';
 import Signup from '@/pages/Signup';
 import Onboarding from '@/pages/Onboarding';
+import DemoGatePage from '@/pages/DemoGatePage';
 import NotFound from '@/pages/NotFound';
 
 // App pages — Journeys
@@ -115,6 +116,7 @@ export function AppRouter() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/onboarding" element={<Onboarding />} />
+      <Route path="/demo" element={<DemoGatePage />} />
 
       {/* App routes — flat paths */}
       {/* Dashboard */}

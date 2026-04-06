@@ -4,6 +4,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
+import { DemoModeProvider } from "@/contexts/DemoModeContext";
+import { DemoBanner } from "@/components/demo/DemoBanner";
 import { AppRouter } from "@/components/routing/AppRouter";
 
 const queryClient = new QueryClient({
@@ -20,13 +22,16 @@ const queryClient = new QueryClient({
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <DemoModeProvider>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter basename="/resurrectio">
+        <DemoBanner />
         <AppRouter />
       </BrowserRouter>
     </TooltipProvider>
+    </DemoModeProvider>
   </QueryClientProvider>
 );
 

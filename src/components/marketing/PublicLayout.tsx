@@ -66,6 +66,15 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
+            <Link to="/demo">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-red-950/70 hover:text-red-950"
+              >
+                Try Demo
+              </Button>
+            </Link>
             <Link to="/login">
               <Button
                 variant="ghost"
