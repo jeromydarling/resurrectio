@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 import {
   AlertTriangle,
   ShieldAlert,
@@ -242,11 +243,11 @@ export default function CrisisProtocol() {
                   </div>
 
                   <div className="flex gap-3 pt-2">
-                    <Button variant="destructive" size="sm" className="bg-red-800 hover:bg-red-900">
+                    <Button variant="destructive" size="sm" className="bg-red-800 hover:bg-red-900" onClick={() => toast.warning(`Escalated to Level ${Math.min(alert.level + 1, 3)} — program director notified`)}>
                       <ChevronUp className="w-4 h-4 mr-1" />
                       Escalate
                     </Button>
-                    <Button variant="outline" size="sm" className="border-green-600 text-green-700 hover:bg-green-50">
+                    <Button variant="outline" size="sm" className="border-green-600 text-green-700 hover:bg-green-50" onClick={() => toast.success(`Crisis resolved for ${alert.person} — case note logged`)}>
                       <CheckCircle2 className="w-4 h-4 mr-1" />
                       Resolve
                     </Button>

@@ -220,14 +220,16 @@ export default function EmployerNetwork() {
                   </div>
 
                   <div className="flex gap-2 pt-1">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="border-red-200 text-red-800 hover:bg-red-50"
-                    >
-                      <Eye className="h-3 w-3 mr-1" />
-                      View Placements
-                    </Button>
+                    <Link to="/employment">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="border-red-200 text-red-800 hover:bg-red-50"
+                      >
+                        <Eye className="h-3 w-3 mr-1" />
+                        View Placements
+                      </Button>
+                    </Link>
                     <Button
                       size="sm"
                       className="bg-red-900 hover:bg-red-950 text-white"

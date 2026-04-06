@@ -420,6 +420,40 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
         </div>
       </section>
 
+      {/* ── Specialized Reentry Tools ── */}
+      <section className="py-16 sm:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
+              Built for the Real Work
+            </h2>
+            <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
+              Tools designed for what case managers actually do every day — not what
+              a software company thinks they should do.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { title: 'Document Recovery', desc: 'Track IDs, birth certificates, Social Security cards, driver\'s licenses. Know who has what and what\'s pending.', href: '/documents' },
+              { title: 'Text Communication', desc: 'Reach people where they are — on a prepaid phone. Appointment reminders, check-ins, and templates.', href: '/text' },
+              { title: 'Transportation', desc: 'Match ride requests with volunteer drivers. Because missing a parole check-in over a bus route is unacceptable.', href: '/transport' },
+              { title: 'Employer Network', desc: 'Second-chance employer directory with WOTC tax credit calculator. Help employers hire — and help them get paid for it.', href: '/employers' },
+              { title: 'Emergency Fund', desc: 'Track benevolence disbursements — bus passes, work boots, deposits. Every dollar accounted for.', href: '/emergency-fund' },
+              { title: 'Pre-Release', desc: 'Start inside. Coordinate with chaplains, track release dates, distribute companion books. 90-day checklists.', href: '/pre-release' },
+              { title: 'Crisis Protocols', desc: 'When NRI fires a Level 3, who gets notified? What resources mobilize? Structured escalation saves lives.', href: '/crisis' },
+              { title: 'Funder Dashboard', desc: 'Aggregate impact for board meetings and grant reports. No names — just numbers. Export to PDF in seconds.', href: '/funder-dashboard' },
+            ].map((tool) => (
+              <Link key={tool.title} to={tool.href} className="group">
+                <div className="rounded-xl border border-red-100 bg-white p-5 h-full hover:shadow-md hover:border-red-300 transition-all">
+                  <h3 className="font-serif font-semibold text-red-950 text-sm mb-2 group-hover:text-red-800">{tool.title}</h3>
+                  <p className="text-xs text-red-950/60 leading-relaxed">{tool.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Integrations — Bring Everything With You ── */}
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
