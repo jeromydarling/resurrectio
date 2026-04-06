@@ -58,6 +58,9 @@ import EmergencyFund from '@/pages/EmergencyFund';
 import PreRelease from '@/pages/PreRelease';
 import CrisisProtocol from '@/pages/CrisisProtocol';
 import FunderDashboard from '@/pages/FunderDashboard';
+import FamilySupport from '@/pages/FamilySupport';
+import ResumeBuilder from '@/pages/ResumeBuilder';
+import StaffWellness from '@/pages/StaffWellness';
 
 // App pages — Services
 import ServiceCoordination from '@/pages/services/ServiceCoordination';
@@ -221,6 +224,9 @@ export function AppRouter() {
       <Route path="/pre-release" element={<AppPage title="Pre-Release" subtitle="Facility coordination"><PreRelease /></AppPage>} />
       <Route path="/crisis" element={<AppPage title="Crisis Protocol" subtitle="Escalation & response"><CrisisProtocol /></AppPage>} />
       <Route path="/funder-dashboard" element={<AppPage title="Impact Dashboard" subtitle="Aggregate metrics for funders"><FunderDashboard /></AppPage>} />
+      <Route path="/family-support" element={<AppPage title="Family Support" subtitle="Supporting the whole family"><FamilySupport /></AppPage>} />
+      <Route path="/resume-builder" element={<AppPage title="Resume Builder" subtitle="AI-powered resume creation"><ResumeBuilder /></AppPage>} />
+      <Route path="/staff-wellness" element={<AppPage title="Staff Wellness" subtitle="Burnout detection & team health"><StaffWellness /></AppPage>} />
 
       {/* Settings & Help */}
       <Route path="/settings" element={<Settings />} />

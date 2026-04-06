@@ -49,6 +49,9 @@ import {
   Building,
   AlertTriangle,
   PieChart,
+  HeartPulse,
+  FileEdit,
+  Baby,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -81,6 +84,7 @@ const navGroups: NavGroup[] = [
       { label: 'Case Notes', href: '/case-notes', icon: FileText },
       { label: 'Milestones', href: '/milestones', icon: Award },
       { label: 'Family', href: '/family', icon: UserPlus },
+      { label: 'Family Support', href: '/family-support', icon: Baby },
       { label: 'Documents', href: '/documents', icon: FileCheck },
       { label: 'Pre-Release', href: '/pre-release', icon: Building },
       { label: 'New Intake', href: '/intake', icon: ClipboardList },
@@ -93,6 +97,7 @@ const navGroups: NavGroup[] = [
       { label: 'Service Coordination', href: '/services', icon: Handshake },
       { label: 'Housing', href: '/housing', icon: Home },
       { label: 'Employment', href: '/employment', icon: Building2 },
+      { label: 'Resume Builder', href: '/resume-builder', icon: FileEdit },
       { label: 'Compliance', href: '/compliance', icon: Scale },
       { label: 'Parole Scheduler', href: '/parole-scheduler', icon: CalendarDays },
       { label: 'Programs', href: '/programs', icon: GraduationCap },
@@ -139,6 +144,7 @@ const navGroups: NavGroup[] = [
     icon: Brain,
     items: [
       { label: 'NRI Signals', href: '/signals', icon: Sparkles },
+      { label: 'Staff Wellness', href: '/staff-wellness', icon: HeartPulse },
       { label: 'Crisis Protocols', href: '/crisis', icon: AlertTriangle },
       { label: 'Reports', href: '/reports', icon: BarChart3 },
       { label: 'Funder Dashboard', href: '/funder-dashboard', icon: PieChart },
