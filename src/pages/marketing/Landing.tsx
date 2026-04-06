@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import heroImage from '@/assets/Firefly_Gemini Flash_Empty two-lane highway stretching toward the horizon at golden hour dawn, Route 66 st 897378.png';
 import { Badge } from '@/components/ui/badge';
 import {
   ArrowRight,
@@ -26,10 +27,17 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
     <div ref={ref} className="bg-[#faf7f3]">
       {/* ── Hero ── */}
       <section className="relative overflow-hidden py-24 sm:py-32 min-h-[70vh] flex items-center">
-        {/* Atmospheric background — dawn light through aged paper */}
+        {/* Atmospheric background — Route 66 dawn + aged paper texture */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Base warm gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#faf7f3] via-[#f5ede4] to-[#faf7f3]" />
+          {/* Hero photograph */}
+          <img
+            src={heroImage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.12]"
+          />
+          {/* Base warm gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#faf7f3]/80 via-[#f5ede4]/60 to-[#faf7f3]/90" />
           {/* Soft light bloom from upper right — dawn coming through a window */}
           <div
             className="absolute -top-20 -right-20 w-[600px] h-[600px] rounded-full opacity-30"
