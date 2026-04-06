@@ -25,8 +25,31 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
   return (
     <div ref={ref} className="bg-[#faf7f3]">
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden py-20 sm:py-28">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-50/80 via-transparent to-red-100/40 pointer-events-none" />
+      <section className="relative overflow-hidden py-24 sm:py-32 min-h-[70vh] flex items-center">
+        {/* Atmospheric background — dawn light through aged paper */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Base warm gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#faf7f3] via-[#f5ede4] to-[#faf7f3]" />
+          {/* Soft light bloom from upper right — dawn coming through a window */}
+          <div
+            className="absolute -top-20 -right-20 w-[600px] h-[600px] rounded-full opacity-30"
+            style={{ background: 'radial-gradient(circle, rgba(220,180,140,0.5) 0%, rgba(250,247,243,0) 70%)' }}
+          />
+          {/* Warm glow from center-left — aged paper feel */}
+          <div
+            className="absolute top-1/3 -left-20 w-[500px] h-[500px] rounded-full opacity-20"
+            style={{ background: 'radial-gradient(circle, rgba(185,130,100,0.4) 0%, transparent 70%)' }}
+          />
+          {/* Subtle paper texture overlay via noise */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          }} />
+          {/* Faint horizontal lines — like ruled letter paper */}
+          <div className="absolute inset-0 opacity-[0.04]" style={{
+            backgroundImage: 'repeating-linear-gradient(transparent, transparent 31px, rgba(139,90,70,0.3) 31px, rgba(139,90,70,0.3) 32px)',
+          }} />
+        </div>
+
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-red-950 leading-[1.1] tracking-tight mb-6">
             From Incarceration to Restoration
@@ -119,7 +142,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               {
                 icon: ArrowRight,
                 title: 'Full Pipeline',
-                desc: 'Prison to ownership — the complete distributist restoration arc. From Companion Book through Communis cooperative membership.',
+                desc: 'Prison to ownership — the complete restoration arc. From Companion Book through cooperative membership and permanent housing.',
               },
             ].map((item) => (
               <Card key={item.title} className="border-red-100 bg-white hover:shadow-md transition-shadow">
@@ -146,9 +169,9 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
             </h2>
             <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
               Every CROS app shares the same DNA: people over transactions, narrative over metrics,
-              community over compliance. Resurrectio is one part of a larger ecosystem built on
-              Catholic social teaching and distributist philosophy — a vision where restoration
-              doesn't end at employment, but continues through ownership, housing, and civic life.
+              community over compliance. Resurrectio is one part of a larger ecosystem rooted in
+              a simple conviction — that human dignity requires more than a job. It requires
+              ownership, stable housing, and a real place in civic life.
             </p>
           </div>
 

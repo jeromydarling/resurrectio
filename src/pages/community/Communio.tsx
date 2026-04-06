@@ -126,9 +126,10 @@ export default function Communio() {
       <div className="bg-muted/30 rounded-xl p-6 border border-border max-w-2xl">
         <p className="text-sm text-muted-foreground leading-relaxed italic">
           "The full pipeline — incarceration to ownership — isn't a product feature.
-          It's a conviction. Every CROS app is built on Catholic social teaching
-          and distributist philosophy: that dignity requires not just a job, but a stake;
-          not just a roof, but a home; not just survival, but belonging."
+          It's a conviction: that dignity requires not just a job, but a stake;
+          not just a roof, but a home; not just survival, but belonging.
+          Widespread ownership, shared stewardship, and community-rooted economics
+          aren't idealism — they're the architecture of a just restoration."
         </p>
       </div>
     </div>
