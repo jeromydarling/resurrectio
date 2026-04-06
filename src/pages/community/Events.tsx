@@ -78,7 +78,16 @@ export default function Events() {
                   </div>
                   <Progress value={capacityPct} className="h-2" />
                 </div>
-                <Button className="w-full bg-red-800 hover:bg-red-900 text-white" size="sm">
+                <Button
+                  className="w-full bg-red-800 hover:bg-red-900 text-white"
+                  size="sm"
+                  onClick={() =>
+                    toast({
+                      title: 'Registered',
+                      description: `You have been registered for ${event.name}.`,
+                    })
+                  }
+                >
                   <CheckCircle className="h-4 w-4 mr-2" />
                   Register
                 </Button>
