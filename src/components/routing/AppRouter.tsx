@@ -87,6 +87,11 @@ import IntakeForm from '@/pages/IntakeForm';
 import MentorMatching from '@/pages/MentorMatching';
 import ParoleScheduler from '@/pages/ParoleScheduler';
 
+// Legal pages
+import Terms from '@/pages/legal/Terms';
+import Privacy from '@/pages/legal/Privacy';
+import DataSecurity from '@/pages/legal/DataSecurity';
+
 // Settings & Help
 import Settings from '@/pages/Settings';
 import Help from '@/pages/Help';
@@ -215,6 +220,11 @@ export function AppRouter() {
       <Route path="/operator/api-health" element={<OperatorLayout><ApiHealth /></OperatorLayout>} />
       <Route path="/operator/moderation" element={<OperatorLayout><ModerationQueue /></OperatorLayout>} />
       <Route path="/operator/settings" element={<OperatorLayout><OperatorSettings /></OperatorLayout>} />
+
+      {/* Legal pages */}
+      <Route path="/terms" element={<PublicLayout><Terms /></PublicLayout>} />
+      <Route path="/privacy" element={<PublicLayout><Privacy /></PublicLayout>} />
+      <Route path="/security" element={<PublicLayout><DataSecurity /></PublicLayout>} />
 
       {/* Catch-all */}
       <Route path="*" element={<NotFound />} />

@@ -33,6 +33,7 @@ const footerColumns = [
     links: [
       { label: 'Terms', to: '/terms' },
       { label: 'Privacy', to: '/privacy' },
+      { label: 'Security', to: '/security' },
     ],
   },
 ];
