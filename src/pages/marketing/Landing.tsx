@@ -442,6 +442,9 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               { title: 'Pre-Release', desc: 'Start inside. Coordinate with chaplains, track release dates, distribute companion books. 90-day checklists.', href: '/pre-release' },
               { title: 'Crisis Protocols', desc: 'When NRI fires a Level 3, who gets notified? What resources mobilize? Structured escalation saves lives.', href: '/crisis' },
               { title: 'Funder Dashboard', desc: 'Aggregate impact for board meetings and grant reports. No names — just numbers. Export to PDF in seconds.', href: '/funder-dashboard' },
+              { title: 'Family Support', desc: 'Families do time too. Track children\'s wellbeing, coordinate visits and calls, prepare families for their person\'s return.', href: '/family-support' },
+              { title: 'Resume Builder', desc: 'AI-powered skills-based resumes in 5 minutes. Lead with what someone can do, not where they\'ve been. Saved to their profile.', href: '/resume-builder' },
+              { title: 'Staff Wellness', desc: 'NRI watches the watchers. Detect burnout before you lose good people — caseload balance, note quality trends, rest tracking.', href: '/staff-wellness' },
             ].map((tool) => (
               <Link key={tool.title} to={tool.href} className="group">
                 <div className="rounded-xl border border-red-100 bg-white p-5 h-full hover:shadow-md hover:border-red-300 transition-all">
@@ -776,6 +779,9 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                 'Impulsus Impact Journal',
                 'Knowledge Base & Resources',
                 'Provisions Tracking',
+                'Family Support & Children\'s Programs',
+                'AI Resume Builder',
+                'Staff Wellness & Burnout Detection',
                 'Unlimited returning citizens',
               ].map((f) => (
                 <div key={f} className="flex items-start gap-2 text-sm text-red-950/70">

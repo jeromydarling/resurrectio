@@ -32,7 +32,8 @@ import {
   CalendarPlus,
   Trash2,
   Loader2,
-  ShieldBan
+  ShieldBan,
+  FileText,
 } from 'lucide-react';
 import { NoteHistoryPanel } from '@/components/notes/NoteHistoryPanel';
 import { ContactTasksPanel } from '@/components/contacts/ContactTasksPanel';
@@ -132,6 +133,10 @@ export default function PersonDetail() {
           <Button variant="outline" className="gap-2" onClick={() => setIsMeetingModalOpen(true)}>
             <CalendarPlus className="w-4 h-4" />
             {t('personDetail.scheduleMeeting')}
+          </Button>
+          <Button variant="outline" className="gap-2" onClick={() => navigate(`/resume-builder?person=${person.id}`)}>
+            <FileText className="w-4 h-4" />
+            Build Resume
           </Button>
           <Button className="gap-2" onClick={() => openContactModal(person)}>
             <Pencil className="w-4 h-4" />

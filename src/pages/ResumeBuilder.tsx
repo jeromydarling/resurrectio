@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -28,8 +29,10 @@ import {
   Briefcase,
   GraduationCap,
   Target,
+  ArrowLeft,
 } from 'lucide-react';
 import { toast } from '@/components/ui/sonner';
+import { mockPeople } from '@/data/mockData';
 
 /* ── skill tags ──────────────────────────────────────────────────── */
 
@@ -126,6 +129,13 @@ const mockResume = {
 /* ── component ───────────────────────────────────────────────────── */
 
 export default function ResumeBuilder() {
+  const [searchParams] = useSearchParams();
+  const personIdFromUrl = searchParams.get('person');
+  const selectedPerson = personIdFromUrl ? mockPeople.find(p => p.id === personIdFromUrl) : null;
+  const [selectedPersonId, setSelectedPersonId] = useState<string>(personIdFromUrl || '');
+
+  const activePerson = selectedPersonId ? mockPeople.find(p => p.id === selectedPersonId) : selectedPerson;
+
   const [form, setForm] = useState({
     fullName: '',
     phone: '',
@@ -170,6 +180,31 @@ export default function ResumeBuilder() {
             conversation into a professional document — leading with what
             someone can do, not where they've been.
           </p>
+        </div>
+      </div>
+
+      {/* ── Person selector ──────────────────────────────────────── */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+        <div className="flex items-center gap-4 flex-wrap">
+          <div className="flex items-center gap-2">
+            <Label className="text-sm font-medium whitespace-nowrap">Building resume for:</Label>
+            <Select value={selectedPersonId} onValueChange={setSelectedPersonId}>
+              <SelectTrigger className="w-[250px]">
+                <SelectValue placeholder="Select a person..." />
+              </SelectTrigger>
+              <SelectContent>
+                {mockPeople.map(p => (
+                  <SelectItem key={p.id} value={p.id}>{p.firstName} {p.lastName}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          {activePerson && (
+            <Link to={`/people/${activePerson.id}`} className="text-sm text-red-800 hover:text-red-600 hover:underline flex items-center gap-1">
+              <ArrowLeft className="h-3 w-3" />
+              Back to {activePerson.firstName}'s profile
+            </Link>
+          )}
         </div>
       </div>
 
@@ -585,12 +620,13 @@ export default function ResumeBuilder() {
                   <Button
                     variant="outline"
                     className="border-red-200 text-red-700 hover:bg-red-50"
-                    onClick={() =>
-                      toast.success('Resume saved to profile (demo)')
-                    }
+                    onClick={() => {
+                      const name = activePerson ? `${activePerson.firstName} ${activePerson.lastName}` : 'this person';
+                      toast.success(`Resume saved to ${name}'s profile`);
+                    }}
                   >
                     <Save className="mr-1.5 h-4 w-4" />
-                    Save to Profile
+                    {activePerson ? `Save to ${activePerson.firstName}'s Profile` : 'Save to Profile'}
                   </Button>
                 </div>
 
