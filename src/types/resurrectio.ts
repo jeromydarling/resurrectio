@@ -235,6 +235,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   excerpt: string;
+  body: string;
 }
 
 export interface KnowledgeBaseArticle {
