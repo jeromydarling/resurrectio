@@ -1,9 +1,9 @@
 /**
- * chmsRegistry — Registry of Church Management System connectors for Relatio.
+ * connectorRegistry — Registry of platform connectors for Relatio.
  *
- * WHAT: Defines supported ChMS platforms, their auth methods, polling cadence, and domains.
- * WHERE: Used by NarrativeCompanionSetupCard, Settings integrations, relatio-sync-runner.
- * WHY: CROS acts as a silent Narrative Companion — never a replacement CRM.
+ * WHAT: Defines supported platforms, their auth methods, polling cadence, and domains.
+ * WHERE: Used by integration setup, Settings, relatio-sync-runner.
+ * WHY: Resurrectio acts as a Narrative Companion — bringing existing data into the platform.
  */
 
 export interface ChmsConnectorConfig {
@@ -20,74 +20,6 @@ export interface ChmsConnectorConfig {
 }
 
 export const CHMS_CONNECTORS: Record<string, ChmsConnectorConfig> = {
-  parishsoft: {
-    label: 'ParishSoft',
-    description: 'Catholic parish management — families, members, constituents.',
-    auth: 'api_key',
-    polling: 'nightly',
-    domains: ['households', 'members', 'constituents'],
-    rateLimit: 100,
-    icon: 'church',
-    coverageMode: 'partial',
-  },
-  ministryplatform: {
-    label: 'MinistryPlatform',
-    description: 'Full-spectrum ministry management — contacts, households, events.',
-    auth: 'oauth2',
-    polling: 'hourly',
-    domains: ['events', 'households', 'people', 'groups'],
-    icon: 'building-2',
-    coverageMode: 'full',
-  },
-  planningcenter: {
-    label: 'Planning Center',
-    description: 'People, households, check-ins, services, and calendars.',
-    auth: 'oauth2',
-    polling: '5min',
-    webhook: true,
-    domains: ['people', 'households', 'groups', 'check_ins', 'services'],
-    rateLimit: 100,
-    icon: 'calendar',
-    coverageMode: 'full',
-  },
-  rock: {
-    label: 'Rock RMS',
-    description: 'Open-source church management — people, groups, events.',
-    auth: 'api_key',
-    polling: 'hourly',
-    domains: ['people', 'groups', 'households', 'events'],
-    icon: 'mountain',
-    coverageMode: 'full',
-  },
-  breeze: {
-    label: 'Breeze ChMS',
-    description: 'Simple church management — people, families, events.',
-    auth: 'api_key',
-    polling: 'daily',
-    domains: ['people', 'families', 'events', 'tags'],
-    rateLimit: 20,
-    icon: 'wind',
-    coverageMode: 'full',
-  },
-  fellowshipone: {
-    label: 'FellowshipOne',
-    description: 'Ministry management — people, households, activities.',
-    auth: 'oauth1',
-    polling: 'hourly',
-    domains: ['people', 'households', 'activities', 'events'],
-    icon: 'users',
-    coverageMode: 'full',
-  },
-  pushpay: {
-    label: 'Pushpay / Church Community Builder',
-    description: 'People, groups, events, attendance, giving — via the CCB API.',
-    auth: 'api_key',
-    polling: 'hourly',
-    domains: ['people', 'groups', 'events', 'attendance', 'giving'],
-    rateLimit: 120,
-    icon: 'church',
-    coverageMode: 'full',
-  },
   salesforce: {
     label: 'Salesforce',
     description: 'The world\'s most popular CRM — contacts, accounts, opportunities, tasks.',
@@ -215,24 +147,6 @@ export const CHMS_CONNECTORS: Record<string, ChmsConnectorConfig> = {
     icon: 'briefcase',
     coverageMode: 'partial',
   },
-  shelbynext: {
-    label: 'ShelbyNext Membership',
-    description: 'Church management — members, families, groups, giving. CSV export only.',
-    auth: 'csv_only',
-    polling: 'manual',
-    domains: ['members', 'families', 'groups', 'contributions'],
-    icon: 'file-spreadsheet',
-    coverageMode: 'minimal',
-  },
-  servantkeeper: {
-    label: 'Servant Keeper',
-    description: 'Church management — members, families, attendance, giving. CSV export only.',
-    auth: 'csv_only',
-    polling: 'manual',
-    domains: ['members', 'families', 'attendance', 'contributions'],
-    icon: 'file-spreadsheet',
-    coverageMode: 'minimal',
-  },
   wildapricot: {
     label: 'Wild Apricot',
     description: 'Cloud membership management by Personify — contacts, events, memberships, donations.',
@@ -336,19 +250,9 @@ export function getConnectorLabel(key: string): string {
 
 /**
  * Returns all connector keys suitable for a given archetype.
- * Church/ministry archetypes see all. Others see a subset.
  */
-export function getConnectorsForArchetype(archetype?: string | null): string[] {
-  const churchArchetypes = ['church', 'ministry_outreach'];
-  const crmKeys = ['salesforce', 'hubspot', 'airtable', 'zoho', 'virtuous', 'oracle', 'blackbaud', 'civicrm'];
-  const personalKeys = ['google_contacts', 'outlook_contacts', 'apple_contacts', 'monicacrm', 'contactsplus'];
-  const wpKeys = ['fluentcrm', 'jetpackcrm', 'wperp'];
-  const nonprofitKeys = ['bloomerang', 'neoncrm', 'lgl', 'donorperfect', 'kindful', 'wildapricot'];
-  if (archetype && churchArchetypes.includes(archetype)) {
-    return Object.keys(CHMS_CONNECTORS);
-  }
-  // Non-church orgs see generic connectors + CRM + WordPress + nonprofit donor platforms + personal
-  return ['planningcenter', 'rock', 'breeze', ...crmKeys, ...wpKeys, ...nonprofitKeys, ...personalKeys];
+export function getConnectorsForArchetype(_archetype?: string | null): string[] {
+  return Object.keys(CHMS_CONNECTORS);
 }
 
 /** Returns human-readable coverage label */
