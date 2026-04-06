@@ -56,24 +56,24 @@ export default function Housing() {
   return (
     <div className="space-y-8 p-6">
       <div>
-        <h1 className="font-serif text-3xl font-bold text-purple-900">
+        <h1 className="font-serif text-3xl font-bold text-red-950">
           Housing Placements
         </h1>
-        <p className="mt-1 text-purple-700/70">
+        <p className="mt-1 text-red-800/70">
           Track housing stability and placements across all participants
         </p>
       </div>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Card className="border-purple-100 bg-white/80">
+        <Card className="border-red-200 bg-white/80">
           <CardContent className="flex items-center gap-4 pt-6">
-            <div className="rounded-lg bg-purple-100 p-3">
-              <Home className="h-5 w-5 text-purple-700" />
+            <div className="rounded-lg bg-red-200 p-3">
+              <Home className="h-5 w-5 text-red-800" />
             </div>
             <div>
-              <p className="text-sm text-purple-600">Total Housed</p>
-              <p className="text-2xl font-bold text-purple-900">{stats.totalHoused}</p>
+              <p className="text-sm text-red-700">Total Housed</p>
+              <p className="text-2xl font-bold text-red-950">{stats.totalHoused}</p>
             </div>
           </CardContent>
         </Card>
@@ -113,32 +113,32 @@ export default function Housing() {
       </div>
 
       {/* Table */}
-      <Card className="border-purple-100">
+      <Card className="border-red-200">
         <CardHeader>
-          <CardTitle className="text-lg text-purple-900">All Placements</CardTitle>
+          <CardTitle className="text-lg text-red-950">All Placements</CardTitle>
         </CardHeader>
         <CardContent className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="border-purple-100">
-                <TableHead className="text-purple-800">Person</TableHead>
-                <TableHead className="text-purple-800">Type</TableHead>
-                <TableHead className="text-purple-800">Provider</TableHead>
-                <TableHead className="text-purple-800">Move-in Date</TableHead>
-                <TableHead className="text-purple-800">Stability</TableHead>
-                <TableHead className="text-purple-800 text-center">Subsidized</TableHead>
-                <TableHead className="text-purple-800">Notes</TableHead>
+              <TableRow className="border-red-200">
+                <TableHead className="text-red-900">Person</TableHead>
+                <TableHead className="text-red-900">Type</TableHead>
+                <TableHead className="text-red-900">Provider</TableHead>
+                <TableHead className="text-red-900">Move-in Date</TableHead>
+                <TableHead className="text-red-900">Stability</TableHead>
+                <TableHead className="text-red-900 text-center">Subsidized</TableHead>
+                <TableHead className="text-red-900">Notes</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {mockHousingRecords.map((record) => (
-                <TableRow key={record.id} className="border-purple-50 hover:bg-purple-50/40">
-                  <TableCell className="font-medium text-purple-900">
+                <TableRow key={record.id} className="border-red-50 hover:bg-red-50/40">
+                  <TableCell className="font-medium text-red-950">
                     {record.personName}
                   </TableCell>
                   <TableCell>{typeBadge(record.type)}</TableCell>
-                  <TableCell className="text-purple-700">{record.provider}</TableCell>
-                  <TableCell className="text-purple-700">
+                  <TableCell className="text-red-800">{record.provider}</TableCell>
+                  <TableCell className="text-red-800">
                     {new Date(record.moveInDate).toLocaleDateString('en-US', {
                       month: 'short',
                       day: 'numeric',
@@ -153,7 +153,7 @@ export default function Housing() {
                           className={`h-2 ${stabilityColor(record.stabilityScore)}`}
                         />
                       </div>
-                      <span className="text-xs font-medium text-purple-700">
+                      <span className="text-xs font-medium text-red-800">
                         {record.stabilityScore}
                       </span>
                     </div>
@@ -169,7 +169,7 @@ export default function Housing() {
                       </Badge>
                     )}
                   </TableCell>
-                  <TableCell className="max-w-[200px] truncate text-sm text-purple-600">
+                  <TableCell className="max-w-[200px] truncate text-sm text-red-700">
                     {record.notes}
                   </TableCell>
                 </TableRow>

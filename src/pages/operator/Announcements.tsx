@@ -65,37 +65,37 @@ export default function Announcements() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-purple-100">Announcements</h1>
-          <p className="text-purple-300/70 text-sm mt-1">System-wide communications and notices</p>
+          <h1 className="text-2xl font-bold text-red-200">Announcements</h1>
+          <p className="text-red-400/70 text-sm mt-1">System-wide communications and notices</p>
         </div>
-        <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+        <Button className="bg-red-700 hover:bg-red-800 text-white">
           <Plus className="w-4 h-4 mr-2" /> New Announcement
         </Button>
       </div>
 
       {/* Stats */}
       <div className="grid grid-cols-3 gap-4">
-        <Card className="bg-purple-950/40 border-purple-800/40">
+        <Card className="bg-red-950/40 border-red-900/40">
           <CardContent className="pt-6 text-center">
-            <p className="text-2xl font-bold text-purple-100">{announcements.length}</p>
-            <p className="text-sm text-purple-300/70">Total Active</p>
+            <p className="text-2xl font-bold text-red-200">{announcements.length}</p>
+            <p className="text-sm text-red-400/70">Total Active</p>
           </CardContent>
         </Card>
-        <Card className="bg-purple-950/40 border-purple-800/40">
+        <Card className="bg-red-950/40 border-red-900/40">
           <CardContent className="pt-6 text-center">
-            <p className="text-2xl font-bold text-purple-100">{announcements.filter((a) => a.target === 'All Ministries').length}</p>
-            <p className="text-sm text-purple-300/70">Platform-Wide</p>
+            <p className="text-2xl font-bold text-red-200">{announcements.filter((a) => a.target === 'All Ministries').length}</p>
+            <p className="text-sm text-red-400/70">Platform-Wide</p>
           </CardContent>
         </Card>
-        <Card className="bg-purple-950/40 border-purple-800/40">
+        <Card className="bg-red-950/40 border-red-900/40">
           <CardContent className="pt-6 text-center">
-            <p className="text-2xl font-bold text-purple-100">{announcements.filter((a) => a.type === 'warning').length}</p>
-            <p className="text-sm text-purple-300/70">Warnings</p>
+            <p className="text-2xl font-bold text-red-200">{announcements.filter((a) => a.type === 'warning').length}</p>
+            <p className="text-sm text-red-400/70">Warnings</p>
           </CardContent>
         </Card>
       </div>
 
-      <Separator className="bg-purple-800/30" />
+      <Separator className="bg-red-900/30" />
 
       {/* Announcement list */}
       <div className="space-y-4">
@@ -103,30 +103,30 @@ export default function Announcements() {
           const cfg = typeConfig[a.type];
           const Icon = cfg.icon;
           return (
-            <Card key={a.id} className="bg-purple-950/40 border-purple-800/40">
+            <Card key={a.id} className="bg-red-950/40 border-red-900/40">
               <CardContent className="pt-5">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-3 flex-1">
-                    <div className="p-2 rounded-lg bg-purple-900/50 mt-0.5">
-                      <Icon className="w-4 h-4 text-purple-400" />
+                    <div className="p-2 rounded-lg bg-red-950/50 mt-0.5">
+                      <Icon className="w-4 h-4 text-red-500" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="text-sm font-semibold text-purple-100">{a.title}</h3>
+                        <h3 className="text-sm font-semibold text-red-200">{a.title}</h3>
                         <Badge variant="outline" className={cfg.badgeClass}>{a.type}</Badge>
                       </div>
-                      <p className="text-sm text-purple-300/70 mt-1.5">{a.message}</p>
-                      <div className="flex items-center gap-4 mt-2 text-xs text-purple-400/60">
+                      <p className="text-sm text-red-400/70 mt-1.5">{a.message}</p>
+                      <div className="flex items-center gap-4 mt-2 text-xs text-red-500/60">
                         <span>Posted: {a.date}</span>
                         <span>Target: {a.target}</span>
                       </div>
                     </div>
                   </div>
                   <div className="flex gap-1 shrink-0">
-                    <Button size="sm" variant="ghost" className="text-purple-400 hover:text-purple-200 hover:bg-purple-800/30 h-8 w-8 p-0">
+                    <Button size="sm" variant="ghost" className="text-red-500 hover:text-red-300 hover:bg-red-900/30 h-8 w-8 p-0">
                       <Pencil className="w-3.5 h-3.5" />
                     </Button>
-                    <Button size="sm" variant="ghost" className="text-purple-400 hover:text-red-300 hover:bg-purple-800/30 h-8 w-8 p-0">
+                    <Button size="sm" variant="ghost" className="text-red-500 hover:text-red-300 hover:bg-red-900/30 h-8 w-8 p-0">
                       <Trash2 className="w-3.5 h-3.5" />
                     </Button>
                   </div>

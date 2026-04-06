@@ -64,22 +64,22 @@ export default function SourceManager() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-purple-100">Source Manager</h1>
-        <p className="text-purple-300/70 text-sm mt-1">Manage data source connections and integrations</p>
+        <h1 className="text-2xl font-bold text-red-200">Source Manager</h1>
+        <p className="text-red-400/70 text-sm mt-1">Manage data source connections and integrations</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {sources.map((src) => (
-          <Card key={src.name} className="bg-purple-950/40 border-purple-800/40">
+          <Card key={src.name} className="bg-red-950/40 border-red-900/40">
             <CardHeader className="pb-3">
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-lg bg-purple-900/50">
-                    <src.icon className="w-5 h-5 text-purple-400" />
+                  <div className="p-2.5 rounded-lg bg-red-950/50">
+                    <src.icon className="w-5 h-5 text-red-500" />
                   </div>
                   <div>
-                    <CardTitle className="text-purple-100 text-lg">{src.name}</CardTitle>
-                    <CardDescription className="text-purple-400/70 text-xs mt-0.5">{src.description}</CardDescription>
+                    <CardTitle className="text-red-200 text-lg">{src.name}</CardTitle>
+                    <CardDescription className="text-red-500/70 text-xs mt-0.5">{src.description}</CardDescription>
                   </div>
                 </div>
                 <Badge variant="outline" className={src.badgeClass}>
@@ -88,20 +88,20 @@ export default function SourceManager() {
                 </Badge>
               </div>
             </CardHeader>
-            <Separator className="bg-purple-800/20 mx-6" />
+            <Separator className="bg-red-900/20 mx-6" />
             <CardContent className="pt-4">
               <div className="flex items-center justify-between text-sm">
                 <div className="space-y-1">
-                  <p className="text-purple-300/60">Last Sync: <span className="text-purple-200">{src.lastSync}</span></p>
-                  <p className="text-purple-300/60">Records: <span className="text-purple-200">{src.records}</span></p>
+                  <p className="text-red-400/60">Last Sync: <span className="text-red-300">{src.lastSync}</span></p>
+                  <p className="text-red-400/60">Records: <span className="text-red-300">{src.records}</span></p>
                 </div>
                 <div className="flex gap-2">
                   {src.status !== 'disconnected' && (
-                    <Button size="sm" variant="ghost" className="text-purple-300 hover:text-purple-100 hover:bg-purple-800/30">
+                    <Button size="sm" variant="ghost" className="text-red-400 hover:text-red-200 hover:bg-red-900/30">
                       <RefreshCw className="w-4 h-4" />
                     </Button>
                   )}
-                  <Button size="sm" variant="outline" className="border-purple-700/50 text-purple-300 hover:bg-purple-800/30 hover:text-purple-100">
+                  <Button size="sm" variant="outline" className="border-red-800/50 text-red-400 hover:bg-red-900/30 hover:text-red-200">
                     <Settings className="w-4 h-4 mr-1.5" /> Configure
                   </Button>
                 </div>

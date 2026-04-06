@@ -14,7 +14,7 @@ import { Separator } from '@/components/ui/separator';
 import { Users, UserCheck, Clock, GraduationCap, Search, Download } from 'lucide-react';
 
 const stats = [
-  { label: 'Total People', value: '1,847', icon: Users, color: 'text-purple-400' },
+  { label: 'Total People', value: '1,847', icon: Users, color: 'text-red-500' },
   { label: 'In Pre-Release', value: '312', icon: Clock, color: 'text-amber-400' },
   { label: 'Active Journey', value: '978', icon: UserCheck, color: 'text-green-400' },
   { label: 'Alumni', value: '557', icon: GraduationCap, color: 'text-blue-400' },
@@ -44,10 +44,10 @@ export default function OperatorPeople() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-purple-100">People</h1>
-          <p className="text-purple-300/70 text-sm mt-1">Cross-ministry view of all participants</p>
+          <h1 className="text-2xl font-bold text-red-200">People</h1>
+          <p className="text-red-400/70 text-sm mt-1">Cross-ministry view of all participants</p>
         </div>
-        <Button variant="outline" className="border-purple-700/50 text-purple-300 hover:bg-purple-800/30 hover:text-purple-100">
+        <Button variant="outline" className="border-red-800/50 text-red-400 hover:bg-red-900/30 hover:text-red-200">
           <Download className="w-4 h-4 mr-2" /> Export
         </Button>
       </div>
@@ -55,14 +55,14 @@ export default function OperatorPeople() {
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((s) => (
-          <Card key={s.label} className="bg-purple-950/40 border-purple-800/40">
+          <Card key={s.label} className="bg-red-950/40 border-red-900/40">
             <CardContent className="pt-6 flex items-center gap-4">
-              <div className="p-3 rounded-lg bg-purple-900/50">
+              <div className="p-3 rounded-lg bg-red-950/50">
                 <s.icon className={`w-5 h-5 ${s.color}`} />
               </div>
               <div>
-                <p className="text-sm text-purple-300/70">{s.label}</p>
-                <p className="text-2xl font-bold text-purple-100">{s.value}</p>
+                <p className="text-sm text-red-400/70">{s.label}</p>
+                <p className="text-2xl font-bold text-red-200">{s.value}</p>
               </div>
             </CardContent>
           </Card>
@@ -71,39 +71,39 @@ export default function OperatorPeople() {
 
       {/* Search */}
       <div className="relative max-w-sm">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-purple-400" />
-        <Input placeholder="Search people…" className="pl-9 bg-purple-950/30 border-purple-800/40 text-purple-100 placeholder:text-purple-500" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-red-500" />
+        <Input placeholder="Search people…" className="pl-9 bg-red-950/30 border-red-900/40 text-red-200 placeholder:text-red-600" />
       </div>
 
       {/* Table */}
-      <Card className="bg-purple-950/40 border-purple-800/40">
+      <Card className="bg-red-950/40 border-red-900/40">
         <CardContent className="p-0">
           <Table>
             <TableHeader>
-              <TableRow className="border-purple-800/30 hover:bg-transparent">
-                <TableHead className="text-purple-300">Name</TableHead>
-                <TableHead className="text-purple-300">Ministry</TableHead>
-                <TableHead className="text-purple-300">Phase</TableHead>
-                <TableHead className="text-purple-300">Mentor</TableHead>
-                <TableHead className="text-purple-300">Enrolled</TableHead>
-                <TableHead className="text-purple-300 text-right">Signals</TableHead>
+              <TableRow className="border-red-900/30 hover:bg-transparent">
+                <TableHead className="text-red-400">Name</TableHead>
+                <TableHead className="text-red-400">Ministry</TableHead>
+                <TableHead className="text-red-400">Phase</TableHead>
+                <TableHead className="text-red-400">Mentor</TableHead>
+                <TableHead className="text-red-400">Enrolled</TableHead>
+                <TableHead className="text-red-400 text-right">Signals</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {people.map((p) => (
-                <TableRow key={p.id} className="border-purple-800/20 hover:bg-purple-900/20">
-                  <TableCell className="text-purple-100 font-medium">{p.name}</TableCell>
-                  <TableCell className="text-purple-300/70 text-sm">{p.ministry}</TableCell>
+                <TableRow key={p.id} className="border-red-900/20 hover:bg-red-950/20">
+                  <TableCell className="text-red-200 font-medium">{p.name}</TableCell>
+                  <TableCell className="text-red-400/70 text-sm">{p.ministry}</TableCell>
                   <TableCell>
                     <Badge variant="outline" className={phaseColor[p.phase]}>{p.phase}</Badge>
                   </TableCell>
-                  <TableCell className="text-purple-300">{p.mentor}</TableCell>
-                  <TableCell className="text-purple-300/60 text-sm">{p.enrolled}</TableCell>
+                  <TableCell className="text-red-400">{p.mentor}</TableCell>
+                  <TableCell className="text-red-400/60 text-sm">{p.enrolled}</TableCell>
                   <TableCell className="text-right">
                     {p.signals > 0 ? (
-                      <Badge className="bg-purple-600/60 text-purple-200">{p.signals}</Badge>
+                      <Badge className="bg-red-700/60 text-red-300">{p.signals}</Badge>
                     ) : (
-                      <span className="text-purple-500/50">0</span>
+                      <span className="text-red-600/50">0</span>
                     )}
                   </TableCell>
                 </TableRow>

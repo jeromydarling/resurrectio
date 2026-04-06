@@ -86,14 +86,14 @@ export const archetypes = {
 export const signalTypes = {
   transformation_momentum: { label: 'Transformation Momentum', color: '#059669', description: 'Person consistently meeting milestones' },
   drift_risk: { label: 'Drift Risk', color: '#ef4444', description: 'Missed meetings, engagement dropping, compliance deadlines approaching' },
-  fabrica_ready: { label: 'Fabrica Ready', color: '#7c3aed', description: 'Stability + motivation aligned for guild training warm handoff' },
+  fabrica_ready: { label: 'Fabrica Ready', color: '#b91c1c', description: 'Stability + motivation aligned for guild training warm handoff' },
   retention_risk: { label: 'Retention Risk', color: '#f59e0b', description: 'Employer or housing signals suggest instability' },
   family_reconnection: { label: 'Family Reconnection', color: '#059669', description: 'Positive family contact patterns emerging' },
-  community_growing: { label: 'Community Growing', color: '#6b21a8', description: 'New mentors, referrals increasing, enrollment trending up' },
+  community_growing: { label: 'Community Growing', color: '#991b1b', description: 'New mentors, referrals increasing, enrollment trending up' },
   compliance_upcoming: { label: 'Compliance Upcoming', color: '#f59e0b', description: 'Parole review, court date approaching' },
   employment_milestone: { label: 'Employment Milestone', color: '#059669', description: 'Job tenure, promotion, wage increase' },
-  communis_ready: { label: 'Communis Ready', color: '#7c3aed', description: 'Full pipeline completion approaching (cooperative membership)' },
-  pre_release_intake: { label: 'Pre-Release Intake', color: '#6b21a8', description: 'Release date approaching, intake process needed' },
+  communis_ready: { label: 'Communis Ready', color: '#b91c1c', description: 'Full pipeline completion approaching (cooperative membership)' },
+  pre_release_intake: { label: 'Pre-Release Intake', color: '#991b1b', description: 'Release date approaching, intake process needed' },
 } as const;
 
 export type ArchetypeKey = keyof typeof archetypes;

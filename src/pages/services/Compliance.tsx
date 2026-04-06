@@ -67,10 +67,10 @@ export default function Compliance() {
   return (
     <div className="space-y-8 p-6">
       <div>
-        <h1 className="font-serif text-3xl font-bold text-purple-900">
+        <h1 className="font-serif text-3xl font-bold text-red-950">
           Compliance Tracking
         </h1>
-        <p className="mt-1 text-purple-700/70">
+        <p className="mt-1 text-red-800/70">
           Court dates, parole requirements, and mandated program compliance
         </p>
       </div>
@@ -113,11 +113,11 @@ export default function Compliance() {
       </div>
 
       {/* Table */}
-      <Card className="border-purple-100">
+      <Card className="border-red-200">
         <CardHeader>
           <div className="flex items-center gap-2">
-            <Scale className="h-5 w-5 text-purple-600" />
-            <CardTitle className="text-lg text-purple-900">
+            <Scale className="h-5 w-5 text-red-700" />
+            <CardTitle className="text-lg text-red-950">
               All Compliance Items
             </CardTitle>
           </div>
@@ -125,35 +125,35 @@ export default function Compliance() {
         <CardContent className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="border-purple-100">
-                <TableHead className="text-purple-800">Person</TableHead>
-                <TableHead className="text-purple-800">Type</TableHead>
-                <TableHead className="text-purple-800">Title</TableHead>
-                <TableHead className="text-purple-800">Date</TableHead>
-                <TableHead className="text-purple-800">Status</TableHead>
-                <TableHead className="text-purple-800">Notes</TableHead>
+              <TableRow className="border-red-200">
+                <TableHead className="text-red-900">Person</TableHead>
+                <TableHead className="text-red-900">Type</TableHead>
+                <TableHead className="text-red-900">Title</TableHead>
+                <TableHead className="text-red-900">Date</TableHead>
+                <TableHead className="text-red-900">Status</TableHead>
+                <TableHead className="text-red-900">Notes</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {sorted.map((item) => (
                 <TableRow
                   key={item.id}
-                  className={`border-purple-50 ${
+                  className={`border-red-50 ${
                     item.status === 'overdue'
                       ? 'bg-red-50/40 hover:bg-red-50/60'
-                      : 'hover:bg-purple-50/40'
+                      : 'hover:bg-red-50/40'
                   }`}
                 >
-                  <TableCell className="font-medium text-purple-900">
+                  <TableCell className="font-medium text-red-950">
                     {item.personName}
                   </TableCell>
                   <TableCell>
-                    <Badge variant="outline" className="border-purple-200 text-purple-700 text-xs">
+                    <Badge variant="outline" className="border-red-300 text-red-800 text-xs">
                       {typeLabel(item.type)}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-purple-700">{item.title}</TableCell>
-                  <TableCell className="text-purple-700">
+                  <TableCell className="text-red-800">{item.title}</TableCell>
+                  <TableCell className="text-red-800">
                     {new Date(item.date).toLocaleDateString('en-US', {
                       month: 'short',
                       day: 'numeric',
@@ -161,7 +161,7 @@ export default function Compliance() {
                     })}
                   </TableCell>
                   <TableCell>{statusBadge(item.status)}</TableCell>
-                  <TableCell className="max-w-[200px] truncate text-sm text-purple-600">
+                  <TableCell className="max-w-[200px] truncate text-sm text-red-700">
                     {item.notes}
                   </TableCell>
                 </TableRow>

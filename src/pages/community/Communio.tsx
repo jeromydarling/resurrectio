@@ -4,12 +4,12 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Hammer, Building2, Home, Users, Heart, ChevronRight } from 'lucide-react';
 
 const pipelineSteps = [
-  { label: 'IN PRISON', sub: 'Companion Book', app: 'Fabrica', icon: Heart, color: 'bg-purple-800' },
-  { label: 'RELEASE', sub: 'Case Coordination', app: 'Resurrectio', icon: Users, color: 'bg-purple-600' },
+  { label: 'IN PRISON', sub: 'Companion Book', app: 'Fabrica', icon: Heart, color: 'bg-red-900' },
+  { label: 'RELEASE', sub: 'Case Coordination', app: 'Resurrectio', icon: Users, color: 'bg-red-700' },
   { label: 'SKILLS', sub: '16-Week Guild Course', app: 'Fabrica', icon: Hammer, color: 'bg-violet-500' },
   { label: 'OWNERSHIP', sub: 'Worker Cooperative', app: 'Communis', icon: Building2, color: 'bg-emerald-600' },
   { label: 'HOUSING', sub: 'Community Land Trust', app: 'Propria', icon: Home, color: 'bg-amber-500' },
-  { label: 'COMMUNITY', sub: 'Civic Participation', app: 'CROS', icon: Users, color: 'bg-purple-400' },
+  { label: 'COMMUNITY', sub: 'Civic Participation', app: 'CROS', icon: Users, color: 'bg-red-500' },
 ];
 
 const connections = [

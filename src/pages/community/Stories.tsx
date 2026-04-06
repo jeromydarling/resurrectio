@@ -9,7 +9,7 @@ export default function Stories() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-serif font-bold text-purple-900">Transformation Stories</h1>
+        <h1 className="text-3xl font-serif font-bold text-red-950">Transformation Stories</h1>
         <p className="text-muted-foreground mt-1">Testimonies of hope, resilience, and restoration</p>
       </div>
 
@@ -19,18 +19,18 @@ export default function Stories() {
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between gap-2 mb-2">
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold text-sm">
+                  <div className="h-10 w-10 rounded-full bg-red-200 flex items-center justify-center text-red-800 font-bold text-sm">
                     {story.personInitial.charAt(0)}
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-purple-800">{story.personInitial}</p>
+                    <p className="text-sm font-medium text-red-900">{story.personInitial}</p>
                     <Badge className={`${STAGE_COLORS[story.stage]} text-[10px]`}>
                       {STAGE_LABELS[story.stage]}
                     </Badge>
                   </div>
                 </div>
               </div>
-              <CardTitle className="font-serif text-purple-900 text-lg leading-snug">
+              <CardTitle className="font-serif text-red-950 text-lg leading-snug">
                 {story.title}
               </CardTitle>
             </CardHeader>
@@ -45,12 +45,12 @@ export default function Stories() {
                 </div>
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {story.tags.map((tag) => (
-                    <Badge key={tag} variant="outline" className="text-[10px] text-purple-700 border-purple-200">
+                    <Badge key={tag} variant="outline" className="text-[10px] text-red-800 border-red-300">
                       {tag}
                     </Badge>
                   ))}
                 </div>
-                <Button variant="outline" className="w-full border-purple-200 text-purple-700 hover:bg-purple-50" size="sm">
+                <Button variant="outline" className="w-full border-red-300 text-red-800 hover:bg-red-50" size="sm">
                   <BookOpen className="h-4 w-4 mr-2" />
                   Read Full Story
                 </Button>

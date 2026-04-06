@@ -21,7 +21,7 @@ export const CHART_COLORS = {
   success: [34, 197, 94] as [number, number, number],
   warning: [234, 179, 8] as [number, number, number],
   danger: [239, 68, 68] as [number, number, number],
-  purple: [168, 85, 247] as [number, number, number],
+  crimson: [153, 27, 27] as [number, number, number],
   cyan: [6, 182, 212] as [number, number, number],
   muted: [100, 116, 139] as [number, number, number],
   dark: [30, 41, 59] as [number, number, number],
@@ -353,7 +353,7 @@ export function getChartColor(index: number): [number, number, number] {
     CHART_COLORS.primary,
     CHART_COLORS.success,
     CHART_COLORS.warning,
-    CHART_COLORS.purple,
+    CHART_COLORS.crimson,
     CHART_COLORS.cyan,
     CHART_COLORS.danger,
   ];

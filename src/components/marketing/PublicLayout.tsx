@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { brand } from '@/config/brand';
 import { useState } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
+import { ResurrectioLogo } from '@/components/brand/ResurrectioLogo';
 
 const navLinks = [
   { label: 'Features', to: '/#features' },
@@ -41,10 +42,11 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
   return (
     <div className="min-h-screen flex flex-col bg-[#faf7f3]">
       {/* Sticky Header */}
-      <header className="sticky top-0 z-50 border-b border-purple-100 bg-white/95 backdrop-blur-md">
+      <header className="sticky top-0 z-50 border-b border-red-100 bg-white/95 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <span className="font-serif text-xl font-bold text-purple-800 tracking-tight">
+          <Link to="/" className="flex items-center gap-2.5">
+            <ResurrectioLogo size={28} color="#991b1b" />
+            <span className="font-serif text-xl font-bold text-red-900 tracking-tight">
               {brand.appName}
             </span>
           </Link>
@@ -55,7 +57,7 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
               <a
                 key={link.to}
                 href={link.to}
-                className="text-purple-900/60 hover:text-purple-900 transition-colors font-medium"
+                className="text-red-950/60 hover:text-red-950 transition-colors font-medium"
               >
                 {link.label}
               </a>
@@ -67,7 +69,7 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-purple-900/70 hover:text-purple-900"
+                className="text-red-950/70 hover:text-red-950"
               >
                 Login
               </Button>
@@ -75,7 +77,7 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
             <Link to="/signup">
               <Button
                 size="sm"
-                className="rounded-full bg-purple-700 text-white hover:bg-purple-800 px-5"
+                className="rounded-full bg-red-800 text-white hover:bg-red-900 px-5"
               >
                 Get Started <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
               </Button>
@@ -84,7 +86,7 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 text-purple-900"
+            className="md:hidden p-2 text-red-950"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -93,18 +95,18 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
 
         {/* Mobile dropdown */}
         {mobileOpen && (
-          <div className="md:hidden border-t border-purple-100 bg-white px-4 py-4 space-y-3">
+          <div className="md:hidden border-t border-red-100 bg-white px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.to}
                 href={link.to}
-                className="block text-sm font-medium text-purple-900/70 py-1.5"
+                className="block text-sm font-medium text-red-950/70 py-1.5"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <div className="flex gap-2 pt-3 border-t border-purple-100">
+            <div className="flex gap-2 pt-3 border-t border-red-100">
               <Link to="/login" className="flex-1" onClick={() => setMobileOpen(false)}>
                 <Button variant="outline" size="sm" className="w-full rounded-full">
                   Login
@@ -113,7 +115,7 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
               <Link to="/signup" className="flex-1" onClick={() => setMobileOpen(false)}>
                 <Button
                   size="sm"
-                  className="w-full rounded-full bg-purple-700 text-white hover:bg-purple-800"
+                  className="w-full rounded-full bg-red-800 text-white hover:bg-red-900"
                 >
                   Get Started
                 </Button>
@@ -129,18 +131,18 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-purple-100 bg-white">
+      <footer className="border-t border-red-100 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {/* Brand column */}
             <div className="col-span-2">
-              <span className="font-serif text-lg font-bold text-purple-800">
+              <span className="font-serif text-lg font-bold text-red-900">
                 {brand.appName}
               </span>
-              <p className="mt-2 text-sm text-purple-900/50 max-w-xs">
+              <p className="mt-2 text-sm text-red-950/50 max-w-xs">
                 {brand.tagline}
               </p>
-              <p className="mt-1 text-xs text-purple-900/40">
+              <p className="mt-1 text-xs text-red-950/40">
                 Powered by CROS/NRI
               </p>
             </div>
@@ -148,7 +150,7 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
             {/* Link columns */}
             {footerColumns.map((col) => (
               <div key={col.title}>
-                <p className="text-xs font-semibold uppercase tracking-wider text-purple-900/40 mb-3">
+                <p className="text-xs font-semibold uppercase tracking-wider text-red-950/40 mb-3">
                   {col.title}
                 </p>
                 <ul className="space-y-2">
@@ -156,7 +158,7 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
                     <li key={link.to}>
                       <Link
                         to={link.to}
-                        className="text-sm text-purple-900/50 hover:text-purple-900 transition-colors"
+                        className="text-sm text-red-950/50 hover:text-red-950 transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -167,7 +169,7 @@ export default function PublicLayout({ children }: { children?: React.ReactNode 
             ))}
           </div>
 
-          <div className="mt-10 pt-6 border-t border-purple-100 text-xs text-purple-900/40">
+          <div className="mt-10 pt-6 border-t border-red-100 text-xs text-red-950/40">
             <span>&copy; {new Date().getFullYear()} {brand.appName}. All rights reserved.</span>
           </div>
         </div>

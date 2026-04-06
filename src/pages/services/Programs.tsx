@@ -7,7 +7,7 @@ import { Users, Calendar, User, GraduationCap, BookOpen } from 'lucide-react';
 
 function typeBadge(type: Program['type']) {
   const styles: Record<Program['type'], string> = {
-    guild_course: 'bg-purple-100 text-purple-800 border-purple-200',
+    guild_course: 'bg-red-200 text-red-900 border-red-300',
     bible_study: 'bg-violet-100 text-violet-800 border-violet-200',
     ged_prep: 'bg-blue-100 text-blue-800 border-blue-200',
     support_group: 'bg-emerald-100 text-emerald-800 border-emerald-200',
@@ -33,24 +33,24 @@ export default function Programs() {
   return (
     <div className="space-y-8 p-6">
       <div>
-        <h1 className="font-serif text-3xl font-bold text-purple-900">
+        <h1 className="font-serif text-3xl font-bold text-red-950">
           Programs
         </h1>
-        <p className="mt-1 text-purple-700/70">
+        <p className="mt-1 text-red-800/70">
           Active program cohorts, completion rates, and upcoming sessions
         </p>
       </div>
 
       {/* Summary Row */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <Card className="border-purple-100 bg-white/80">
+        <Card className="border-red-200 bg-white/80">
           <CardContent className="flex items-center gap-4 pt-6">
-            <div className="rounded-lg bg-purple-100 p-3">
-              <BookOpen className="h-5 w-5 text-purple-700" />
+            <div className="rounded-lg bg-red-200 p-3">
+              <BookOpen className="h-5 w-5 text-red-800" />
             </div>
             <div>
-              <p className="text-sm text-purple-600">Active Programs</p>
-              <p className="text-2xl font-bold text-purple-900">{mockPrograms.length}</p>
+              <p className="text-sm text-red-700">Active Programs</p>
+              <p className="text-2xl font-bold text-red-950">{mockPrograms.length}</p>
             </div>
           </CardContent>
         </Card>
@@ -91,28 +91,28 @@ export default function Programs() {
         {mockPrograms.map((program) => (
           <Card
             key={program.id}
-            className="border-purple-100 bg-white/90 hover:shadow-md transition-shadow"
+            className="border-red-200 bg-white/90 hover:shadow-md transition-shadow"
           >
             <CardHeader className="pb-3">
               <div className="flex items-start justify-between">
-                <CardTitle className="text-lg text-purple-900">
+                <CardTitle className="text-lg text-red-950">
                   {program.name}
                 </CardTitle>
                 {typeBadge(program.type)}
               </div>
-              <CardDescription className="text-purple-600/80 mt-1">
+              <CardDescription className="text-red-700/80 mt-1">
                 {program.description}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-5">
               {/* Stats Row */}
               <div className="flex items-center gap-6 text-sm">
-                <div className="flex items-center gap-1.5 text-purple-700">
+                <div className="flex items-center gap-1.5 text-red-800">
                   <Users className="h-4 w-4" />
                   <span className="font-medium">{program.enrolledCount}</span>
-                  <span className="text-purple-500">enrolled</span>
+                  <span className="text-red-600">enrolled</span>
                 </div>
-                <div className="flex items-center gap-1.5 text-purple-700">
+                <div className="flex items-center gap-1.5 text-red-800">
                   <Calendar className="h-4 w-4" />
                   <span>
                     {new Date(program.nextSession).toLocaleDateString('en-US', {
@@ -126,8 +126,8 @@ export default function Programs() {
               {/* Completion Rate */}
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-purple-600">Completion Rate</span>
-                  <span className="font-semibold text-purple-900">
+                  <span className="text-red-700">Completion Rate</span>
+                  <span className="font-semibold text-red-950">
                     {program.completionRate}%
                   </span>
                 </div>
@@ -135,15 +135,15 @@ export default function Programs() {
               </div>
 
               {/* Facilitator */}
-              <div className="flex items-center gap-2 text-sm text-purple-700">
-                <User className="h-4 w-4 text-purple-500" />
+              <div className="flex items-center gap-2 text-sm text-red-800">
+                <User className="h-4 w-4 text-red-600" />
                 <span>{program.facilitator}</span>
               </div>
 
               {/* Recent Graduates */}
               {program.recentGraduates.length > 0 && (
                 <div className="space-y-2">
-                  <p className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-purple-500">
+                  <p className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-red-600">
                     <GraduationCap className="h-3.5 w-3.5" />
                     Recent Graduates
                   </p>
@@ -152,7 +152,7 @@ export default function Programs() {
                       <Badge
                         key={name}
                         variant="outline"
-                        className="border-purple-200 bg-purple-50 text-purple-700 text-xs"
+                        className="border-red-300 bg-red-50 text-red-800 text-xs"
                       >
                         {name}
                       </Badge>

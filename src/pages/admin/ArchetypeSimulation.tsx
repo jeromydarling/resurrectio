@@ -262,7 +262,7 @@ function BehaviorPreview({ archetype }: { archetype: any }) {
     { key: 'event_rate', label: 'Events', icon: Calendar, color: 'bg-blue-500' },
     { key: 'volunteer_rate', label: 'Voluntārium', icon: HandHelping, color: 'bg-emerald-500' },
     { key: 'provisio_rate', label: 'Prōvīsiō', icon: Package, color: 'bg-amber-500' },
-    { key: 'email_rate', label: 'Email Touches', icon: Users, color: 'bg-purple-500' },
+    { key: 'email_rate', label: 'Email Touches', icon: Users, color: 'bg-red-600' },
     { key: 'journey_advance_rate', label: 'Journey Moves', icon: Zap, color: 'bg-cyan-500' },
     { key: 'communio_share_rate', label: 'Communio Shares', icon: Sparkles, color: 'bg-pink-500' },
   ];

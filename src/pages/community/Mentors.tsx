@@ -33,7 +33,7 @@ export default function Mentors() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-serif font-bold text-purple-900">Mentor Directory</h1>
+        <h1 className="text-3xl font-serif font-bold text-red-950">Mentor Directory</h1>
         <p className="text-muted-foreground mt-1">Community mentors walking alongside returning citizens</p>
       </div>
 
@@ -52,7 +52,7 @@ export default function Mentors() {
           <Card key={mentor.id} className="bg-white/80">
             <CardHeader className="pb-3">
               <div className="flex items-start justify-between">
-                <CardTitle className="font-serif text-purple-900 text-lg">
+                <CardTitle className="font-serif text-red-950 text-lg">
                   {mentor.firstName} {mentor.lastName}
                 </CardTitle>
                 <Badge className={trainingStatusStyles[mentor.trainingStatus]}>
@@ -63,7 +63,7 @@ export default function Mentors() {
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center gap-2 text-sm">
-                <Star className="h-4 w-4 text-purple-500" />
+                <Star className="h-4 w-4 text-red-600" />
                 <span>{mentor.specialization}</span>
               </div>
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -79,7 +79,7 @@ export default function Mentors() {
               <p className="text-xs text-muted-foreground">
                 Joined {new Date(mentor.joinDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
               </p>
-              <Button className="w-full bg-purple-700 hover:bg-purple-800 text-white mt-2" size="sm">
+              <Button className="w-full bg-red-800 hover:bg-red-900 text-white mt-2" size="sm">
                 <UserPlus className="h-4 w-4 mr-2" />
                 Match Mentor
               </Button>

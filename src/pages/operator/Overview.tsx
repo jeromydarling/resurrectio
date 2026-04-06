@@ -42,21 +42,21 @@ export default function Overview() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-purple-100">Ecosystem Overview</h1>
-        <p className="text-purple-300/70 text-sm mt-1">Platform-wide health and activity at a glance</p>
+        <h1 className="text-2xl font-bold text-red-200">Ecosystem Overview</h1>
+        <p className="text-red-400/70 text-sm mt-1">Platform-wide health and activity at a glance</p>
       </div>
 
       {/* Top stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {topStats.map((s) => (
-          <Card key={s.label} className="bg-purple-950/40 border-purple-800/40">
+          <Card key={s.label} className="bg-red-950/40 border-red-900/40">
             <CardContent className="pt-6 flex items-center gap-4">
-              <div className="p-3 rounded-lg bg-purple-900/50">
-                <s.icon className="w-5 h-5 text-purple-400" />
+              <div className="p-3 rounded-lg bg-red-950/50">
+                <s.icon className="w-5 h-5 text-red-500" />
               </div>
               <div>
-                <p className="text-sm text-purple-300/70">{s.label}</p>
-                <p className="text-2xl font-bold text-purple-100">{s.value}</p>
+                <p className="text-sm text-red-400/70">{s.label}</p>
+                <p className="text-2xl font-bold text-red-200">{s.value}</p>
               </div>
             </CardContent>
           </Card>
@@ -65,18 +65,18 @@ export default function Overview() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Activity feed */}
-        <Card className="bg-purple-950/40 border-purple-800/40 lg:col-span-2">
+        <Card className="bg-red-950/40 border-red-900/40 lg:col-span-2">
           <CardHeader>
-            <CardTitle className="text-purple-100 text-lg">Recent Activity</CardTitle>
-            <CardDescription className="text-purple-400/70">Across all ministries</CardDescription>
+            <CardTitle className="text-red-200 text-lg">Recent Activity</CardTitle>
+            <CardDescription className="text-red-500/70">Across all ministries</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             {recentActivity.map((a) => (
               <div key={a.id} className="flex items-start gap-3">
-                <div className={`w-2 h-2 rounded-full mt-2 ${a.type === 'success' ? 'bg-green-500' : 'bg-purple-500'}`} />
+                <div className={`w-2 h-2 rounded-full mt-2 ${a.type === 'success' ? 'bg-green-500' : 'bg-red-600'}`} />
                 <div className="flex-1">
-                  <p className="text-sm text-purple-200">{a.text}</p>
-                  <p className="text-xs text-purple-400/60">{a.time}</p>
+                  <p className="text-sm text-red-300">{a.text}</p>
+                  <p className="text-xs text-red-500/60">{a.time}</p>
                 </div>
               </div>
             ))}
@@ -84,17 +84,17 @@ export default function Overview() {
         </Card>
 
         {/* Health indicators */}
-        <Card className="bg-purple-950/40 border-purple-800/40">
+        <Card className="bg-red-950/40 border-red-900/40">
           <CardHeader>
-            <CardTitle className="text-purple-100 text-lg">System Health</CardTitle>
-            <CardDescription className="text-purple-400/70">Service status</CardDescription>
+            <CardTitle className="text-red-200 text-lg">System Health</CardTitle>
+            <CardDescription className="text-red-500/70">Service status</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {healthIndicators.map((h) => (
-              <div key={h.label} className="flex items-center justify-between p-3 rounded-lg bg-purple-900/20 border border-purple-800/20">
+              <div key={h.label} className="flex items-center justify-between p-3 rounded-lg bg-red-950/20 border border-red-900/20">
                 <div className="flex items-center gap-3">
                   <h.icon className={`w-4 h-4 ${statusColor(h.status)}`} />
-                  <span className="text-sm text-purple-200">{h.label}</span>
+                  <span className="text-sm text-red-300">{h.label}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className={`w-2 h-2 rounded-full ${statusBg(h.status)}`} />
@@ -102,9 +102,9 @@ export default function Overview() {
                 </div>
               </div>
             ))}
-            <Separator className="bg-purple-800/20" />
+            <Separator className="bg-red-900/20" />
             <div className="text-center">
-              <p className="text-xs text-purple-400/60">Last checked 30 seconds ago</p>
+              <p className="text-xs text-red-500/60">Last checked 30 seconds ago</p>
             </div>
           </CardContent>
         </Card>

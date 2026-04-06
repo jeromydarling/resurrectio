@@ -56,7 +56,7 @@ export default function People() {
     <div className="space-y-8 pb-12">
       {/* Header */}
       <div>
-        <h1 className="font-serif text-3xl font-bold text-purple-900">
+        <h1 className="font-serif text-3xl font-bold text-red-950">
           Returning Citizens
         </h1>
         <p className="mt-1 text-muted-foreground">
@@ -81,7 +81,7 @@ export default function People() {
             <Users className="h-4 w-4" />
             {filtered.length} {filtered.length === 1 ? 'person' : 'people'}
           </span>
-          <Button className="bg-purple-800 hover:bg-purple-900">
+          <Button className="bg-red-900 hover:bg-red-950">
             <UserPlus className="mr-2 h-4 w-4" />
             Add Person
           </Button>
@@ -104,7 +104,7 @@ export default function People() {
             </TableHeader>
             <TableBody>
               {filtered.map((person) => (
-                <TableRow key={person.id} className="hover:bg-purple-50/40">
+                <TableRow key={person.id} className="hover:bg-red-50/40">
                   <TableCell className="font-medium">
                     {person.firstName} {person.lastName}
                   </TableCell>

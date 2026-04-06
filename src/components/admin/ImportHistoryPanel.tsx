@@ -35,7 +35,7 @@ const IMPORT_TYPES = [
 function ImportTypeBadge({ type }: { type: string }) {
   const colors: Record<string, string> = {
     contacts: 'bg-blue-100 text-blue-800 border-blue-200',
-    events: 'bg-purple-100 text-purple-800 border-purple-200',
+    events: 'bg-red-200 text-red-900 border-red-300',
     grants: 'bg-green-100 text-green-800 border-green-200',
   };
 

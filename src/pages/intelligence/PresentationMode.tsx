@@ -4,7 +4,7 @@ import { Maximize, Users, Home, Briefcase, GraduationCap, TrendingUp, Quote } fr
 import { mockStories, mockDashboardStats } from '@/data/mockData';
 
 const stats = [
-  { label: 'Active People', value: '127', icon: Users, color: 'text-purple-600' },
+  { label: 'Active People', value: '127', icon: Users, color: 'text-red-700' },
   { label: 'Housing Rate', value: '72%', icon: Home, color: 'text-emerald-600' },
   { label: 'Employment Rate', value: '68%', icon: Briefcase, color: 'text-blue-600' },
   { label: 'Program Completion', value: '83%', icon: GraduationCap, color: 'text-amber-600' },
@@ -34,7 +34,7 @@ export default function PresentationMode() {
         ))}
       </div>
 
-      <Card className="bg-gradient-to-br from-purple-50 to-white border-purple-200">
+      <Card className="bg-gradient-to-br from-red-50 to-white border-red-300">
         <CardHeader>
           <CardTitle className="font-serif flex items-center gap-2">
             <Quote className="h-5 w-5 text-primary" /> Transformation Story

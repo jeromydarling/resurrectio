@@ -164,7 +164,7 @@ export default function Playbooks() {
     switch (category) {
       case 'metro': return 'bg-blue-500/10 text-blue-600';
       case 'anchor_type': return 'bg-green-500/10 text-green-600';
-      case 'grant_type': return 'bg-purple-500/10 text-purple-600';
+      case 'grant_type': return 'bg-red-600/10 text-red-700';
       default: return 'bg-gray-500/10 text-gray-600';
     }
   };

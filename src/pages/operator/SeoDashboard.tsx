@@ -41,49 +41,49 @@ export default function SeoDashboard() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-purple-100">SEO Dashboard</h1>
-        <p className="text-purple-300/70 text-sm mt-1">Organic search performance and keyword tracking</p>
+        <h1 className="text-2xl font-bold text-red-200">SEO Dashboard</h1>
+        <p className="text-red-400/70 text-sm mt-1">Organic search performance and keyword tracking</p>
       </div>
 
       {/* Stats cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((s) => (
-          <Card key={s.label} className="bg-purple-950/40 border-purple-800/40">
+          <Card key={s.label} className="bg-red-950/40 border-red-900/40">
             <CardContent className="pt-6">
               <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 rounded-lg bg-purple-900/50">
-                  <s.icon className="w-4 h-4 text-purple-400" />
+                <div className="p-2 rounded-lg bg-red-950/50">
+                  <s.icon className="w-4 h-4 text-red-500" />
                 </div>
-                <p className="text-sm text-purple-300/70">{s.label}</p>
+                <p className="text-sm text-red-400/70">{s.label}</p>
               </div>
-              <p className="text-2xl font-bold text-purple-100">{s.value}</p>
-              <p className="text-xs text-purple-400/60 mt-1">{s.sub}</p>
+              <p className="text-2xl font-bold text-red-200">{s.value}</p>
+              <p className="text-xs text-red-500/60 mt-1">{s.sub}</p>
             </CardContent>
           </Card>
         ))}
       </div>
 
-      <Separator className="bg-purple-800/30" />
+      <Separator className="bg-red-900/30" />
 
       {/* Keyword rankings bar chart */}
-      <Card className="bg-purple-950/40 border-purple-800/40">
+      <Card className="bg-red-950/40 border-red-900/40">
         <CardHeader>
-          <CardTitle className="text-purple-100 text-lg">Keyword Rankings</CardTitle>
-          <CardDescription className="text-purple-400/70">Search volume by keyword</CardDescription>
+          <CardTitle className="text-red-200 text-lg">Keyword Rankings</CardTitle>
+          <CardDescription className="text-red-500/70">Search volume by keyword</CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
           {topKeywords.map((k) => (
             <div key={k.keyword} className="flex items-center gap-3">
-              <span className="text-sm text-purple-200 w-48 truncate">{k.keyword}</span>
-              <div className="flex-1 h-6 bg-purple-900/30 rounded overflow-hidden">
+              <span className="text-sm text-red-300 w-48 truncate">{k.keyword}</span>
+              <div className="flex-1 h-6 bg-red-950/30 rounded overflow-hidden">
                 <div
-                  className="h-full bg-purple-600/70 rounded flex items-center justify-end pr-2"
+                  className="h-full bg-red-700/70 rounded flex items-center justify-end pr-2"
                   style={{ width: `${(k.volume / maxVolume) * 100}%` }}
                 >
-                  <span className="text-xs text-purple-100 font-medium">{k.volume}</span>
+                  <span className="text-xs text-red-200 font-medium">{k.volume}</span>
                 </div>
               </div>
-              <Badge variant="outline" className="border-purple-700/50 text-purple-300 text-xs w-16 justify-center">
+              <Badge variant="outline" className="border-red-800/50 text-red-400 text-xs w-16 justify-center">
                 #{k.position}
               </Badge>
               <span className="w-10 text-xs text-right">
@@ -92,7 +92,7 @@ export default function SeoDashboard() {
                 ) : k.change < 0 ? (
                   <span className="text-red-400 flex items-center justify-end gap-0.5"><ArrowDown className="w-3 h-3" />{Math.abs(k.change)}</span>
                 ) : (
-                  <span className="text-purple-500">—</span>
+                  <span className="text-red-600">—</span>
                 )}
               </span>
             </div>
@@ -101,27 +101,27 @@ export default function SeoDashboard() {
       </Card>
 
       {/* Top pages table */}
-      <Card className="bg-purple-950/40 border-purple-800/40">
+      <Card className="bg-red-950/40 border-red-900/40">
         <CardHeader>
-          <CardTitle className="text-purple-100 text-lg">Top Pages by Traffic</CardTitle>
+          <CardTitle className="text-red-200 text-lg">Top Pages by Traffic</CardTitle>
         </CardHeader>
         <CardContent className="p-0">
           <Table>
             <TableHeader>
-              <TableRow className="border-purple-800/30 hover:bg-transparent">
-                <TableHead className="text-purple-300">Page</TableHead>
-                <TableHead className="text-purple-300">Path</TableHead>
-                <TableHead className="text-purple-300 text-right">Visits</TableHead>
-                <TableHead className="text-purple-300 text-right">Bounce Rate</TableHead>
+              <TableRow className="border-red-900/30 hover:bg-transparent">
+                <TableHead className="text-red-400">Page</TableHead>
+                <TableHead className="text-red-400">Path</TableHead>
+                <TableHead className="text-red-400 text-right">Visits</TableHead>
+                <TableHead className="text-red-400 text-right">Bounce Rate</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {topPages.map((p) => (
-                <TableRow key={p.path} className="border-purple-800/20 hover:bg-purple-900/20">
-                  <TableCell className="text-purple-100 font-medium">{p.title}</TableCell>
-                  <TableCell className="text-purple-400/70 font-mono text-xs">{p.path}</TableCell>
-                  <TableCell className="text-purple-200 text-right">{p.visits}</TableCell>
-                  <TableCell className="text-purple-300 text-right">{p.bounce}</TableCell>
+                <TableRow key={p.path} className="border-red-900/20 hover:bg-red-950/20">
+                  <TableCell className="text-red-200 font-medium">{p.title}</TableCell>
+                  <TableCell className="text-red-500/70 font-mono text-xs">{p.path}</TableCell>
+                  <TableCell className="text-red-300 text-right">{p.visits}</TableCell>
+                  <TableCell className="text-red-400 text-right">{p.bounce}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

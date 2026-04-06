@@ -213,11 +213,11 @@ export const STAGE_LABELS: Record<JourneyStage, string> = {
 };
 
 export const STAGE_COLORS: Record<JourneyStage, string> = {
-  pre_release: 'bg-purple-700 text-white',
+  pre_release: 'bg-red-800 text-white',
   stabilization: 'bg-violet-500 text-white',
   growth: 'bg-emerald-600 text-white',
   flourishing: 'bg-amber-500 text-white',
-  alumni: 'bg-purple-300 text-purple-900',
+  alumni: 'bg-red-400 text-red-950',
 };
 
 export const STAGE_BADGE_CLASSES: Record<JourneyStage, string> = {

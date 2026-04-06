@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { archetypes } from '@/config/brand';
 import { Heart, HandHeart, ClipboardList, Building2, Sprout } from 'lucide-react';
+import { ResurrectioLogo } from '@/components/brand/ResurrectioLogo';
 import { brand } from '@/config/brand';
 
 const archetypeIcons: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -20,7 +21,7 @@ export default function Onboarding() {
     if (key === 'gardener') {
       navigate('/operator/overview');
     } else {
-      navigate('/ministry/dashboard');
+      navigate('/dashboard');
     }
   };
 
@@ -28,9 +29,7 @@ export default function Onboarding() {
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4">
       <div className="max-w-3xl w-full text-center mb-10">
         <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-            <Sprout className="h-7 w-7 text-primary" />
-          </div>
+          <ResurrectioLogo size={44} color="hsl(0, 72%, 35%)" />
         </div>
         <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-3">
           Welcome to {brand.appName}

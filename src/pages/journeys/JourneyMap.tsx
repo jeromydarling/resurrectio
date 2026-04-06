@@ -15,19 +15,19 @@ const STAGES: JourneyStage[] = [
 ];
 
 const COLUMN_ACCENT: Record<JourneyStage, string> = {
-  pre_release: 'border-t-purple-700',
+  pre_release: 'border-t-red-800',
   stabilization: 'border-t-violet-500',
   growth: 'border-t-emerald-600',
   flourishing: 'border-t-amber-500',
-  alumni: 'border-t-purple-300',
+  alumni: 'border-t-red-400',
 };
 
 const COLUMN_BG: Record<JourneyStage, string> = {
-  pre_release: 'bg-purple-50',
+  pre_release: 'bg-red-50',
   stabilization: 'bg-violet-50',
   growth: 'bg-emerald-50',
   flourishing: 'bg-amber-50',
-  alumni: 'bg-purple-50/60',
+  alumni: 'bg-red-50/60',
 };
 
 const HOUSING_ICON_COLOR: Record<Person['housingStatus'], string> = {
@@ -66,7 +66,7 @@ export default function JourneyMap() {
     <div className="space-y-8 pb-12">
       {/* Header */}
       <div>
-        <h1 className="font-serif text-3xl font-bold text-purple-900">
+        <h1 className="font-serif text-3xl font-bold text-red-950">
           Journey Map
         </h1>
         <p className="mt-1 text-muted-foreground">
@@ -85,7 +85,7 @@ export default function JourneyMap() {
                 className={`rounded-lg border-t-4 ${COLUMN_ACCENT[stage]} ${COLUMN_BG[stage]} px-4 py-3`}
               >
                 <div className="flex items-center justify-between">
-                  <h2 className="font-serif text-sm font-semibold text-purple-900">
+                  <h2 className="font-serif text-sm font-semibold text-red-950">
                     {STAGE_LABELS[stage]}
                   </h2>
                   <Badge variant="secondary" className="text-xs">
@@ -99,10 +99,10 @@ export default function JourneyMap() {
                 {people.map((person) => (
                   <Card
                     key={person.id}
-                    className="cursor-pointer border border-purple-100 shadow-sm transition-shadow hover:shadow-md"
+                    className="cursor-pointer border border-red-200 shadow-sm transition-shadow hover:shadow-md"
                   >
                     <CardContent className="p-4 space-y-3">
-                      <p className="font-medium text-sm text-purple-900">
+                      <p className="font-medium text-sm text-red-950">
                         {person.firstName} {person.lastName}
                       </p>
 
@@ -130,7 +130,7 @@ export default function JourneyMap() {
                 ))}
 
                 {people.length === 0 && (
-                  <div className="flex items-center justify-center rounded-lg border border-dashed border-purple-200 py-8 text-xs text-muted-foreground">
+                  <div className="flex items-center justify-center rounded-lg border border-dashed border-red-300 py-8 text-xs text-muted-foreground">
                     No one here yet
                   </div>
                 )}

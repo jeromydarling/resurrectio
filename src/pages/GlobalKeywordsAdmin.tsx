@@ -25,7 +25,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   education: 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/20',
   workforce: 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-500/20',
   health_services: 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20',
-  partner_signals: 'bg-purple-500/10 text-purple-700 dark:text-purple-400 border-purple-500/20',
+  partner_signals: 'bg-red-600/10 text-red-800 dark:text-red-500 border-red-600/20',
   policy: 'bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border-cyan-500/20',
   local_events: 'bg-orange-500/10 text-orange-700 dark:text-orange-400 border-orange-500/20',
   tone: 'bg-muted text-muted-foreground border-border',

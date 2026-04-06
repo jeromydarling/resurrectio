@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Sprout } from 'lucide-react';
+import { ResurrectioLogo } from '@/components/brand/ResurrectioLogo';
 import { brand } from '@/config/brand';
 
 export default function Signup() {
@@ -23,9 +23,7 @@ export default function Signup() {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-              <Sprout className="h-6 w-6 text-primary" />
-            </div>
+            <ResurrectioLogo size={36} color="hsl(0, 72%, 35%)" />
           </div>
           <CardTitle className="text-2xl font-serif">{brand.appName}</CardTitle>
           <CardDescription>Start your ministry's journey</CardDescription>

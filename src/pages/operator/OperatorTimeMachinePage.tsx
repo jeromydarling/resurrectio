@@ -181,7 +181,7 @@ export default function OperatorTimeMachinePage() {
     switch (source) {
       case 'narrative': return <Sparkles className="h-4 w-4 text-amber-600" />;
       case 'migrations': return <ArrowRightLeft className="h-4 w-4 text-blue-600" />;
-      case 'demo': return <FlaskConical className="h-4 w-4 text-purple-600" />;
+      case 'demo': return <FlaskConical className="h-4 w-4 text-red-700" />;
       case 'communio': return <Users className="h-4 w-4 text-emerald-600" />;
       case 'integrations': return <Plug className="h-4 w-4 text-slate-600" />;
       default: return <Clock className="h-4 w-4 text-muted-foreground" />;

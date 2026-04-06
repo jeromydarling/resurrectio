@@ -87,53 +87,49 @@ export function AppRouter() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/onboarding" element={<Onboarding />} />
 
-      {/* App routes — tenant scoped */}
-      <Route path="/:tenantSlug">
-        <Route index element={<Navigate to="dashboard" replace />} />
+      {/* App routes — flat paths */}
+      {/* Dashboard */}
+      <Route path="/dashboard" element={<AppPage title="Dashboard" subtitle="Ministry overview"><Dashboard /></AppPage>} />
 
-        {/* Dashboard */}
-        <Route path="dashboard" element={<AppPage title="Dashboard" subtitle="Ministry overview"><Dashboard /></AppPage>} />
+      {/* Journeys */}
+      <Route path="/people" element={<AppPage title="People" subtitle="Returning citizens directory"><People /></AppPage>} />
+      <Route path="/journey-map" element={<AppPage title="Journey Map" subtitle="Restoration pipeline"><JourneyMap /></AppPage>} />
+      <Route path="/case-notes" element={<AppPage title="Case Notes" subtitle="Narrative records"><CaseNotes /></AppPage>} />
+      <Route path="/milestones" element={<AppPage title="Milestones" subtitle="Progress markers"><Milestones /></AppPage>} />
+      <Route path="/family" element={<AppPage title="Family" subtitle="Reconnection tracking"><Family /></AppPage>} />
 
-        {/* Journeys */}
-        <Route path="people" element={<AppPage title="People" subtitle="Returning citizens directory"><People /></AppPage>} />
-        <Route path="journey-map" element={<AppPage title="Journey Map" subtitle="Restoration pipeline"><JourneyMap /></AppPage>} />
-        <Route path="case-notes" element={<AppPage title="Case Notes" subtitle="Narrative records"><CaseNotes /></AppPage>} />
-        <Route path="milestones" element={<AppPage title="Milestones" subtitle="Progress markers"><Milestones /></AppPage>} />
-        <Route path="family" element={<AppPage title="Family" subtitle="Reconnection tracking"><Family /></AppPage>} />
+      {/* Services */}
+      <Route path="/services" element={<AppPage title="Service Coordination" subtitle="Provider matrix"><ServiceCoordination /></AppPage>} />
+      <Route path="/housing" element={<AppPage title="Housing" subtitle="Placement tracking"><Housing /></AppPage>} />
+      <Route path="/employment" element={<AppPage title="Employment" subtitle="Job readiness & retention"><Employment /></AppPage>} />
+      <Route path="/compliance" element={<AppPage title="Compliance" subtitle="Court dates & requirements"><Compliance /></AppPage>} />
+      <Route path="/programs" element={<AppPage title="Programs" subtitle="Cohort management"><Programs /></AppPage>} />
 
-        {/* Services */}
-        <Route path="services" element={<AppPage title="Service Coordination" subtitle="Provider matrix"><ServiceCoordination /></AppPage>} />
-        <Route path="housing" element={<AppPage title="Housing" subtitle="Placement tracking"><Housing /></AppPage>} />
-        <Route path="employment" element={<AppPage title="Employment" subtitle="Job readiness & retention"><Employment /></AppPage>} />
-        <Route path="compliance" element={<AppPage title="Compliance" subtitle="Court dates & requirements"><Compliance /></AppPage>} />
-        <Route path="programs" element={<AppPage title="Programs" subtitle="Cohort management"><Programs /></AppPage>} />
+      {/* Community */}
+      <Route path="/mentors" element={<AppPage title="Mentors" subtitle="Volunteer directory"><Mentors /></AppPage>} />
+      <Route path="/stories" element={<AppPage title="Stories" subtitle="Transformation narratives"><Stories /></AppPage>} />
+      <Route path="/events" element={<AppPage title="Events" subtitle="Ministry calendar"><Events /></AppPage>} />
+      <Route path="/blog" element={<AppPage title="Blog" subtitle="Ministry updates"><Blog /></AppPage>} />
+      <Route path="/knowledge" element={<AppPage title="Knowledge Base" subtitle="Resource library"><KnowledgeBase /></AppPage>} />
+      <Route path="/communio" element={<AppPage title="Communio" subtitle="Cross-app collaboration"><Communio /></AppPage>} />
+      <Route path="/directory" element={<AppPage title="Directory" subtitle="Organization directory"><Directory /></AppPage>} />
+      <Route path="/resources" element={<AppPage title="Resources" subtitle="Downloadable materials"><Resources /></AppPage>} />
 
-        {/* Community */}
-        <Route path="mentors" element={<AppPage title="Mentors" subtitle="Volunteer directory"><Mentors /></AppPage>} />
-        <Route path="stories" element={<AppPage title="Stories" subtitle="Transformation narratives"><Stories /></AppPage>} />
-        <Route path="events" element={<AppPage title="Events" subtitle="Ministry calendar"><Events /></AppPage>} />
-        <Route path="blog" element={<AppPage title="Blog" subtitle="Ministry updates"><Blog /></AppPage>} />
-        <Route path="knowledge" element={<AppPage title="Knowledge Base" subtitle="Resource library"><KnowledgeBase /></AppPage>} />
-        <Route path="communio" element={<AppPage title="Communio" subtitle="Cross-app collaboration"><Communio /></AppPage>} />
-        <Route path="directory" element={<AppPage title="Directory" subtitle="Organization directory"><Directory /></AppPage>} />
-        <Route path="resources" element={<AppPage title="Resources" subtitle="Downloadable materials"><Resources /></AppPage>} />
+      {/* Organize */}
+      <Route path="/partners" element={<AppPage title="Partners" subtitle="Courts, employers, providers"><Partners /></AppPage>} />
+      <Route path="/activities" element={<AppPage title="Activities" subtitle="Touchpoint timeline"><Activities /></AppPage>} />
+      <Route path="/territories" element={<AppPage title="Territories" subtitle="Geographic coverage"><Territories /></AppPage>} />
+      <Route path="/templates" element={<AppPage title="Templates" subtitle="Forms & playbooks"><Templates /></AppPage>} />
 
-        {/* Organize */}
-        <Route path="partners" element={<AppPage title="Partners" subtitle="Courts, employers, providers"><Partners /></AppPage>} />
-        <Route path="activities" element={<AppPage title="Activities" subtitle="Touchpoint timeline"><Activities /></AppPage>} />
-        <Route path="territories" element={<AppPage title="Territories" subtitle="Geographic coverage"><Territories /></AppPage>} />
-        <Route path="templates" element={<AppPage title="Templates" subtitle="Forms & playbooks"><Templates /></AppPage>} />
+      {/* Intelligence */}
+      <Route path="/signals" element={<AppPage title="NRI Signals" subtitle="Pattern detection"><NriSignals /></AppPage>} />
+      <Route path="/reports" element={<AppPage title="Reports" subtitle="Impact reporting"><Reports /></AppPage>} />
+      <Route path="/presentation" element={<AppPage title="Presentation Mode" subtitle="For funder meetings"><PresentationMode /></AppPage>} />
+      <Route path="/garden-pulse" element={<AppPage title="Garden Pulse" subtitle="Ecosystem health"><GardenPulse /></AppPage>} />
 
-        {/* Intelligence */}
-        <Route path="signals" element={<AppPage title="NRI Signals" subtitle="Pattern detection"><NriSignals /></AppPage>} />
-        <Route path="reports" element={<AppPage title="Reports" subtitle="Impact reporting"><Reports /></AppPage>} />
-        <Route path="presentation" element={<AppPage title="Presentation Mode" subtitle="For funder meetings"><PresentationMode /></AppPage>} />
-        <Route path="garden-pulse" element={<AppPage title="Garden Pulse" subtitle="Ecosystem health"><GardenPulse /></AppPage>} />
-
-        {/* Settings & Help */}
-        <Route path="settings" element={<Settings />} />
-        <Route path="help" element={<Help />} />
-      </Route>
+      {/* Settings & Help */}
+      <Route path="/settings" element={<Settings />} />
+      <Route path="/help" element={<Help />} />
 
       {/* Operator (Gardener Console) */}
       <Route path="/operator" element={<Navigate to="/operator/overview" replace />} />

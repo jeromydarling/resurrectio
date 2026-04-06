@@ -40,66 +40,66 @@ export default function ApiHealth() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-purple-100">API Health</h1>
-        <p className="text-purple-300/70 text-sm mt-1">Infrastructure and service status monitoring</p>
+        <h1 className="text-2xl font-bold text-red-200">API Health</h1>
+        <p className="text-red-400/70 text-sm mt-1">Infrastructure and service status monitoring</p>
       </div>
 
       {/* Summary stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <Card className="bg-purple-950/40 border-purple-800/40">
+        <Card className="bg-red-950/40 border-red-900/40">
           <CardContent className="pt-6 flex items-center gap-4">
-            <div className="p-3 rounded-lg bg-purple-900/50">
+            <div className="p-3 rounded-lg bg-red-950/50">
               <Activity className="w-5 h-5 text-green-400" />
             </div>
             <div>
-              <p className="text-sm text-purple-300/70">Uptime</p>
-              <p className="text-2xl font-bold text-purple-100">99.97%</p>
+              <p className="text-sm text-red-400/70">Uptime</p>
+              <p className="text-2xl font-bold text-red-200">99.97%</p>
             </div>
           </CardContent>
         </Card>
-        <Card className="bg-purple-950/40 border-purple-800/40">
+        <Card className="bg-red-950/40 border-red-900/40">
           <CardContent className="pt-6 flex items-center gap-4">
-            <div className="p-3 rounded-lg bg-purple-900/50">
-              <BarChart3 className="w-5 h-5 text-purple-400" />
+            <div className="p-3 rounded-lg bg-red-950/50">
+              <BarChart3 className="w-5 h-5 text-red-500" />
             </div>
             <div>
-              <p className="text-sm text-purple-300/70">Error Rate</p>
-              <p className="text-2xl font-bold text-purple-100">0.02%</p>
+              <p className="text-sm text-red-400/70">Error Rate</p>
+              <p className="text-2xl font-bold text-red-200">0.02%</p>
             </div>
           </CardContent>
         </Card>
-        <Card className="bg-purple-950/40 border-purple-800/40">
+        <Card className="bg-red-950/40 border-red-900/40">
           <CardContent className="pt-6 flex items-center gap-4">
-            <div className="p-3 rounded-lg bg-purple-900/50">
-              <Clock className="w-5 h-5 text-purple-400" />
+            <div className="p-3 rounded-lg bg-red-950/50">
+              <Clock className="w-5 h-5 text-red-500" />
             </div>
             <div>
-              <p className="text-sm text-purple-300/70">Avg Latency</p>
-              <p className="text-2xl font-bold text-purple-100">45ms</p>
+              <p className="text-sm text-red-400/70">Avg Latency</p>
+              <p className="text-2xl font-bold text-red-200">45ms</p>
             </div>
           </CardContent>
         </Card>
       </div>
 
       {/* Service health grid */}
-      <Card className="bg-purple-950/40 border-purple-800/40">
+      <Card className="bg-red-950/40 border-red-900/40">
         <CardHeader>
-          <CardTitle className="text-purple-100 text-lg">Service Health</CardTitle>
-          <CardDescription className="text-purple-400/70">Current status of all platform services</CardDescription>
+          <CardTitle className="text-red-200 text-lg">Service Health</CardTitle>
+          <CardDescription className="text-red-500/70">Current status of all platform services</CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
           {services.map((svc) => {
             const cfg = statusConfig[svc.status];
             const StatusIcon = cfg.icon;
             return (
-              <div key={svc.name} className="flex items-center justify-between p-3 rounded-lg bg-purple-900/15 border border-purple-800/15">
+              <div key={svc.name} className="flex items-center justify-between p-3 rounded-lg bg-red-950/15 border border-red-900/15">
                 <div className="flex items-center gap-3">
                   <svc.icon className={`w-4 h-4 ${cfg.color}`} />
-                  <span className="text-sm font-medium text-purple-100">{svc.name}</span>
+                  <span className="text-sm font-medium text-red-200">{svc.name}</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="text-xs text-purple-400/60">{svc.latency}ms</span>
-                  <span className="text-xs text-purple-400/60">{svc.uptime}</span>
+                  <span className="text-xs text-red-500/60">{svc.latency}ms</span>
+                  <span className="text-xs text-red-500/60">{svc.uptime}</span>
                   <Badge variant="outline" className={cfg.badgeClass}>
                     <StatusIcon className="w-3 h-3 mr-1" />
                     {cfg.label}
@@ -111,24 +111,24 @@ export default function ApiHealth() {
         </CardContent>
       </Card>
 
-      <Separator className="bg-purple-800/30" />
+      <Separator className="bg-red-900/30" />
 
       {/* Response time chart */}
-      <Card className="bg-purple-950/40 border-purple-800/40">
+      <Card className="bg-red-950/40 border-red-900/40">
         <CardHeader>
-          <CardTitle className="text-purple-100 text-lg">Response Time (24h)</CardTitle>
-          <CardDescription className="text-purple-400/70">Average response time in milliseconds</CardDescription>
+          <CardTitle className="text-red-200 text-lg">Response Time (24h)</CardTitle>
+          <CardDescription className="text-red-500/70">Average response time in milliseconds</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex items-end gap-3 h-40">
             {responseTimes.map((r) => (
               <div key={r.hour} className="flex-1 flex flex-col items-center gap-1">
-                <span className="text-xs text-purple-200 font-medium">{r.ms}ms</span>
+                <span className="text-xs text-red-300 font-medium">{r.ms}ms</span>
                 <div
-                  className="w-full rounded-t bg-purple-600/70 hover:bg-purple-500/70 transition-colors"
+                  className="w-full rounded-t bg-red-700/70 hover:bg-red-600/70 transition-colors"
                   style={{ height: `${(r.ms / maxMs) * 100}%` }}
                 />
-                <span className="text-[10px] text-purple-400/60">{r.hour}</span>
+                <span className="text-[10px] text-red-500/60">{r.hour}</span>
               </div>
             ))}
           </div>

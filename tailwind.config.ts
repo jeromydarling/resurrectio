@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['DM Sans', 'system-ui', 'sans-serif'],
-        serif: ['Georgia', 'Times New Roman', 'serif'],
+        serif: ['Cormorant Garamond', 'Georgia', 'Times New Roman', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -81,18 +81,18 @@ export default {
           "5": "hsl(var(--chart-5))",
         },
         resurrectio: {
-          purple: {
-            DEFAULT: "#6b21a8",
-            50: "#faf5ff",
-            100: "#f3e8ff",
-            200: "#e9d5ff",
-            300: "#c4b5fd",
-            400: "#a78bfa",
-            500: "#7c3aed",
-            600: "#6b21a8",
-            700: "#581c87",
-            800: "#4c1d95",
-            900: "#3b0764",
+          crimson: {
+            DEFAULT: "#991b1b",
+            50: "#fef2f2",
+            100: "#fee2e2",
+            200: "#fecaca",
+            300: "#fca5a5",
+            400: "#f87171",
+            500: "#ef4444",
+            600: "#dc2626",
+            700: "#b91c1c",
+            800: "#991b1b",
+            900: "#7f1d1d",
           },
           cream: "#faf7f3",
           warm: {

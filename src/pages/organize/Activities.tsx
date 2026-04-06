@@ -11,7 +11,7 @@ const typeIcons: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 const typeColors: Record<string, string> = {
   call: 'bg-blue-100 text-blue-700', visit: 'bg-green-100 text-green-700',
-  email: 'bg-indigo-100 text-indigo-700', meeting: 'bg-purple-100 text-purple-700',
+  email: 'bg-indigo-100 text-indigo-700', meeting: 'bg-red-200 text-red-800',
   referral: 'bg-amber-100 text-amber-700', note: 'bg-gray-100 text-gray-700',
   milestone: 'bg-emerald-100 text-emerald-700',
 };

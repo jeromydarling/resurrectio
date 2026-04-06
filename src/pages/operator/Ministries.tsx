@@ -25,7 +25,7 @@ const ministries = [
 ];
 
 const planColor: Record<string, string> = {
-  Core: 'bg-purple-800/50 text-purple-300',
+  Core: 'bg-red-900/50 text-red-400',
   Insight: 'bg-indigo-800/50 text-indigo-300',
   Story: 'bg-violet-600/60 text-violet-200',
 };
@@ -37,47 +37,47 @@ export default function Ministries() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-purple-100">Ministries</h1>
-          <p className="text-purple-300/70 text-sm mt-1">{ministries.length} organizations &middot; {totalPeople.toLocaleString()} total people</p>
+          <h1 className="text-2xl font-bold text-red-200">Ministries</h1>
+          <p className="text-red-400/70 text-sm mt-1">{ministries.length} organizations &middot; {totalPeople.toLocaleString()} total people</p>
         </div>
-        <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+        <Button className="bg-red-700 hover:bg-red-800 text-white">
           <Plus className="w-4 h-4 mr-2" /> Add Ministry
         </Button>
       </div>
 
       {/* Search */}
       <div className="relative max-w-sm">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-purple-400" />
-        <Input placeholder="Search ministries…" className="pl-9 bg-purple-950/30 border-purple-800/40 text-purple-100 placeholder:text-purple-500" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-red-500" />
+        <Input placeholder="Search ministries…" className="pl-9 bg-red-950/30 border-red-900/40 text-red-200 placeholder:text-red-600" />
       </div>
 
       {/* Table */}
-      <Card className="bg-purple-950/40 border-purple-800/40">
+      <Card className="bg-red-950/40 border-red-900/40">
         <CardContent className="p-0">
           <Table>
             <TableHeader>
-              <TableRow className="border-purple-800/30 hover:bg-transparent">
-                <TableHead className="text-purple-300">Ministry Name</TableHead>
-                <TableHead className="text-purple-300">Location</TableHead>
-                <TableHead className="text-purple-300 text-right">People</TableHead>
-                <TableHead className="text-purple-300 text-right">Mentors</TableHead>
-                <TableHead className="text-purple-300">Plan Tier</TableHead>
-                <TableHead className="text-purple-300">Status</TableHead>
-                <TableHead className="text-purple-300">Last Active</TableHead>
+              <TableRow className="border-red-900/30 hover:bg-transparent">
+                <TableHead className="text-red-400">Ministry Name</TableHead>
+                <TableHead className="text-red-400">Location</TableHead>
+                <TableHead className="text-red-400 text-right">People</TableHead>
+                <TableHead className="text-red-400 text-right">Mentors</TableHead>
+                <TableHead className="text-red-400">Plan Tier</TableHead>
+                <TableHead className="text-red-400">Status</TableHead>
+                <TableHead className="text-red-400">Last Active</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {ministries.map((m) => (
-                <TableRow key={m.name} className="border-purple-800/20 hover:bg-purple-900/20">
+                <TableRow key={m.name} className="border-red-900/20 hover:bg-red-950/20">
                   <TableCell className="font-medium">
                     <div className="flex items-center gap-2">
-                      <Building2 className="w-4 h-4 text-purple-500" />
-                      <span className="text-purple-100">{m.name}</span>
+                      <Building2 className="w-4 h-4 text-red-600" />
+                      <span className="text-red-200">{m.name}</span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-purple-300/70">{m.location}</TableCell>
-                  <TableCell className="text-purple-200 text-right">{m.people}</TableCell>
-                  <TableCell className="text-purple-200 text-right">{m.mentors}</TableCell>
+                  <TableCell className="text-red-400/70">{m.location}</TableCell>
+                  <TableCell className="text-red-300 text-right">{m.people}</TableCell>
+                  <TableCell className="text-red-300 text-right">{m.mentors}</TableCell>
                   <TableCell>
                     <Badge className={planColor[m.plan]}>{m.plan}</Badge>
                   </TableCell>
@@ -86,7 +86,7 @@ export default function Ministries() {
                       {m.status}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-purple-300/60 text-sm">{m.lastActive}</TableCell>
+                  <TableCell className="text-red-400/60 text-sm">{m.lastActive}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

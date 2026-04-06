@@ -8,7 +8,7 @@ import { mockPartners } from '@/data/mockData';
 
 const typeColors: Record<string, string> = {
   court: 'bg-gray-100 text-gray-700', employer: 'bg-blue-100 text-blue-700',
-  housing: 'bg-green-100 text-green-700', funder: 'bg-purple-100 text-purple-700',
+  housing: 'bg-green-100 text-green-700', funder: 'bg-red-200 text-red-800',
   church: 'bg-amber-100 text-amber-700', legal: 'bg-slate-100 text-slate-700',
   treatment: 'bg-teal-100 text-teal-700', education: 'bg-indigo-100 text-indigo-700',
 };

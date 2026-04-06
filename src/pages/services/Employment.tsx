@@ -51,24 +51,24 @@ export default function Employment() {
   return (
     <div className="space-y-8 p-6">
       <div>
-        <h1 className="font-serif text-3xl font-bold text-purple-900">
+        <h1 className="font-serif text-3xl font-bold text-red-950">
           Employment Tracking
         </h1>
-        <p className="mt-1 text-purple-700/70">
+        <p className="mt-1 text-red-800/70">
           Monitor job placements, wages, and retention across participants
         </p>
       </div>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <Card className="border-purple-100 bg-white/80">
+        <Card className="border-red-200 bg-white/80">
           <CardContent className="flex items-center gap-4 pt-6">
-            <div className="rounded-lg bg-purple-100 p-3">
-              <Briefcase className="h-5 w-5 text-purple-700" />
+            <div className="rounded-lg bg-red-200 p-3">
+              <Briefcase className="h-5 w-5 text-red-800" />
             </div>
             <div>
-              <p className="text-sm text-purple-600">Placement Rate</p>
-              <p className="text-2xl font-bold text-purple-900">{stats.placementRate}%</p>
+              <p className="text-sm text-red-700">Placement Rate</p>
+              <p className="text-2xl font-bold text-red-950">{stats.placementRate}%</p>
             </div>
           </CardContent>
         </Card>
@@ -97,39 +97,39 @@ export default function Employment() {
       </div>
 
       {/* Table */}
-      <Card className="border-purple-100">
+      <Card className="border-red-200">
         <CardHeader>
-          <CardTitle className="text-lg text-purple-900">All Employment Records</CardTitle>
+          <CardTitle className="text-lg text-red-950">All Employment Records</CardTitle>
         </CardHeader>
         <CardContent className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="border-purple-100">
-                <TableHead className="text-purple-800">Person</TableHead>
-                <TableHead className="text-purple-800">Employer</TableHead>
-                <TableHead className="text-purple-800">Role</TableHead>
-                <TableHead className="text-purple-800">Start Date</TableHead>
-                <TableHead className="text-purple-800">Wage</TableHead>
-                <TableHead className="text-purple-800">Retention</TableHead>
-                <TableHead className="text-purple-800">Status</TableHead>
+              <TableRow className="border-red-200">
+                <TableHead className="text-red-900">Person</TableHead>
+                <TableHead className="text-red-900">Employer</TableHead>
+                <TableHead className="text-red-900">Role</TableHead>
+                <TableHead className="text-red-900">Start Date</TableHead>
+                <TableHead className="text-red-900">Wage</TableHead>
+                <TableHead className="text-red-900">Retention</TableHead>
+                <TableHead className="text-red-900">Status</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {mockEmploymentRecords.map((record) => (
-                <TableRow key={record.id} className="border-purple-50 hover:bg-purple-50/40">
-                  <TableCell className="font-medium text-purple-900">
+                <TableRow key={record.id} className="border-red-50 hover:bg-red-50/40">
+                  <TableCell className="font-medium text-red-950">
                     {record.personName}
                   </TableCell>
-                  <TableCell className="text-purple-700">{record.employer}</TableCell>
-                  <TableCell className="text-purple-700">{record.role}</TableCell>
-                  <TableCell className="text-purple-700">
+                  <TableCell className="text-red-800">{record.employer}</TableCell>
+                  <TableCell className="text-red-800">{record.role}</TableCell>
+                  <TableCell className="text-red-800">
                     {new Date(record.startDate).toLocaleDateString('en-US', {
                       month: 'short',
                       day: 'numeric',
                       year: 'numeric',
                     })}
                   </TableCell>
-                  <TableCell className="font-medium text-purple-900">
+                  <TableCell className="font-medium text-red-950">
                     ${record.wage.toFixed(2)}/hr
                   </TableCell>
                   <TableCell>
@@ -139,7 +139,7 @@ export default function Employment() {
                           ? 'text-emerald-700'
                           : record.retentionDays >= 30
                           ? 'text-amber-700'
-                          : 'text-purple-600'
+                          : 'text-red-700'
                       }`}
                     >
                       {record.retentionDays} days

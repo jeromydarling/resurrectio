@@ -3,12 +3,12 @@ import { Button } from '@/components/ui/button';
 import { BarChart3, FileText, Download, Calendar } from 'lucide-react';
 
 const reports = [
-  { name: 'Monthly Summary', description: 'Overview of all ministry activity, outcomes, and signals for the current month.', period: 'March 2026', color: 'bg-purple-600' },
+  { name: 'Monthly Summary', description: 'Overview of all ministry activity, outcomes, and signals for the current month.', period: 'March 2026', color: 'bg-red-700' },
   { name: 'Quarterly Impact', description: 'Comprehensive impact report with housing, employment, and program outcomes.', period: 'Q1 2026', color: 'bg-violet-500' },
   { name: 'Housing Outcomes', description: 'Detailed housing placement analysis, stability scores, and provider performance.', period: 'Last 90 Days', color: 'bg-emerald-600' },
   { name: 'Employment Outcomes', description: 'Job placement rates, retention metrics, wage progression, and employer satisfaction.', period: 'Last 90 Days', color: 'bg-blue-600' },
   { name: 'Program Completion', description: 'Enrollment, completion rates, and graduate outcomes across all programs.', period: 'YTD 2026', color: 'bg-amber-500' },
-  { name: 'Funder Report', description: 'CCHD-formatted impact report with narrative outcomes and quantitative metrics.', period: 'Q1 2026', color: 'bg-purple-800' },
+  { name: 'Funder Report', description: 'CCHD-formatted impact report with narrative outcomes and quantitative metrics.', period: 'Q1 2026', color: 'bg-red-900' },
 ];
 
 export default function Reports() {

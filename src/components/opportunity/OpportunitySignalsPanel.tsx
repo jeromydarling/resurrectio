@@ -12,7 +12,7 @@ interface OpportunitySignalsPanelProps {
 const sourceConfig: Record<string, { icon: typeof Zap; label: string; color: string }> = {
   grant: { icon: TrendingUp, label: 'Grant', color: 'bg-emerald-500/20 text-emerald-700 border-emerald-300' },
   event: { icon: Calendar, label: 'Event', color: 'bg-blue-500/20 text-blue-700 border-blue-300' },
-  person: { icon: Users, label: 'Person', color: 'bg-purple-500/20 text-purple-700 border-purple-300' },
+  person: { icon: Users, label: 'Person', color: 'bg-red-600/20 text-red-800 border-red-400' },
   neighborhood: { icon: MapPin, label: 'Area', color: 'bg-amber-500/20 text-amber-700 border-amber-300' },
   org_update: { icon: Building2, label: 'Org', color: 'bg-slate-500/20 text-slate-700 border-slate-300' },
 };

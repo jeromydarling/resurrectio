@@ -44,11 +44,11 @@ function StatusDot({ status }: { status: 'active' | 'pending' | 'none' }) {
 
 function stageBadgeClass(stage: Person['stage']): string {
   const map: Record<Person['stage'], string> = {
-    pre_release: 'bg-purple-700 text-white',
+    pre_release: 'bg-red-800 text-white',
     stabilization: 'bg-violet-500 text-white',
     growth: 'bg-emerald-600 text-white',
     flourishing: 'bg-amber-500 text-white',
-    alumni: 'bg-purple-300 text-purple-900',
+    alumni: 'bg-red-400 text-red-950',
   };
   return map[stage];
 }
@@ -80,20 +80,20 @@ export default function ServiceCoordination() {
   return (
     <div className="space-y-8 p-6">
       <div>
-        <h1 className="font-serif text-3xl font-bold text-purple-900">
+        <h1 className="font-serif text-3xl font-bold text-red-950">
           Service Coordination
         </h1>
-        <p className="mt-1 text-purple-700/70">
+        <p className="mt-1 text-red-800/70">
           Overview of service provider assignments across all participants
         </p>
       </div>
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <Card className="border-purple-100 bg-white/80">
+        <Card className="border-red-200 bg-white/80">
           <CardContent className="pt-6">
-            <p className="text-sm text-purple-600">Total Participants</p>
-            <p className="text-3xl font-bold text-purple-900">{summary.total}</p>
+            <p className="text-sm text-red-700">Total Participants</p>
+            <p className="text-3xl font-bold text-red-950">{summary.total}</p>
           </CardContent>
         </Card>
         <Card className="border-emerald-100 bg-white/80">
@@ -111,22 +111,22 @@ export default function ServiceCoordination() {
       </div>
 
       {/* Search & Table */}
-      <Card className="border-purple-100">
+      <Card className="border-red-200">
         <CardHeader>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-2">
-              <LayoutGrid className="h-5 w-5 text-purple-600" />
-              <CardTitle className="text-lg text-purple-900">
+              <LayoutGrid className="h-5 w-5 text-red-700" />
+              <CardTitle className="text-lg text-red-950">
                 Service Matrix
               </CardTitle>
             </div>
             <div className="relative w-full sm:w-72">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-purple-400" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-red-500" />
               <Input
                 placeholder="Search by name..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-9 border-purple-200 focus-visible:ring-purple-400"
+                className="pl-9 border-red-300 focus-visible:ring-red-500"
               />
             </div>
           </div>
@@ -137,11 +137,11 @@ export default function ServiceCoordination() {
         <CardContent className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="border-purple-100">
-                <TableHead className="text-purple-800">Name</TableHead>
-                <TableHead className="text-purple-800">Stage</TableHead>
+              <TableRow className="border-red-200">
+                <TableHead className="text-red-900">Name</TableHead>
+                <TableHead className="text-red-900">Stage</TableHead>
                 {SERVICE_COLUMNS.map((col) => (
-                  <TableHead key={col} className="text-center text-purple-800">
+                  <TableHead key={col} className="text-center text-red-900">
                     {col}
                   </TableHead>
                 ))}
@@ -151,8 +151,8 @@ export default function ServiceCoordination() {
               {filtered.map((person) => {
                 const services = mockServiceMatrix[person.id] || {};
                 return (
-                  <TableRow key={person.id} className="border-purple-50 hover:bg-purple-50/40">
-                    <TableCell className="font-medium text-purple-900">
+                  <TableRow key={person.id} className="border-red-50 hover:bg-red-50/40">
+                    <TableCell className="font-medium text-red-950">
                       {person.firstName} {person.lastName}
                     </TableCell>
                     <TableCell>
@@ -172,7 +172,7 @@ export default function ServiceCoordination() {
                 <TableRow>
                   <TableCell
                     colSpan={2 + SERVICE_COLUMNS.length}
-                    className="py-12 text-center text-purple-400"
+                    className="py-12 text-center text-red-500"
                   >
                     No participants match your search.
                   </TableCell>

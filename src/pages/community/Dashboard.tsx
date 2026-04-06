@@ -12,8 +12,8 @@ import {
 const stats = mockDashboardStats;
 
 const statCards = [
-  { label: 'Active People', value: stats.activePeople, icon: Users, color: 'text-purple-700' },
-  { label: 'Active Mentors', value: stats.activeMentors, icon: UserCheck, color: 'text-purple-600' },
+  { label: 'Active People', value: stats.activePeople, icon: Users, color: 'text-red-800' },
+  { label: 'Active Mentors', value: stats.activeMentors, icon: UserCheck, color: 'text-red-700' },
   { label: 'Housing Rate', value: `${stats.housingPlacementRate}%`, icon: Home, color: 'text-emerald-600' },
   { label: 'Employment Rate', value: `${stats.employmentRate}%`, icon: Briefcase, color: 'text-blue-600' },
   { label: 'Programs', value: stats.activePrograms, icon: BookOpen, color: 'text-amber-600' },
@@ -43,7 +43,7 @@ export default function CommunityDashboard() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-3xl font-serif font-bold text-purple-900">Community Dashboard</h1>
+        <h1 className="text-3xl font-serif font-bold text-red-950">Community Dashboard</h1>
         <p className="text-muted-foreground mt-1">Overview of the Resurrectio reentry community</p>
       </div>
 
@@ -53,7 +53,7 @@ export default function CommunityDashboard() {
           <Card key={s.label} className="bg-white/80">
             <CardContent className="pt-6 pb-4 text-center">
               <s.icon className={`h-6 w-6 mx-auto mb-2 ${s.color}`} />
-              <p className="text-2xl font-bold text-purple-900">{s.value}</p>
+              <p className="text-2xl font-bold text-red-950">{s.value}</p>
               <p className="text-xs text-muted-foreground mt-1">{s.label}</p>
             </CardContent>
           </Card>
@@ -63,7 +63,7 @@ export default function CommunityDashboard() {
       {/* Journey Pipeline */}
       <Card>
         <CardHeader>
-          <CardTitle className="font-serif text-purple-900">Journey Pipeline</CardTitle>
+          <CardTitle className="font-serif text-red-950">Journey Pipeline</CardTitle>
           <CardDescription>Distribution of people across reentry stages</CardDescription>
         </CardHeader>
         <CardContent>
@@ -99,7 +99,7 @@ export default function CommunityDashboard() {
         {/* Recent Activity */}
         <Card>
           <CardHeader>
-            <CardTitle className="font-serif text-purple-900 flex items-center gap-2">
+            <CardTitle className="font-serif text-red-950 flex items-center gap-2">
               <Activity className="h-5 w-5" /> Recent Activity
             </CardTitle>
           </CardHeader>
@@ -109,7 +109,7 @@ export default function CommunityDashboard() {
               return (
                 <div key={a.id}>
                   <div className="flex items-start gap-3 py-2">
-                    <Icon className="h-4 w-4 mt-0.5 text-purple-500 shrink-0" />
+                    <Icon className="h-4 w-4 mt-0.5 text-red-600 shrink-0" />
                     <div className="flex-1 min-w-0">
                       <p className="text-sm">{a.description}</p>
                       <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
@@ -130,7 +130,7 @@ export default function CommunityDashboard() {
         {/* Top NRI Signals */}
         <Card>
           <CardHeader>
-            <CardTitle className="font-serif text-purple-900 flex items-center gap-2">
+            <CardTitle className="font-serif text-red-950 flex items-center gap-2">
               <Eye className="h-5 w-5" /> Top NRI Signals
             </CardTitle>
             <CardDescription>Narrative Resonance Intelligence alerts</CardDescription>
@@ -140,7 +140,7 @@ export default function CommunityDashboard() {
               <div key={s.id} className="border rounded-lg p-3">
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <p className="font-medium text-sm text-purple-900">{s.title}</p>
+                    <p className="font-medium text-sm text-red-950">{s.title}</p>
                     <p className="text-xs text-muted-foreground mt-0.5">{s.personName}</p>
                   </div>
                   <Badge className={confidenceColors[s.confidence]}>{s.confidence}</Badge>

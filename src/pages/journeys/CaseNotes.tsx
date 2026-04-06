@@ -34,7 +34,7 @@ const TYPE_LABELS: Record<NoteType, string> = {
 };
 
 const TYPE_BADGE_CLASSES: Record<NoteType, string> = {
-  mentor_meeting: 'bg-purple-100 text-purple-800 hover:bg-purple-100',
+  mentor_meeting: 'bg-red-200 text-red-900 hover:bg-red-200',
   milestone: 'bg-emerald-100 text-emerald-800 hover:bg-emerald-100',
   concern: 'bg-red-100 text-red-800 hover:bg-red-100',
   celebration: 'bg-amber-100 text-amber-800 hover:bg-amber-100',
@@ -77,7 +77,7 @@ export default function CaseNotes() {
     <div className="space-y-8 pb-12">
       {/* Header */}
       <div>
-        <h1 className="font-serif text-3xl font-bold text-purple-900">
+        <h1 className="font-serif text-3xl font-bold text-red-950">
           Case Notes
         </h1>
         <p className="mt-1 text-muted-foreground">
@@ -119,24 +119,24 @@ export default function CaseNotes() {
       </div>
 
       {/* Timeline */}
-      <div className="relative space-y-4 pl-6 before:absolute before:left-2 before:top-2 before:h-[calc(100%-1rem)] before:w-0.5 before:bg-purple-100">
+      <div className="relative space-y-4 pl-6 before:absolute before:left-2 before:top-2 before:h-[calc(100%-1rem)] before:w-0.5 before:bg-red-200">
         {filtered.map((note) => {
           const Icon = TYPE_ICONS[note.type];
           return (
             <div key={note.id} className="relative">
               {/* Timeline dot */}
-              <div className="absolute -left-6 top-5 flex h-4 w-4 items-center justify-center rounded-full bg-purple-200">
-                <div className="h-2 w-2 rounded-full bg-purple-600" />
+              <div className="absolute -left-6 top-5 flex h-4 w-4 items-center justify-center rounded-full bg-red-300">
+                <div className="h-2 w-2 rounded-full bg-red-700" />
               </div>
 
-              <Card className="border-purple-100 transition-shadow hover:shadow-md">
+              <Card className="border-red-200 transition-shadow hover:shadow-md">
                 <CardHeader className="pb-2">
                   <div className="flex flex-wrap items-center gap-2">
                     <Badge className={TYPE_BADGE_CLASSES[note.type]}>
                       <Icon className="mr-1 h-3 w-3" />
                       {TYPE_LABELS[note.type]}
                     </Badge>
-                    <span className="text-sm font-medium text-purple-800">
+                    <span className="text-sm font-medium text-red-900">
                       {note.personName}
                     </span>
                     <span className="text-xs text-muted-foreground">

@@ -39,11 +39,11 @@ export default function NriSignals() {
           const config = (signalTypes as any)[signal.type];
           const isExpanded = expandedId === signal.id;
           return (
-            <Card key={signal.id} className="overflow-hidden" style={{ borderLeftWidth: '4px', borderLeftColor: config?.color || '#6b21a8' }}>
+            <Card key={signal.id} className="overflow-hidden" style={{ borderLeftWidth: '4px', borderLeftColor: config?.color || '#991b1b' }}>
               <CardContent className="p-5">
                 <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: `${config?.color || '#6b21a8'}20` }}>
-                    <Icon className="h-4 w-4" style={{ color: config?.color || '#6b21a8' }} />
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: `${config?.color || '#991b1b'}20` }}>
+                    <Icon className="h-4 w-4" style={{ color: config?.color || '#991b1b' }} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">

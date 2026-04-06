@@ -37,10 +37,10 @@ export default function ContentStudio() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-purple-100">Content Studio</h1>
-          <p className="text-purple-300/70 text-sm mt-1">Manage blog posts, articles, and content pieces</p>
+          <h1 className="text-2xl font-bold text-red-200">Content Studio</h1>
+          <p className="text-red-400/70 text-sm mt-1">Manage blog posts, articles, and content pieces</p>
         </div>
-        <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+        <Button className="bg-red-700 hover:bg-red-800 text-white">
           <Plus className="w-4 h-4 mr-2" /> New Article
         </Button>
       </div>
@@ -48,53 +48,53 @@ export default function ContentStudio() {
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {stats.map((s) => (
-          <Card key={s.label} className="bg-purple-950/40 border-purple-800/40">
+          <Card key={s.label} className="bg-red-950/40 border-red-900/40">
             <CardContent className="pt-6 flex items-center gap-4">
-              <div className="p-3 rounded-lg bg-purple-900/50">
-                <s.icon className="w-5 h-5 text-purple-400" />
+              <div className="p-3 rounded-lg bg-red-950/50">
+                <s.icon className="w-5 h-5 text-red-500" />
               </div>
               <div>
-                <p className="text-sm text-purple-300/70">{s.label}</p>
-                <p className="text-2xl font-bold text-purple-100">{s.value}</p>
+                <p className="text-sm text-red-400/70">{s.label}</p>
+                <p className="text-2xl font-bold text-red-200">{s.value}</p>
               </div>
             </CardContent>
           </Card>
         ))}
       </div>
 
-      <Separator className="bg-purple-800/30" />
+      <Separator className="bg-red-900/30" />
 
       {/* Search */}
       <div className="relative max-w-sm">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-purple-400" />
-        <Input placeholder="Search articles…" className="pl-9 bg-purple-950/30 border-purple-800/40 text-purple-100 placeholder:text-purple-500" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-red-500" />
+        <Input placeholder="Search articles…" className="pl-9 bg-red-950/30 border-red-900/40 text-red-200 placeholder:text-red-600" />
       </div>
 
       {/* Table */}
-      <Card className="bg-purple-950/40 border-purple-800/40">
+      <Card className="bg-red-950/40 border-red-900/40">
         <CardContent className="p-0">
           <Table>
             <TableHeader>
-              <TableRow className="border-purple-800/30 hover:bg-transparent">
-                <TableHead className="text-purple-300">Title</TableHead>
-                <TableHead className="text-purple-300">Status</TableHead>
-                <TableHead className="text-purple-300">Author</TableHead>
-                <TableHead className="text-purple-300">Date</TableHead>
-                <TableHead className="text-purple-300 text-right">Views</TableHead>
+              <TableRow className="border-red-900/30 hover:bg-transparent">
+                <TableHead className="text-red-400">Title</TableHead>
+                <TableHead className="text-red-400">Status</TableHead>
+                <TableHead className="text-red-400">Author</TableHead>
+                <TableHead className="text-red-400">Date</TableHead>
+                <TableHead className="text-red-400 text-right">Views</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {articles.map((a) => (
-                <TableRow key={a.id} className="border-purple-800/20 hover:bg-purple-900/20">
-                  <TableCell className="text-purple-100 font-medium">{a.title}</TableCell>
+                <TableRow key={a.id} className="border-red-900/20 hover:bg-red-950/20">
+                  <TableCell className="text-red-200 font-medium">{a.title}</TableCell>
                   <TableCell>
-                    <Badge variant={a.status === 'published' ? 'default' : 'secondary'} className={a.status === 'published' ? 'bg-purple-600/80 text-purple-100' : 'bg-purple-800/50 text-purple-300'}>
+                    <Badge variant={a.status === 'published' ? 'default' : 'secondary'} className={a.status === 'published' ? 'bg-red-700/80 text-red-200' : 'bg-red-900/50 text-red-400'}>
                       {a.status}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-purple-300">{a.author}</TableCell>
-                  <TableCell className="text-purple-300/70">{a.date}</TableCell>
-                  <TableCell className="text-purple-200 text-right">{a.views.toLocaleString()}</TableCell>
+                  <TableCell className="text-red-400">{a.author}</TableCell>
+                  <TableCell className="text-red-400/70">{a.date}</TableCell>
+                  <TableCell className="text-red-300 text-right">{a.views.toLocaleString()}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

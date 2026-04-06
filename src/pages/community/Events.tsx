@@ -6,7 +6,7 @@ import { mockEvents } from '@/data/mockData';
 import { Calendar, Clock, MapPin, Users, CheckCircle } from 'lucide-react';
 
 const eventTypeStyles: Record<string, string> = {
-  mentoring_circle: 'bg-purple-100 text-purple-800',
+  mentoring_circle: 'bg-red-200 text-red-900',
   family_day: 'bg-pink-100 text-pink-800',
   job_fair: 'bg-blue-100 text-blue-800',
   worship: 'bg-amber-100 text-amber-800',
@@ -31,7 +31,7 @@ export default function Events() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-serif font-bold text-purple-900">Community Events</h1>
+        <h1 className="text-3xl font-serif font-bold text-red-950">Community Events</h1>
         <p className="text-muted-foreground mt-1">Gatherings that strengthen and sustain our community</p>
       </div>
 
@@ -42,7 +42,7 @@ export default function Events() {
             <Card key={event.id} className="bg-white/80">
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="font-serif text-purple-900 text-lg">{event.name}</CardTitle>
+                  <CardTitle className="font-serif text-red-950 text-lg">{event.name}</CardTitle>
                   <Badge className={eventTypeStyles[event.type]}>
                     {eventTypeLabels[event.type]}
                   </Badge>
@@ -52,15 +52,15 @@ export default function Events() {
               <CardContent className="space-y-3">
                 <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-1.5">
-                    <Calendar className="h-4 w-4 text-purple-500" />
+                    <Calendar className="h-4 w-4 text-red-600" />
                     <span>{new Date(event.date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Clock className="h-4 w-4 text-purple-500" />
+                    <Clock className="h-4 w-4 text-red-600" />
                     <span>{event.time}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <MapPin className="h-4 w-4 text-purple-500" />
+                    <MapPin className="h-4 w-4 text-red-600" />
                     <span>{event.location}</span>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ export default function Events() {
                   </div>
                   <Progress value={capacityPct} className="h-2" />
                 </div>
-                <Button className="w-full bg-purple-700 hover:bg-purple-800 text-white" size="sm">
+                <Button className="w-full bg-red-800 hover:bg-red-900 text-white" size="sm">
                   <CheckCircle className="h-4 w-4 mr-2" />
                   Register
                 </Button>

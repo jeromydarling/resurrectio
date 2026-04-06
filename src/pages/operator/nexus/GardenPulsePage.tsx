@@ -1311,7 +1311,7 @@ function SeasonalRhythm({ silentMode }: { silentMode: boolean }) {
   const seasons = [
     { key: 'advent', label: 'Advent', months: [11, 0], color: 'bg-violet-400/50', secular: 'Year End Reflection' },
     { key: 'christmas', label: 'Christmas', months: [0], color: 'bg-amber-300/50', secular: 'New Beginnings' },
-    { key: 'lent', label: 'Lent', months: [1, 2, 3], color: 'bg-purple-400/40', secular: 'Spring Preparation' },
+    { key: 'lent', label: 'Lent', months: [1, 2, 3], color: 'bg-red-500/40', secular: 'Spring Preparation' },
     { key: 'easter', label: 'Easter', months: [3, 4], color: 'bg-yellow-300/50', secular: 'Spring Renewal' },
     { key: 'pentecost', label: 'Pentecost', months: [5], color: 'bg-red-400/40', secular: 'Early Summer Energy' },
     { key: 'ordinary', label: 'Ordinary Time', months: [6, 7, 8, 9, 10], color: 'bg-emerald-400/30', secular: 'Sustained Growth' },

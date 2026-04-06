@@ -23,7 +23,7 @@ export default function KnowledgeBase() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-serif font-bold text-purple-900">Knowledge Base</h1>
+        <h1 className="text-3xl font-serif font-bold text-red-950">Knowledge Base</h1>
         <p className="text-muted-foreground mt-1">Resource library for returning citizens and their support network</p>
       </div>
 
@@ -31,18 +31,18 @@ export default function KnowledgeBase() {
         {grouped.map((section) => (
           <Card key={section.key} className="bg-white/80">
             <CardHeader>
-              <CardTitle className="font-serif text-purple-900 flex items-center gap-2">
-                <section.icon className="h-5 w-5 text-purple-600" />
+              <CardTitle className="font-serif text-red-950 flex items-center gap-2">
+                <section.icon className="h-5 w-5 text-red-700" />
                 {section.label}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-1">
               {section.articles.map((article, idx) => (
                 <div key={article.id}>
-                  <div className="flex items-start gap-3 py-3 group cursor-pointer hover:bg-purple-50/50 rounded-md px-2 -mx-2 transition-colors">
-                    <FileText className="h-4 w-4 mt-0.5 text-purple-400 shrink-0" />
+                  <div className="flex items-start gap-3 py-3 group cursor-pointer hover:bg-red-50/50 rounded-md px-2 -mx-2 transition-colors">
+                    <FileText className="h-4 w-4 mt-0.5 text-red-500 shrink-0" />
                     <div>
-                      <p className="text-sm font-medium text-purple-900 group-hover:text-purple-700">
+                      <p className="text-sm font-medium text-red-950 group-hover:text-red-800">
                         {article.title}
                       </p>
                       <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">

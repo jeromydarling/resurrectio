@@ -41,7 +41,7 @@ const EVENT_POOL: Omit<SimulatedEvent, 'id' | 'time'>[] = [
 ];
 
 const TYPE_COLORS: Record<string, string> = {
-  reflection: 'text-purple-500',
+  reflection: 'text-red-600',
   meeting: 'text-blue-500',
   contact: 'text-emerald-500',
   pulse: 'text-amber-500',

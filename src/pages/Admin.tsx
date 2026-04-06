@@ -41,7 +41,7 @@ const ROLES: { value: AppRole; label: string; description: string }[] = [
 function RoleBadge({ role }: { role: AppRole }) {
   const colors: Record<AppRole, string> = {
     admin: 'bg-red-100 text-red-800 border-red-200',
-    leadership: 'bg-purple-100 text-purple-800 border-purple-200',
+    leadership: 'bg-red-200 text-red-900 border-red-300',
     regional_lead: 'bg-blue-100 text-blue-800 border-blue-200',
     staff: 'bg-gray-100 text-gray-800 border-gray-200',
   };

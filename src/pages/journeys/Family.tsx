@@ -65,7 +65,7 @@ export default function Family() {
     <div className="space-y-8 pb-12">
       {/* Header */}
       <div>
-        <h1 className="font-serif text-3xl font-bold text-purple-900">
+        <h1 className="font-serif text-3xl font-bold text-red-950">
           Family Connections
         </h1>
         <p className="mt-1 text-muted-foreground">
@@ -75,13 +75,13 @@ export default function Family() {
 
       {/* Summary */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        <Card className="border-purple-100">
+        <Card className="border-red-200">
           <CardContent className="flex items-center gap-3 p-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100">
-              <Users className="h-5 w-5 text-purple-700" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-200">
+              <Users className="h-5 w-5 text-red-800" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-purple-900">{totalMembers}</p>
+              <p className="text-2xl font-bold text-red-950">{totalMembers}</p>
               <p className="text-xs text-muted-foreground">Family Members</p>
             </div>
           </CardContent>
@@ -115,11 +115,11 @@ export default function Family() {
       {/* Person Cards */}
       <div className="space-y-6">
         {grouped.map(([personId, { personName, members }]) => (
-          <Card key={personId} className="border-purple-100 overflow-hidden">
-            <CardHeader className="bg-purple-50/60 pb-3">
+          <Card key={personId} className="border-red-200 overflow-hidden">
+            <CardHeader className="bg-red-50/60 pb-3">
               <div className="flex items-center gap-2">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-purple-200">
-                  <User className="h-5 w-5 text-purple-700" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-red-300">
+                  <User className="h-5 w-5 text-red-800" />
                 </div>
                 <div>
                   <CardTitle className="font-serif text-lg">{personName}</CardTitle>
@@ -130,7 +130,7 @@ export default function Family() {
               </div>
             </CardHeader>
             <CardContent className="p-0">
-              <div className="divide-y divide-purple-50">
+              <div className="divide-y divide-red-50">
                 {members.map((fm) => {
                   const RelIcon = RELATIONSHIP_ICONS[fm.relationship];
                   const statusConfig = CONTACT_STATUS_CONFIG[fm.contactStatus];
@@ -141,11 +141,11 @@ export default function Family() {
                       className="flex flex-col gap-2 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-100/70">
-                          <RelIcon className="h-4 w-4 text-purple-600" />
+                        <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-200/70">
+                          <RelIcon className="h-4 w-4 text-red-700" />
                         </div>
                         <div className="space-y-1">
-                          <p className="font-medium text-sm text-purple-900">
+                          <p className="font-medium text-sm text-red-950">
                             {fm.name}
                           </p>
                           <p className="text-xs text-muted-foreground">

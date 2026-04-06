@@ -26,12 +26,12 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
     <div ref={ref} className="bg-[#faf7f3]">
       {/* ── Hero ── */}
       <section className="relative overflow-hidden py-20 sm:py-28">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/80 via-transparent to-purple-100/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-red-50/80 via-transparent to-red-100/40 pointer-events-none" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-purple-900 leading-[1.1] tracking-tight mb-6">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-red-950 leading-[1.1] tracking-tight mb-6">
             From Incarceration to Restoration
           </h1>
-          <p className="text-lg sm:text-xl text-purple-900/70 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl text-red-950/70 max-w-2xl mx-auto mb-8 leading-relaxed">
             Resurrectio walks with returning citizens from the moment of release through housing,
             employment, and community — transforming reentry from a revolving door into a rising arc.
           </p>
@@ -39,7 +39,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
             <Link to="/signup">
               <Button
                 size="lg"
-                className="rounded-full bg-purple-700 text-white hover:bg-purple-800 px-8 h-12 text-base"
+                className="rounded-full bg-red-800 text-white hover:bg-red-900 px-8 h-12 text-base"
               >
                 Start Your Ministry <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -48,13 +48,13 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-full border-purple-300 text-purple-800 hover:bg-purple-50 px-8 h-12 text-base"
+                className="rounded-full border-red-300 text-red-900 hover:bg-red-50 px-8 h-12 text-base"
               >
                 See How It Works
               </Button>
             </a>
           </div>
-          <p className="mt-8 text-sm text-purple-900/40">
+          <p className="mt-8 text-sm text-red-950/40">
             Trusted by prison ministries and reentry organizations nationwide
           </p>
         </div>
@@ -64,10 +64,10 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
       <section id="mission" className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-purple-900 mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
               The Reentry Crisis
             </h2>
-            <p className="text-purple-900/60 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
               Every year, hundreds of thousands of people leave prison with nowhere to turn.
               Services are fragmented, data lives in spreadsheets, and people fall through the cracks.
             </p>
@@ -79,11 +79,11 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               { stat: '70-80%', label: 'Use spreadsheets or nothing', desc: 'Reentry orgs lack purpose-built tools' },
               { stat: '$3-4.5B', label: 'Annual funding fragmented', desc: 'Spread across disconnected programs and agencies' },
             ].map((item) => (
-              <Card key={item.stat} className="text-center border-purple-100 bg-white">
+              <Card key={item.stat} className="text-center border-red-100 bg-white">
                 <CardContent className="pt-6 pb-6">
-                  <p className="text-3xl sm:text-4xl font-bold text-purple-700 mb-2">{item.stat}</p>
-                  <p className="font-semibold text-purple-900 mb-1">{item.label}</p>
-                  <p className="text-sm text-purple-900/50">{item.desc}</p>
+                  <p className="text-3xl sm:text-4xl font-bold text-red-800 mb-2">{item.stat}</p>
+                  <p className="font-semibold text-red-950 mb-1">{item.label}</p>
+                  <p className="text-sm text-red-950/50">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -95,10 +95,10 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
       <section className="py-16 sm:py-24 bg-white/60">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-purple-900 mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
               People, Not Cases
             </h2>
-            <p className="text-purple-900/60 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
               Resurrectio sees returning citizens as people on journeys, not case numbers.
               Built on CROS (Communal Relationship Operating System) philosophy, it centers
               human dignity and relational intelligence at every step.
@@ -122,13 +122,13 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                 desc: 'Prison to ownership — the complete distributist restoration arc. From Companion Book through Communis cooperative membership.',
               },
             ].map((item) => (
-              <Card key={item.title} className="border-purple-100 bg-white hover:shadow-md transition-shadow">
+              <Card key={item.title} className="border-red-100 bg-white hover:shadow-md transition-shadow">
                 <CardContent className="pt-6 pb-6">
-                  <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-4">
-                    <item.icon className="h-6 w-6 text-purple-700" />
+                  <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center mb-4">
+                    <item.icon className="h-6 w-6 text-red-800" />
                   </div>
-                  <h3 className="font-semibold text-purple-900 text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-purple-900/60 leading-relaxed">{item.desc}</p>
+                  <h3 className="font-semibold text-red-950 text-lg mb-2">{item.title}</h3>
+                  <p className="text-sm text-red-950/60 leading-relaxed">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -140,22 +140,22 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-purple-900 mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
               The Rising Arc
             </h2>
-            <p className="text-purple-900/60 max-w-xl mx-auto">
+            <p className="text-red-950/60 max-w-xl mx-auto">
               From incarceration through full community ownership — the complete restoration pipeline.
             </p>
           </div>
           <div className="relative overflow-x-auto pb-4">
             <div className="flex items-stretch gap-0 min-w-[800px]">
               {[
-                { phase: 'IN PRISON', tool: 'Companion Book / Fabrica', color: 'from-purple-800 to-purple-700' },
-                { phase: 'RELEASE', tool: 'Resurrectio', color: 'from-purple-700 to-purple-600' },
-                { phase: 'SKILLS', tool: 'Fabrica Guild Course', color: 'from-purple-600 to-purple-500' },
-                { phase: 'OWNERSHIP', tool: 'Communis Cooperative', color: 'from-purple-500 to-purple-400' },
-                { phase: 'HOUSING', tool: 'Propria CLT', color: 'from-purple-400 to-purple-300' },
-                { phase: 'COMMUNITY', tool: 'CROS', color: 'from-purple-300 to-purple-200' },
+                { phase: 'IN PRISON', tool: 'Companion Book / Fabrica', color: 'from-red-900 to-red-800' },
+                { phase: 'RELEASE', tool: 'Resurrectio', color: 'from-red-800 to-red-700' },
+                { phase: 'SKILLS', tool: 'Fabrica Guild Course', color: 'from-red-700 to-red-600' },
+                { phase: 'OWNERSHIP', tool: 'Communis Cooperative', color: 'from-red-600 to-red-500' },
+                { phase: 'HOUSING', tool: 'Propria CLT', color: 'from-red-500 to-red-400' },
+                { phase: 'COMMUNITY', tool: 'CROS', color: 'from-red-400 to-red-300' },
               ].map((step, i, arr) => (
                 <div key={step.phase} className="flex items-stretch flex-1">
                   <div
@@ -168,7 +168,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                   </div>
                   {i < arr.length - 1 && (
                     <div className="flex items-center px-1">
-                      <ChevronRight className="h-5 w-5 text-purple-400" />
+                      <ChevronRight className="h-5 w-5 text-red-500" />
                     </div>
                   )}
                 </div>
@@ -182,7 +182,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
       <section id="features" className="py-16 sm:py-24 bg-white/60">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-purple-900 mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
               Everything Your Ministry Needs
             </h2>
           </div>
@@ -214,13 +214,13 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                 desc: 'NRI signals detect patterns and surface actionable insights.',
               },
             ].map((item) => (
-              <Card key={item.title} className="border-purple-100 bg-white hover:shadow-md transition-shadow">
+              <Card key={item.title} className="border-red-100 bg-white hover:shadow-md transition-shadow">
                 <CardContent className="pt-6 pb-6">
-                  <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-4">
-                    <item.icon className="h-6 w-6 text-purple-700" />
+                  <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center mb-4">
+                    <item.icon className="h-6 w-6 text-red-800" />
                   </div>
-                  <h3 className="font-semibold text-purple-900 text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-purple-900/60 leading-relaxed">{item.desc}</p>
+                  <h3 className="font-semibold text-red-950 text-lg mb-2">{item.title}</h3>
+                  <p className="text-sm text-red-950/60 leading-relaxed">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -232,10 +232,10 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-purple-900 mb-3">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-3">
               Narrative Relational Intelligence
             </h2>
-            <p className="text-purple-900/60 max-w-xl mx-auto">
+            <p className="text-red-950/60 max-w-xl mx-auto">
               Bounded AI that amplifies human judgment — never replaces it
             </p>
           </div>
@@ -262,24 +262,24 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
             ].map((item) => (
               <div
                 key={item.layer}
-                className="flex gap-4 items-start bg-white rounded-xl border border-purple-100 p-6"
+                className="flex gap-4 items-start bg-white rounded-xl border border-red-100 p-6"
               >
-                <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
-                  <item.icon className="h-5 w-5 text-purple-700" />
+                <div className="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0">
+                  <item.icon className="h-5 w-5 text-red-800" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <Badge variant="secondary" className="bg-purple-50 text-purple-700 text-[10px]">
+                    <Badge variant="secondary" className="bg-red-50 text-red-800 text-[10px]">
                       Layer {item.layer}
                     </Badge>
-                    <h3 className="font-semibold text-purple-900">{item.title}</h3>
+                    <h3 className="font-semibold text-red-950">{item.title}</h3>
                   </div>
-                  <p className="text-sm text-purple-900/60 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-red-950/60 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-center mt-8 text-sm text-purple-700 font-medium max-w-lg mx-auto">
+          <p className="text-center mt-8 text-sm text-red-800 font-medium max-w-lg mx-auto">
             Every signal includes evidence, confidence metrics, and a &ldquo;Why am I seeing this?&rdquo; explainer.
           </p>
         </div>
@@ -289,10 +289,10 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
       <section className="py-16 sm:py-24 bg-white/60">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-purple-900 mb-3">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-red-950 mb-3">
               What NRI Signals Look Like
             </h2>
-            <p className="text-purple-900/60">
+            <p className="text-red-950/60">
               Real-time intelligence delivered to the people who need it
             </p>
           </div>
@@ -318,17 +318,17 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               },
               {
                 type: 'Fabrica Ready',
-                accent: 'border-l-purple-500',
-                badgeColor: 'bg-purple-50 text-purple-700',
+                accent: 'border-l-red-700',
+                badgeColor: 'bg-red-50 text-red-800',
                 icon: Sparkles,
-                iconColor: 'text-purple-500',
+                iconColor: 'text-red-600',
                 person: 'Anthony W.',
                 body: 'Anthony W. shows stability indicators aligned for guild training. Employment steady 4+ months. Mentor endorsement received.',
               },
             ].map((signal) => (
               <Card
                 key={signal.type}
-                className={`border-purple-100 bg-white border-l-4 ${signal.accent}`}
+                className={`border-red-100 bg-white border-l-4 ${signal.accent}`}
               >
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-2 mb-1">
@@ -337,12 +337,12 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                       {signal.type}
                     </Badge>
                   </div>
-                  <CardTitle className="text-sm font-semibold text-purple-900">
+                  <CardTitle className="text-sm font-semibold text-red-950">
                     {signal.person}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-purple-900/60 leading-relaxed">{signal.body}</p>
+                  <p className="text-sm text-red-950/60 leading-relaxed">{signal.body}</p>
                 </CardContent>
               </Card>
             ))}
@@ -354,7 +354,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
       <section id="built-for" className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-purple-900 mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
               Built for Organizations Like Yours
             </h2>
           </div>
@@ -375,10 +375,10 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
             ].map((org) => (
               <div
                 key={org.name}
-                className="flex items-center gap-3 bg-white rounded-xl border border-purple-100 p-4 hover:border-purple-300 hover:shadow-sm transition-all"
+                className="flex items-center gap-3 bg-white rounded-xl border border-red-100 p-4 hover:border-red-300 hover:shadow-sm transition-all"
               >
-                <org.icon className="h-5 w-5 text-purple-400 flex-shrink-0" />
-                <span className="text-sm font-medium text-purple-900/80">{org.name}</span>
+                <org.icon className="h-5 w-5 text-red-500 flex-shrink-0" />
+                <span className="text-sm font-medium text-red-950/80">{org.name}</span>
               </div>
             ))}
           </div>
@@ -388,13 +388,13 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
       {/* ── Final CTA ── */}
       <section className="py-20 sm:py-28 text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-purple-900 mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-6">
             Ready to Transform Your Ministry?
           </h2>
           <Link to="/signup">
             <Button
               size="lg"
-              className="rounded-full bg-purple-700 text-white hover:bg-purple-800 px-10 h-12 text-base"
+              className="rounded-full bg-red-800 text-white hover:bg-red-900 px-10 h-12 text-base"
             >
               Start Your Ministry <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

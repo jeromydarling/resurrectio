@@ -16,12 +16,12 @@ function getSignalLabel(type: string): string {
 
 function getSignalColor(type: string): string {
   const config = signalTypes[type as SignalTypeKey];
-  return config?.color ?? '#6b21a8';
+  return config?.color ?? '#991b1b';
 }
 
 export default function GardenPulse() {
   return (
-    <div className="space-y-8 bg-gradient-to-b from-amber-50/50 to-purple-50/30 min-h-screen p-1">
+    <div className="space-y-8 bg-gradient-to-b from-amber-50/50 to-red-50/30 min-h-screen p-1">
       {/* Health Score */}
       <div className="flex items-center justify-center py-8">
         <div className="relative w-40 h-40">
@@ -46,7 +46,7 @@ export default function GardenPulse() {
             { label: 'Housing Stability', value: '87%', trend: 'up', detail: 'Avg stability score', icon: Home },
             { label: 'Employment Retention', value: '73%', trend: 'down', detail: '90-day retention rate', icon: Briefcase },
           ].map(item => (
-            <Card key={item.label} className="bg-gradient-to-br from-purple-50/50 to-white">
+            <Card key={item.label} className="bg-gradient-to-br from-red-50/50 to-white">
               <CardContent className="p-5">
                 <div className="flex items-center justify-between mb-2">
                   <item.icon className={`h-5 w-5 ${item.trend === 'up' ? 'text-emerald-600' : 'text-amber-600'}`} />

@@ -45,7 +45,7 @@ const CATEGORY_COLORS: Record<MilestoneCategory, string> = {
   housing_secured: 'bg-emerald-100 text-emerald-700',
   employment_started: 'bg-blue-100 text-blue-700',
   ninety_day_retention: 'bg-amber-100 text-amber-700',
-  program_completion: 'bg-purple-100 text-purple-700',
+  program_completion: 'bg-red-200 text-red-800',
   family_reunification: 'bg-pink-100 text-pink-700',
   compliance_clear: 'bg-teal-100 text-teal-700',
   drivers_license: 'bg-indigo-100 text-indigo-700',
@@ -90,7 +90,7 @@ export default function Milestones() {
     <div className="space-y-8 pb-12">
       {/* Header */}
       <div>
-        <h1 className="font-serif text-3xl font-bold text-purple-900">
+        <h1 className="font-serif text-3xl font-bold text-red-950">
           Milestones
         </h1>
         <p className="mt-1 text-muted-foreground">
@@ -100,13 +100,13 @@ export default function Milestones() {
 
       {/* Stats Row */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-4">
-        <Card className="border-purple-100">
+        <Card className="border-red-200">
           <CardContent className="flex items-center gap-3 p-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100">
-              <Trophy className="h-5 w-5 text-purple-700" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-200">
+              <Trophy className="h-5 w-5 text-red-800" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-purple-900">{mockMilestones.length}</p>
+              <p className="text-2xl font-bold text-red-950">{mockMilestones.length}</p>
               <p className="text-xs text-muted-foreground">Total Milestones</p>
             </div>
           </CardContent>
@@ -165,7 +165,7 @@ export default function Milestones() {
               >
                 <Icon className="h-4 w-4" />
               </div>
-              <h2 className="font-serif text-lg font-semibold text-purple-900">
+              <h2 className="font-serif text-lg font-semibold text-red-950">
                 {CATEGORY_LABELS[cat]}
               </h2>
               <Badge variant="secondary" className="text-xs">
@@ -177,11 +177,11 @@ export default function Milestones() {
               {milestones.map((ms) => (
                 <Card
                   key={ms.id}
-                  className="border-purple-100 transition-shadow hover:shadow-md"
+                  className="border-red-200 transition-shadow hover:shadow-md"
                 >
                   <CardContent className="p-4 space-y-2">
                     <div className="flex items-start justify-between gap-2">
-                      <p className="font-medium text-sm text-purple-900">{ms.title}</p>
+                      <p className="font-medium text-sm text-red-950">{ms.title}</p>
                       {ms.verified ? (
                         <Badge className="bg-emerald-100 text-emerald-700 hover:bg-emerald-100 shrink-0">
                           <CheckCircle2 className="mr-1 h-3 w-3" />

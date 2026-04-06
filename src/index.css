@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,15 +6,15 @@
 
 @layer base {
   :root {
-    /* Core Brand - Resurrectio Purple + Warm Cream */
+    /* Core Brand - Resurrectio Crimson + Warm Cream */
     --background: 30 33% 97%;
     --foreground: 20 12% 15%;
 
     /* Marketing theme tokens */
-    --marketing-purple: 271 76% 40%;
-    --marketing-purple-light: 263 70% 58%;
+    --marketing-crimson: 0 72% 35%;
+    --marketing-crimson-light: 0 65% 45%;
     --marketing-surface: 30 33% 97%;
-    --marketing-border: 271 20% 88%;
+    --marketing-border: 0 20% 88%;
 
     /* Cards & Surfaces */
     --card: 30 25% 99%;
@@ -23,20 +23,20 @@
     --popover: 30 25% 99%;
     --popover-foreground: 20 12% 15%;
 
-    /* Primary - Deep Purple (#6b21a8) */
-    --primary: 271 76% 40%;
+    /* Primary - Deep Crimson (#991b1b) */
+    --primary: 0 72% 35%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Light Purple Tint */
-    --secondary: 271 30% 95%;
-    --secondary-foreground: 271 76% 30%;
+    /* Secondary - Light Crimson Tint */
+    --secondary: 0 30% 96%;
+    --secondary-foreground: 0 72% 25%;
 
     /* Muted */
     --muted: 30 15% 93%;
     --muted-foreground: 20 6% 44%;
 
-    /* Accent - Medium Purple (#7c3aed) */
-    --accent: 263 70% 58%;
+    /* Accent - Medium Crimson (#b91c1c) */
+    --accent: 0 65% 45%;
     --accent-foreground: 0 0% 100%;
 
     /* Destructive - Red (#ef4444) */
@@ -51,75 +51,75 @@
     --info: 217 91% 60%;
     --info-foreground: 0 0% 100%;
 
-    /* Journey Stage Colors - Purple Spectrum */
-    --stage-pre-release: 271 76% 40%;
-    --stage-stabilization: 263 70% 58%;
+    /* Journey Stage Colors - Red Spectrum */
+    --stage-pre-release: 0 72% 35%;
+    --stage-stabilization: 0 65% 45%;
     --stage-growth: 160 84% 30%;
     --stage-flourishing: 38 92% 50%;
-    --stage-alumni: 271 30% 70%;
+    --stage-alumni: 0 30% 70%;
 
     /* Borders & Inputs */
     --border: 30 15% 88%;
     --input: 30 15% 88%;
-    --ring: 271 76% 40%;
+    --ring: 0 72% 35%;
 
     --radius: 0.75rem;
 
-    /* Sidebar - Deep Purple */
-    --sidebar-background: 271 81% 18%;
-    --sidebar-foreground: 271 20% 92%;
-    --sidebar-primary: 263 70% 70%;
+    /* Sidebar - Deep Crimson */
+    --sidebar-background: 0 78% 16%;
+    --sidebar-foreground: 0 20% 92%;
+    --sidebar-primary: 0 65% 70%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 271 60% 25%;
-    --sidebar-accent-foreground: 271 20% 92%;
-    --sidebar-border: 271 60% 25%;
-    --sidebar-ring: 263 70% 58%;
+    --sidebar-accent: 0 60% 22%;
+    --sidebar-accent-foreground: 0 20% 92%;
+    --sidebar-border: 0 50% 22%;
+    --sidebar-ring: 0 65% 45%;
 
-    /* Chart Colors - Purple Spectrum */
-    --chart-1: 271 76% 40%;
-    --chart-2: 263 70% 58%;
+    /* Chart Colors - Red Spectrum */
+    --chart-1: 0 72% 35%;
+    --chart-2: 0 65% 45%;
     --chart-3: 160 84% 30%;
     --chart-4: 38 92% 50%;
-    --chart-5: 271 30% 70%;
+    --chart-5: 0 30% 70%;
   }
 
   .dark {
-    --background: 271 20% 7%;
-    --foreground: 271 10% 92%;
+    --background: 0 20% 7%;
+    --foreground: 0 10% 92%;
 
-    --card: 271 18% 10%;
-    --card-foreground: 271 10% 92%;
+    --card: 0 18% 10%;
+    --card-foreground: 0 10% 92%;
 
-    --popover: 271 18% 10%;
-    --popover-foreground: 271 10% 92%;
+    --popover: 0 18% 10%;
+    --popover-foreground: 0 10% 92%;
 
-    --primary: 263 70% 58%;
+    --primary: 0 65% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 271 18% 18%;
-    --secondary-foreground: 271 10% 92%;
+    --secondary: 0 18% 18%;
+    --secondary-foreground: 0 10% 92%;
 
-    --muted: 271 18% 18%;
-    --muted-foreground: 271 10% 58%;
+    --muted: 0 18% 18%;
+    --muted-foreground: 0 10% 58%;
 
-    --accent: 271 76% 40%;
+    --accent: 0 72% 35%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 271 18% 20%;
-    --input: 271 18% 20%;
-    --ring: 263 70% 58%;
+    --border: 0 18% 20%;
+    --input: 0 18% 20%;
+    --ring: 0 65% 45%;
 
-    --sidebar-background: 271 81% 7%;
-    --sidebar-foreground: 271 10% 92%;
-    --sidebar-primary: 263 70% 58%;
+    --sidebar-background: 0 78% 7%;
+    --sidebar-foreground: 0 10% 92%;
+    --sidebar-primary: 0 65% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 271 60% 14%;
-    --sidebar-accent-foreground: 271 10% 92%;
-    --sidebar-border: 271 60% 14%;
-    --sidebar-ring: 263 70% 58%;
+    --sidebar-accent: 0 60% 14%;
+    --sidebar-accent-foreground: 0 10% 92%;
+    --sidebar-border: 0 60% 14%;
+    --sidebar-ring: 0 65% 45%;
   }
 }
 
@@ -134,13 +134,14 @@
   }
 
   h1, h2, h3 {
-    font-family: Georgia, 'Times New Roman', serif;
-    @apply font-normal tracking-tight;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    @apply font-medium tracking-tight;
+    font-style: normal;
   }
 
   h4, h5, h6 {
-    font-family: Georgia, 'Times New Roman', serif;
-    @apply font-normal tracking-tight;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    @apply font-medium tracking-tight;
   }
 }
 

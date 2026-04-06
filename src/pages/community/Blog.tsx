@@ -7,7 +7,7 @@ export default function Blog() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-serif font-bold text-purple-900">Community Blog</h1>
+        <h1 className="text-3xl font-serif font-bold text-red-950">Community Blog</h1>
         <p className="text-muted-foreground mt-1">Reflections, insights, and updates from our community</p>
       </div>
 
@@ -15,7 +15,7 @@ export default function Blog() {
         {mockBlogPosts.map((post) => (
           <Card key={post.id} className="bg-white/80">
             <CardHeader className="pb-2">
-              <CardTitle className="font-serif text-purple-900 text-xl leading-snug">
+              <CardTitle className="font-serif text-red-950 text-xl leading-snug">
                 {post.title}
               </CardTitle>
               <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground pt-1">
@@ -36,7 +36,7 @@ export default function Blog() {
             <CardContent className="pt-2">
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{post.excerpt}</p>
               <Separator className="mb-3" />
-              <button className="flex items-center gap-1.5 text-sm font-medium text-purple-700 hover:text-purple-900 transition-colors">
+              <button className="flex items-center gap-1.5 text-sm font-medium text-red-800 hover:text-red-950 transition-colors">
                 Read More <ArrowRight className="h-4 w-4" />
               </button>
             </CardContent>
