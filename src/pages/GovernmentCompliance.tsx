@@ -98,6 +98,19 @@ const reports = [
     lastExported: 'March 31, 2026',
   },
   {
+    name: 'Workforce One (WF1)',
+    fullName: 'Minnesota DEED Workforce One Case Management System',
+    icon: Database,
+    requiredBy: 'Minnesota DEED-funded reentry programs (ACP, Pilot Re-Entry)',
+    description:
+      'Print field-matched worksheets for WF1 data entry — participant enrollment, eligibility, case notes, services, activities, and outcomes. All data must be in WF1 within 15 business days or it doesn\'t count for performance measures.',
+    format: 'Printable worksheets matching WF1 page fields + EDS document prep',
+    statusLabel: 'Ready to Print',
+    statusVariant: 'default' as const,
+    buttonLabel: 'Generate WF1 Worksheets',
+    lastExported: 'March 31, 2026',
+  },
+  {
     name: 'State DOC Reporting',
     fullName: 'State Department of Corrections',
     icon: Settings2,

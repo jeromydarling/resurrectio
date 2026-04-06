@@ -528,6 +528,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               { name: 'OJP PMT', who: 'Second Chance Act grantees', desc: 'Quarterly performance measures in PMT-ready CSV format.' },
               { name: 'HMIS', who: 'HUD-funded housing programs', desc: 'Client demographics and housing data per HUD FY2026 CSV standards.' },
               { name: 'SPARS', who: 'SAMHSA grant recipients', desc: 'GPRA/NOMS CSV batch upload — intake, follow-up, and discharge data.' },
+              { name: 'Workforce One', who: 'Minnesota DEED grantees', desc: 'Field-matched worksheets for WF1 — enrollment, case notes, services, outcomes. 15-day entry deadline handled.' },
               { name: 'State DOC', who: 'State-contracted providers', desc: 'Configurable templates matching your state DOC reporting requirements.' },
               { name: 'QPR / QNR', who: 'All DOL ETA grantees', desc: 'Auto-generated quarterly performance reports with WIOA indicators and narrative sections.' },
               { name: 'CJIS Compliance', who: 'Criminal justice data users', desc: 'Security audit documentation and policy compliance checklists.' },
