@@ -136,26 +136,32 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
         </div>
       </section>
 
-      {/* ── Journey Arc Visualization ── */}
+      {/* ── The CROS Ecosystem — Rising Arc ── */}
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
+            <p className="text-xs font-semibold uppercase tracking-widest text-red-800/60 mb-3">The CROS Ecosystem</p>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
               The Rising Arc
             </h2>
-            <p className="text-red-950/60 max-w-xl mx-auto">
-              From incarceration through full community ownership — the complete restoration pipeline.
+            <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
+              Every CROS app shares the same DNA: people over transactions, narrative over metrics,
+              community over compliance. Resurrectio is one part of a larger ecosystem built on
+              Catholic social teaching and distributist philosophy — a vision where restoration
+              doesn't end at employment, but continues through ownership, housing, and civic life.
             </p>
           </div>
-          <div className="relative overflow-x-auto pb-4">
+
+          {/* Pipeline visualization */}
+          <div className="relative overflow-x-auto pb-6 mt-10">
             <div className="flex items-stretch gap-0 min-w-[800px]">
               {[
-                { phase: 'IN PRISON', tool: 'Companion Book / Fabrica', color: 'from-red-900 to-red-800' },
-                { phase: 'RELEASE', tool: 'Resurrectio', color: 'from-red-800 to-red-700' },
-                { phase: 'SKILLS', tool: 'Fabrica Guild Course', color: 'from-red-700 to-red-600' },
-                { phase: 'OWNERSHIP', tool: 'Communis Cooperative', color: 'from-red-600 to-red-500' },
-                { phase: 'HOUSING', tool: 'Propria CLT', color: 'from-red-500 to-red-400' },
-                { phase: 'COMMUNITY', tool: 'CROS', color: 'from-red-400 to-red-300' },
+                { phase: 'IN PRISON', app: 'Fabrica', color: 'from-red-900 to-red-800' },
+                { phase: 'RELEASE', app: 'Resurrectio', color: 'from-red-800 to-red-700' },
+                { phase: 'SKILLS', app: 'Fabrica', color: 'from-red-700 to-red-600' },
+                { phase: 'OWNERSHIP', app: 'Communis', color: 'from-red-600 to-red-500' },
+                { phase: 'HOUSING', app: 'Propria', color: 'from-red-500 to-red-400' },
+                { phase: 'COMMUNITY', app: 'CROS', color: 'from-red-400 to-red-300' },
               ].map((step, i, arr) => (
                 <div key={step.phase} className="flex items-stretch flex-1">
                   <div
@@ -164,7 +170,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                     <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider opacity-80 mb-1">
                       {step.phase}
                     </p>
-                    <p className="text-xs sm:text-sm font-medium">{step.tool}</p>
+                    <p className="text-xs sm:text-sm font-medium">{step.app}</p>
                   </div>
                   {i < arr.length - 1 && (
                     <div className="flex items-center px-1">
@@ -175,6 +181,97 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               ))}
             </div>
           </div>
+
+          {/* App detail cards */}
+          <div className="grid sm:grid-cols-2 gap-6 mt-10">
+            <div className="bg-white rounded-xl border border-red-100 p-6 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center">
+                  <HandHeart className="h-5 w-5 text-red-800" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg font-semibold text-red-950">Fabrica</h3>
+                  <p className="text-xs text-red-800/60 italic">Guild & Makerspace Management</p>
+                </div>
+              </div>
+              <p className="text-sm text-red-950/60 leading-relaxed mb-3">
+                A 16-week guild course that gives returning citizens craft training, identity formation,
+                and community. Fabrica also provides a companion book for men still inside — so the
+                journey of spiritual formation and pre-release preparation begins before the gates open.
+              </p>
+              <p className="text-xs text-red-800/50 italic">
+                "Learn a craft. Find your people. Build something that matters."
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl border border-red-100 p-6 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center">
+                  <Building2 className="h-5 w-5 text-red-800" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg font-semibold text-red-950">Communis</h3>
+                  <p className="text-xs text-red-800/60 italic">Worker Cooperative Management</p>
+                </div>
+              </div>
+              <p className="text-sm text-red-950/60 leading-relaxed mb-3">
+                The path from employment to ownership. Communis manages worker cooperatives — shared
+                enterprises where every member has a voice and a stake. For returning citizens, it means
+                the job you were placed in can become the business you co-own.
+              </p>
+              <p className="text-xs text-red-800/50 italic">
+                "From worker to owner. From surviving to building."
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl border border-red-100 p-6 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center">
+                  <MapPin className="h-5 w-5 text-red-800" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg font-semibold text-red-950">Propria</h3>
+                  <p className="text-xs text-red-800/60 italic">Community Land Trust Management</p>
+                </div>
+              </div>
+              <p className="text-sm text-red-950/60 leading-relaxed mb-3">
+                Permanent affordable housing through collective land stewardship. Propria manages Community
+                Land Trusts where the land is held in common and homes remain affordable in perpetuity.
+                For someone who came home to a shelter, it's the path to a place that's truly theirs.
+              </p>
+              <p className="text-xs text-red-800/50 italic">
+                "Land held in trust. Homes that stay affordable. Roots that hold."
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl border border-red-100 p-6 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center">
+                  <Users className="h-5 w-5 text-red-800" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg font-semibold text-red-950">CROS</h3>
+                  <p className="text-xs text-red-800/60 italic">The Community Relationship OS</p>
+                </div>
+              </div>
+              <p className="text-sm text-red-950/60 leading-relaxed mb-3">
+                The foundation everything runs on. CROS is a human CRM — it tracks relationships,
+                narratives, and community health rather than sales pipelines. It's how organizations
+                remember people, notice what's changing, and build a living story of impact. Every
+                app in the family shares its architecture, its calm UX, and its conviction that
+                people are not transactions.
+              </p>
+              <p className="text-xs text-red-800/50 italic">
+                "Remember people. Notice what's changing. Serve well."
+              </p>
+            </div>
+          </div>
+
+          <p className="text-center mt-10 text-sm text-red-950/50 max-w-xl mx-auto leading-relaxed">
+            No one else connects the full arc — incarceration to ownership.
+            This isn't a Resurrectio feature. It's a shared conviction across every CROS app:
+            that restoration doesn't end when someone gets a job. It ends when they belong.
+          </p>
         </div>
       </section>
 
