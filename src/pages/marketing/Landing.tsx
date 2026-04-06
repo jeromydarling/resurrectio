@@ -109,6 +109,68 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
         </div>
       </section>
 
+      {/* ── The Real Cost of Patched-Together Systems ── */}
+      <section className="py-16 sm:py-24 bg-white/60">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
+              The Human Cost of the Wrong Tools
+            </h2>
+            <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
+              Most reentry organizations aren't failing because they lack compassion.
+              They're failing because they're duct-taping together systems that were never
+              built for them — and people are paying the price.
+            </p>
+          </div>
+
+          <div className="space-y-6 mb-12">
+            {[
+              {
+                problem: 'A case manager spends 12 hours a week entering the same data into three different systems.',
+                cost: 'That\'s 12 hours not spent sitting across the table from Marcus, who just missed his second parole check-in.',
+              },
+              {
+                problem: 'A returning citizen gets discharged from transitional housing on a Friday. The referral to the next provider sits in someone\'s inbox until Monday.',
+                cost: 'By Monday, he\'s sleeping in his car. By Wednesday, he\'s missed his curfew. By Friday, he has a warrant.',
+              },
+              {
+                problem: 'A funder asks for outcome data. The program director spends two weeks pulling numbers from spreadsheets, a donor CRM, and a case management system that don\'t talk to each other.',
+                cost: 'The report is late. The numbers don\'t match. The grant renewal is uncertain. The program that could have helped 40 more people might not exist next year.',
+              },
+              {
+                problem: 'A mentor notices something wrong — a change in tone, missed meetings, a look in the eyes. But there\'s no place to log it. No system that connects that signal to the case file.',
+                cost: 'Six weeks later, everyone says "we didn\'t see it coming." But someone did. The system just didn\'t have a place for what they saw.',
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-white rounded-xl border border-red-100 p-6 sm:p-8">
+                <p className="text-sm text-red-950/80 leading-relaxed mb-3">
+                  {item.problem}
+                </p>
+                <p className="text-sm text-red-800 leading-relaxed font-medium italic">
+                  {item.cost}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-red-950/60 leading-relaxed mb-4">
+              Salesforce wasn't built for this. Bonterra Apricot wasn't built for this.
+              Spreadsheets were never built for this. These tools were built to track
+              transactions, manage donors, or satisfy compliance requirements.
+              They don't know what a journey looks like. They don't understand
+              what a warm handoff means. They have no concept of a person who is
+              more than their case number.
+            </p>
+            <p className="text-red-950 font-medium leading-relaxed">
+              Resurrectio was built for the mission — because the mission deserves
+              a system that was designed from the ground up to see people,
+              not process them.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── Solution Narrative ── */}
       <section className="py-16 sm:py-24 bg-white/60">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
