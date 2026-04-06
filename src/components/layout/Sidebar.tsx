@@ -133,6 +133,7 @@ const navGroups: NavGroup[] = [
       { label: 'Activities', href: '/activities', icon: Activity },
       { label: 'Territories', href: '/territories', icon: MapPin },
       { label: 'Templates', href: '/templates', icon: ClipboardList },
+      { label: 'Document Hub', href: '/document-hub', icon: FolderOpen },
       { label: 'Grants', href: '/grants', icon: DollarSign },
       { label: 'Projects', href: '/projects', icon: FolderOpen },
       { label: 'Campaigns', href: '/campaigns', icon: Send },

@@ -61,6 +61,7 @@ import FunderDashboard from '@/pages/FunderDashboard';
 import FamilySupport from '@/pages/FamilySupport';
 import ResumeBuilder from '@/pages/ResumeBuilder';
 import StaffWellness from '@/pages/StaffWellness';
+import DocumentHub from '@/pages/DocumentHub';
 
 // App pages — Services
 import ServiceCoordination from '@/pages/services/ServiceCoordination';
@@ -227,6 +228,7 @@ export function AppRouter() {
       <Route path="/family-support" element={<AppPage title="Family Support" subtitle="Supporting the whole family"><FamilySupport /></AppPage>} />
       <Route path="/resume-builder" element={<AppPage title="Resume Builder" subtitle="AI-powered resume creation"><ResumeBuilder /></AppPage>} />
       <Route path="/staff-wellness" element={<AppPage title="Staff Wellness" subtitle="Burnout detection & team health"><StaffWellness /></AppPage>} />
+      <Route path="/document-hub" element={<AppPage title="Document Hub" subtitle="Cloud-connected document management"><DocumentHub /></AppPage>} />
 
       {/* Settings & Help */}
       <Route path="/settings" element={<Settings />} />
