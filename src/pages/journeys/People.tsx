@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -81,10 +82,12 @@ export default function People() {
             <Users className="h-4 w-4" />
             {filtered.length} {filtered.length === 1 ? 'person' : 'people'}
           </span>
-          <Button className="bg-red-900 hover:bg-red-950">
-            <UserPlus className="mr-2 h-4 w-4" />
-            Add Person
-          </Button>
+          <Link to="/quick-add">
+            <Button className="bg-red-900 hover:bg-red-950">
+              <UserPlus className="mr-2 h-4 w-4" />
+              Add Person
+            </Button>
+          </Link>
         </div>
       </div>
 
@@ -106,7 +109,9 @@ export default function People() {
               {filtered.map((person) => (
                 <TableRow key={person.id} className="hover:bg-red-50/40">
                   <TableCell className="font-medium">
-                    {person.firstName} {person.lastName}
+                    <Link to={`/people/${person.id}`} className="text-red-900 hover:text-red-700 hover:underline">
+                      {person.firstName} {person.lastName}
+                    </Link>
                   </TableCell>
                   <TableCell>
                     <Badge className={STAGE_BADGE_CLASSES[person.stage]}>

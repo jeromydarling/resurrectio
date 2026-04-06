@@ -36,9 +36,9 @@ export default function Blog() {
             <CardContent className="pt-2">
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{post.excerpt}</p>
               <Separator className="mb-3" />
-              <button className="flex items-center gap-1.5 text-sm font-medium text-red-800 hover:text-red-950 transition-colors">
-                Read More <ArrowRight className="h-4 w-4" />
-              </button>
+              <span className="flex items-center gap-1.5 text-sm font-medium text-red-800/50 cursor-default" title="Full articles coming soon">
+                Full article coming soon <ArrowRight className="h-4 w-4" />
+              </span>
             </CardContent>
           </Card>
         ))}

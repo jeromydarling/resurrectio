@@ -20,6 +20,7 @@ import {
   Church,
   HandHeart,
   MapPin,
+  Check,
 } from 'lucide-react';
 
 const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
@@ -581,6 +582,207 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                 <org.icon className="h-5 w-5 text-red-500 flex-shrink-0" />
                 <span className="text-sm font-medium text-red-950/80">{org.name}</span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pricing ── */}
+      <section id="pricing" className="py-16 sm:py-24 bg-white/60">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
+              Simple, Transparent Pricing
+            </h2>
+            <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
+              Choose the plan that fits your ministry. Scale up anytime.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {/* Core */}
+            <Card className="border-red-100 bg-white">
+              <CardHeader className="pb-2">
+                <CardTitle className="font-serif text-xl text-red-950">Core</CardTitle>
+                <p className="text-3xl font-bold text-red-800 mt-2">
+                  $49<span className="text-base font-normal text-red-950/50">/mo per ministry</span>
+                </p>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <ul className="space-y-3 mb-6">
+                  {[
+                    'People & Journey Tracking',
+                    'Case Notes & Milestones',
+                    'Service Coordination (Housing, Employment, Compliance)',
+                    'Mentor Management',
+                    'Events & Calendar',
+                    'Basic Reports',
+                    'CSV Import',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-red-950/70">
+                      <Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/signup">
+                  <Button className="w-full rounded-full border-red-300 text-red-900 hover:bg-red-50" variant="outline">
+                    Get Started
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Insight — recommended */}
+            <Card className="border-2 border-red-800 bg-white relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <Badge className="bg-red-800 text-white text-xs px-3 py-0.5">Most Popular</Badge>
+              </div>
+              <CardHeader className="pb-2">
+                <CardTitle className="font-serif text-xl text-red-950">Insight</CardTitle>
+                <p className="text-3xl font-bold text-red-800 mt-2">
+                  $99<span className="text-base font-normal text-red-950/50">/mo per ministry</span>
+                </p>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <ul className="space-y-3 mb-6">
+                  {[
+                    'Everything in Core',
+                    'NRI Signal Detection (19 signal types)',
+                    'Drift Risk & Transformation Momentum alerts',
+                    'Impact Reporting with narrative outcomes',
+                    'Testimonium storytelling',
+                    '5 platform integrations',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-red-950/70">
+                      <Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/signup">
+                  <Button className="w-full rounded-full bg-red-800 text-white hover:bg-red-900">
+                    Get Started
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Story */}
+            <Card className="border-red-100 bg-white">
+              <CardHeader className="pb-2">
+                <CardTitle className="font-serif text-xl text-red-950">Story</CardTitle>
+                <p className="text-3xl font-bold text-red-800 mt-2">
+                  $149<span className="text-base font-normal text-red-950/50">/mo per ministry</span>
+                </p>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <ul className="space-y-3 mb-6">
+                  {[
+                    'Everything in Insight',
+                    'Presentation Mode for funder meetings',
+                    'Garden Pulse ecosystem visualization',
+                    'Unlimited integrations (20+ platforms)',
+                    'Communio cross-app bridge',
+                    'Impulsus impact journal',
+                    'Priority support',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-red-950/70">
+                      <Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/signup">
+                  <Button className="w-full rounded-full border-red-300 text-red-900 hover:bg-red-50" variant="outline">
+                    Get Started
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+          <p className="text-center mt-8 text-sm text-red-950/50">
+            All plans include Supabase backend, unlimited returning citizens, and 30-day free trial.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Testimonials ── */}
+      <section className="py-16 sm:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
+              Trusted by Ministry Leaders
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              {
+                quote: 'Before Resurrectio, we tracked everything in spreadsheets. Now our case managers spend time with people instead of fighting with data.',
+                name: 'Maria Santos',
+                role: 'Program Director, Hope House Reentry Services',
+              },
+              {
+                quote: 'The NRI signals caught a drift risk we would have missed. That early warning probably kept David from going back inside.',
+                name: 'Fr. James Okonkwo',
+                role: 'Chaplain, Kairos Prison Ministry - Illinois',
+              },
+              {
+                quote: "What sold us was the full pipeline. No other tool connects prison to ownership. That's not a feature \u2014 it's a vision.",
+                name: 'Deacon Robert Chen',
+                role: 'Executive Director, St. Dismas Ministry',
+              },
+            ].map((t) => (
+              <Card key={t.name} className="border-red-100 bg-white border-l-4 border-l-red-300">
+                <CardContent className="pt-6 pb-6">
+                  <p className="text-sm text-red-950/70 leading-relaxed italic mb-4">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <p className="font-semibold text-red-950 text-sm">{t.name}</p>
+                  <p className="text-xs text-red-950/50">{t.role}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section id="faq" className="py-16 sm:py-24 bg-white/60">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {[
+              {
+                q: 'What makes Resurrectio different from Bonterra Apricot or CorrectTech?',
+                a: "Those tools treat people as cases in a compliance pipeline. Resurrectio treats them as people on journeys. Our NRI intelligence layer surfaces patterns and signals \u2014 it doesn't just store data. And no other tool connects the full arc from incarceration through cooperative ownership and permanent housing.",
+              },
+              {
+                q: 'Is our data secure?',
+                a: "Resurrectio runs on Supabase (PostgreSQL) with row-level security, encrypted at rest and in transit. We're SOC 2 Type II aligned and follow CJIS security policy guidelines. Your data is tenant-scoped \u2014 no other organization can access it.",
+              },
+              {
+                q: 'Can we keep using our existing CRM alongside Resurrectio?',
+                a: 'Yes. Our Relatio integration layer supports 20+ platforms including Salesforce, HubSpot, and Blackbaud. You can run Resurrectio as a companion that reads from your existing system, or migrate fully.',
+              },
+              {
+                q: 'How long does setup take?',
+                a: 'Most ministries are up and running in under a week. CSV import takes minutes. API integrations typically connect in 5-20 minutes with our guided setup wizard.',
+              },
+              {
+                q: 'Do you support faith-based organizations specifically?',
+                a: "Resurrectio was designed for the reentry ministry community. Our archetype onboarding, vocabulary, and signal types are tuned for the way prison ministries actually work \u2014 mentoring relationships, spiritual formation, family reunification, and restoration journeys.",
+              },
+            ].map((item) => (
+              <Card key={item.q} className="border-red-100 bg-white">
+                <CardContent className="pt-6 pb-6">
+                  <h3 className="font-semibold text-red-950 mb-2">&ldquo;{item.q}&rdquo;</h3>
+                  <p className="text-sm text-red-950/60 leading-relaxed">{item.a}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>

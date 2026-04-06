@@ -94,6 +94,15 @@ export const signalTypes = {
   employment_milestone: { label: 'Employment Milestone', color: '#059669', description: 'Job tenure, promotion, wage increase' },
   communis_ready: { label: 'Communis Ready', color: '#b91c1c', description: 'Full pipeline completion approaching (cooperative membership)' },
   pre_release_intake: { label: 'Pre-Release Intake', color: '#991b1b', description: 'Release date approaching, intake process needed' },
+  substance_relapse_risk: { label: 'Substance Relapse Risk', color: '#ef4444', description: 'Missed recovery meetings, behavioral pattern changes, or self-reported triggers detected' },
+  mental_health_crisis: { label: 'Mental Health Crisis', color: '#ef4444', description: 'Withdrawal from activities, missed appointments, or escalating distress indicators' },
+  parole_violation_risk: { label: 'Parole Violation Risk', color: '#ef4444', description: 'Multiple missed check-ins, failed drug tests, or curfew violations approaching threshold' },
+  housing_eviction_warning: { label: 'Housing Eviction Warning', color: '#f59e0b', description: 'Rent arrears, landlord complaints, or lease violations flagged by housing provider' },
+  employment_termination_risk: { label: 'Employment Termination Risk', color: '#f59e0b', description: 'Attendance issues, employer concerns, or performance warnings reported' },
+  program_dropout_risk: { label: 'Program Dropout Risk', color: '#f59e0b', description: 'Declining attendance, missed assignments, or disengagement from cohort activities' },
+  benefit_enrollment_window: { label: 'Benefit Enrollment Window', color: '#059669', description: 'Time-sensitive eligibility for SNAP, Medicaid, SSI, or housing voucher approaching' },
+  mentor_burnout_risk: { label: 'Mentor Burnout Risk', color: '#f59e0b', description: 'Mentor logging fewer hours, canceling meetings, or requesting reassignment signals' },
+  reincarceration_risk: { label: 'Re-Incarceration Risk', color: '#ef4444', description: 'Composite score from multiple risk factors indicates elevated probability of return to custody' },
 } as const;
 
 export type ArchetypeKey = keyof typeof archetypes;

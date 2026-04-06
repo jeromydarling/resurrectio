@@ -9,6 +9,7 @@ const navLinks = [
   { label: 'Features', to: '/#features' },
   { label: 'Mission', to: '/#mission' },
   { label: 'Built For', to: '/#built-for' },
+  { label: 'Pricing', to: '/#pricing' },
 ];
 
 const footerColumns = [

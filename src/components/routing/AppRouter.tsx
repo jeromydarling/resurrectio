@@ -19,6 +19,35 @@ import CaseNotes from '@/pages/journeys/CaseNotes';
 import Milestones from '@/pages/journeys/Milestones';
 import Family from '@/pages/journeys/Family';
 
+// CROS detail/find pages (existing infrastructure)
+import PersonDetail from '@/pages/PersonDetail';
+import FindPeople from '@/pages/FindPeople';
+import EventDetail from '@/pages/EventDetail';
+import FindEvents from '@/pages/FindEvents';
+import GrantDetail from '@/pages/GrantDetail';
+import FindGrants from '@/pages/FindGrants';
+import VolunteerDetail from '@/pages/VolunteerDetail';
+import VolunteerHoursInbox from '@/pages/VolunteerHoursInbox';
+import ProjectDetail from '@/pages/ProjectDetail';
+import ProvisionDetail from '@/pages/ProvisionDetail';
+import OpportunityDetail from '@/pages/OpportunityDetail';
+import QuickAdd from '@/pages/QuickAdd';
+import ImportCenter from '@/pages/ImportCenter';
+
+// CROS feature pages (existing infrastructure)
+import Grants from '@/pages/Grants';
+import Volunteers from '@/pages/Volunteers';
+import Projects from '@/pages/Projects';
+import Provisions from '@/pages/Provisions';
+import Opportunities from '@/pages/Opportunities';
+import Pipeline from '@/pages/Pipeline';
+import Impulsus from '@/pages/Impulsus';
+import Testimonium from '@/pages/Testimonium';
+import TestimoniumReport from '@/pages/TestimoniumReport';
+import ActivitiesPage from '@/pages/Activities';
+import CalendarPage from '@/pages/Calendar';
+import Campaigns from '@/pages/outreach/Campaigns';
+
 // App pages — Services
 import ServiceCoordination from '@/pages/services/ServiceCoordination';
 import Housing from '@/pages/services/Housing';
@@ -126,6 +155,33 @@ export function AppRouter() {
       <Route path="/reports" element={<AppPage title="Reports" subtitle="Impact reporting"><Reports /></AppPage>} />
       <Route path="/presentation" element={<AppPage title="Presentation Mode" subtitle="For funder meetings"><PresentationMode /></AppPage>} />
       <Route path="/garden-pulse" element={<AppPage title="Garden Pulse" subtitle="Ecosystem health"><GardenPulse /></AppPage>} />
+
+      {/* Detail views (CROS infrastructure) */}
+      <Route path="/people/:id" element={<AppPage title="Person Detail" subtitle="Journey profile"><PersonDetail /></AppPage>} />
+      <Route path="/people/find" element={<AppPage title="Find People" subtitle="Search returning citizens"><FindPeople /></AppPage>} />
+      <Route path="/events/:id" element={<AppPage title="Event Detail" subtitle="Event information"><EventDetail /></AppPage>} />
+      <Route path="/events/find" element={<AppPage title="Find Events" subtitle="Search events"><FindEvents /></AppPage>} />
+      <Route path="/grants" element={<AppPage title="Grants" subtitle="Funding opportunities"><Grants /></AppPage>} />
+      <Route path="/grants/:id" element={<AppPage title="Grant Detail" subtitle="Grant information"><GrantDetail /></AppPage>} />
+      <Route path="/grants/find" element={<AppPage title="Find Grants" subtitle="Search grants"><FindGrants /></AppPage>} />
+      <Route path="/volunteers" element={<AppPage title="Volunteers" subtitle="Volunteer management"><Volunteers /></AppPage>} />
+      <Route path="/volunteers/:id" element={<AppPage title="Volunteer Detail" subtitle="Volunteer profile"><VolunteerDetail /></AppPage>} />
+      <Route path="/volunteer-hours" element={<AppPage title="Volunteer Hours" subtitle="Hours tracking"><VolunteerHoursInbox /></AppPage>} />
+      <Route path="/projects" element={<AppPage title="Projects" subtitle="Program cohorts"><Projects /></AppPage>} />
+      <Route path="/projects/:id" element={<AppPage title="Project Detail" subtitle="Program detail"><ProjectDetail /></AppPage>} />
+      <Route path="/provisions" element={<AppPage title="Provisions" subtitle="Resource distribution"><Provisions /></AppPage>} />
+      <Route path="/provisions/:id" element={<AppPage title="Provision Detail" subtitle="Provision tracking"><ProvisionDetail /></AppPage>} />
+      <Route path="/opportunities" element={<AppPage title="Opportunities" subtitle="Partner pipeline"><Opportunities /></AppPage>} />
+      <Route path="/opportunities/:id" element={<AppPage title="Opportunity Detail" subtitle="Partnership detail"><OpportunityDetail /></AppPage>} />
+      <Route path="/pipeline" element={<AppPage title="Pipeline" subtitle="Journey chapters"><Pipeline /></AppPage>} />
+      <Route path="/quick-add" element={<AppPage title="Quick Add" subtitle="Add a person or note"><QuickAdd /></AppPage>} />
+      <Route path="/import" element={<AppPage title="Import Center" subtitle="Data migration"><ImportCenter /></AppPage>} />
+      <Route path="/impulsus" element={<AppPage title="Impact Journal" subtitle="Private reflections"><Impulsus /></AppPage>} />
+      <Route path="/testimonium" element={<AppPage title="Testimonium" subtitle="Narrative storytelling"><Testimonium /></AppPage>} />
+      <Route path="/testimonium/report" element={<AppPage title="Testimonium Report" subtitle="Story impact"><TestimoniumReport /></AppPage>} />
+      <Route path="/all-activities" element={<AppPage title="All Activities" subtitle="Complete timeline"><ActivitiesPage /></AppPage>} />
+      <Route path="/calendar" element={<AppPage title="Calendar" subtitle="Schedule view"><CalendarPage /></AppPage>} />
+      <Route path="/campaigns" element={<AppPage title="Campaigns" subtitle="Outreach & fundraising"><Campaigns /></AppPage>} />
 
       {/* Settings & Help */}
       <Route path="/settings" element={<Settings />} />

@@ -34,6 +34,14 @@ import {
   HelpCircle,
   ChevronDown,
   X,
+  DollarSign,
+  Package,
+  Plug,
+  PenSquare,
+  CalendarDays,
+  Send,
+  PlusCircle,
+  Upload,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -77,6 +85,7 @@ const navGroups: NavGroup[] = [
       { label: 'Employment', href: '/employment', icon: Building2 },
       { label: 'Compliance', href: '/compliance', icon: Scale },
       { label: 'Programs', href: '/programs', icon: GraduationCap },
+      { label: 'Provisions', href: '/provisions', icon: Package },
     ],
   },
   {
@@ -85,7 +94,9 @@ const navGroups: NavGroup[] = [
     items: [
       { label: 'Mentors', href: '/mentors', icon: HandHeart },
       { label: 'Stories', href: '/stories', icon: BookOpen },
+      { label: 'Volunteers', href: '/volunteers', icon: Users },
       { label: 'Events', href: '/events', icon: Calendar },
+      { label: 'Calendar', href: '/calendar', icon: CalendarDays },
       { label: 'Blog', href: '/blog', icon: Newspaper },
       { label: 'Knowledge Base', href: '/knowledge', icon: Library },
       { label: 'Communio', href: '/communio', icon: Globe },
@@ -101,6 +112,10 @@ const navGroups: NavGroup[] = [
       { label: 'Activities', href: '/activities', icon: Activity },
       { label: 'Territories', href: '/territories', icon: MapPin },
       { label: 'Templates', href: '/templates', icon: ClipboardList },
+      { label: 'Grants', href: '/grants', icon: DollarSign },
+      { label: 'Projects', href: '/projects', icon: FolderOpen },
+      { label: 'Campaigns', href: '/campaigns', icon: Send },
+      { label: 'Import Center', href: '/import', icon: Upload },
     ],
   },
   {
@@ -111,11 +126,14 @@ const navGroups: NavGroup[] = [
       { label: 'Reports', href: '/reports', icon: BarChart3 },
       { label: 'Presentation Mode', href: '/presentation', icon: Presentation },
       { label: 'Garden Pulse', href: '/garden-pulse', icon: Sprout },
+      { label: 'Testimonium', href: '/testimonium', icon: BookOpen },
+      { label: 'Impact Journal', href: '/impulsus', icon: PenSquare },
     ],
   },
 ];
 
 const bottomItems: NavItem[] = [
+  { label: 'Quick Add', href: '/quick-add', icon: PlusCircle },
   { label: 'Settings', href: '/settings', icon: Settings },
   { label: 'Help', href: '/help', icon: HelpCircle },
 ];

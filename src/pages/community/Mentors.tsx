@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { mockMentors } from '@/data/mockData';
 import { Search, UserPlus, Clock, Users, Star } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const trainingStatusStyles: Record<string, string> = {
   active: 'bg-emerald-100 text-emerald-800',
@@ -20,6 +22,7 @@ const trainingStatusLabels: Record<string, string> = {
 
 export default function Mentors() {
   const [search, setSearch] = useState('');
+  const { toast } = useToast();
 
   const filtered = mockMentors.filter((m) => {
     const term = search.toLowerCase();
@@ -53,7 +56,9 @@ export default function Mentors() {
             <CardHeader className="pb-3">
               <div className="flex items-start justify-between">
                 <CardTitle className="font-serif text-red-950 text-lg">
-                  {mentor.firstName} {mentor.lastName}
+                  <Link to={`/volunteers/${mentor.id}`} className="hover:text-red-700 hover:underline">
+                    {mentor.firstName} {mentor.lastName}
+                  </Link>
                 </CardTitle>
                 <Badge className={trainingStatusStyles[mentor.trainingStatus]}>
                   {trainingStatusLabels[mentor.trainingStatus]}
@@ -79,7 +84,16 @@ export default function Mentors() {
               <p className="text-xs text-muted-foreground">
                 Joined {new Date(mentor.joinDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
               </p>
-              <Button className="w-full bg-red-800 hover:bg-red-900 text-white mt-2" size="sm">
+              <Button
+                className="w-full bg-red-800 hover:bg-red-900 text-white mt-2"
+                size="sm"
+                onClick={() =>
+                  toast({
+                    title: 'Coming Soon',
+                    description: 'Mentor matching coming soon',
+                  })
+                }
+              >
                 <UserPlus className="h-4 w-4 mr-2" />
                 Match Mentor
               </Button>

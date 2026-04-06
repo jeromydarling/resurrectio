@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { mockEvents } from '@/data/mockData';
 import { Calendar, Clock, MapPin, Users, CheckCircle } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const eventTypeStyles: Record<string, string> = {
   mentoring_circle: 'bg-red-200 text-red-900',
@@ -28,6 +30,8 @@ const sortedEvents = [...mockEvents].sort(
 );
 
 export default function Events() {
+  const { toast } = useToast();
+
   return (
     <div className="space-y-6">
       <div>
@@ -42,7 +46,7 @@ export default function Events() {
             <Card key={event.id} className="bg-white/80">
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="font-serif text-red-950 text-lg">{event.name}</CardTitle>
+                  <CardTitle className="font-serif text-red-950 text-lg"><Link to={`/events/${event.id}`} className="hover:text-red-700 hover:underline">{event.name}</Link></CardTitle>
                   <Badge className={eventTypeStyles[event.type]}>
                     {eventTypeLabels[event.type]}
                   </Badge>
