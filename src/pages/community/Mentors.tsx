@@ -100,7 +100,10 @@ export default function Mentors() {
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-center text-muted-foreground py-12">No mentors found matching your search.</p>
+        <div className="py-12 text-center text-muted-foreground">
+          <Users className="mx-auto mb-2 h-8 w-8 text-muted-foreground/40" />
+          No mentors found matching your search.
+        </div>
       )}
     </div>
   );
