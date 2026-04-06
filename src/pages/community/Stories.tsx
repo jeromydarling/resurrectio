@@ -11,10 +11,7 @@ export default function Stories() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-serif font-bold text-red-950">Transformation Stories</h1>
-        <p className="text-muted-foreground mt-1">Testimonies of hope, resilience, and restoration</p>
-      </div>
+      <p className="text-muted-foreground">Testimonies of hope, resilience, and restoration</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {mockStories.map((story) => {

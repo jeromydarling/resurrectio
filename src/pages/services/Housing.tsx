@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { mockHousingRecords } from '@/data/mockData';
 import type { HousingRecord } from '@/types/resurrectio';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -54,15 +55,10 @@ export default function Housing() {
   }, []);
 
   return (
-    <div className="space-y-8 p-6">
-      <div>
-        <h1 className="font-serif text-3xl font-bold text-red-950">
-          Housing Placements
-        </h1>
-        <p className="mt-1 text-red-800/70">
-          Track housing stability and placements across all participants
-        </p>
-      </div>
+    <div className="space-y-8">
+      <p className="text-muted-foreground">
+        Track housing stability and placements across all participants
+      </p>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -133,8 +129,10 @@ export default function Housing() {
             <TableBody>
               {mockHousingRecords.map((record) => (
                 <TableRow key={record.id} className="border-red-50 hover:bg-red-50/40">
-                  <TableCell className="font-medium text-red-950">
-                    {record.personName}
+                  <TableCell className="font-medium">
+                    <Link to={`/people/${record.personId}`} className="text-red-900 hover:text-red-700 hover:underline">
+                      {record.personName}
+                    </Link>
                   </TableCell>
                   <TableCell>{typeBadge(record.type)}</TableCell>
                   <TableCell className="text-red-800">{record.provider}</TableCell>

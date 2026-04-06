@@ -34,10 +34,7 @@ export default function Events() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-serif font-bold text-red-950">Community Events</h1>
-        <p className="text-muted-foreground mt-1">Gatherings that strengthen and sustain our community</p>
-      </div>
+      <p className="text-muted-foreground">Gatherings that strengthen and sustain our community</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {sortedEvents.map((event) => {

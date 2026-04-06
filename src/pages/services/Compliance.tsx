@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { mockComplianceItems } from '@/data/mockData';
 import type { ComplianceItem } from '@/types/resurrectio';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -65,15 +66,10 @@ export default function Compliance() {
   }, []);
 
   return (
-    <div className="space-y-8 p-6">
-      <div>
-        <h1 className="font-serif text-3xl font-bold text-red-950">
-          Compliance Tracking
-        </h1>
-        <p className="mt-1 text-red-800/70">
-          Court dates, parole requirements, and mandated program compliance
-        </p>
-      </div>
+    <div className="space-y-8">
+      <p className="text-muted-foreground">
+        Court dates, parole requirements, and mandated program compliance
+      </p>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -144,8 +140,10 @@ export default function Compliance() {
                       : 'hover:bg-red-50/40'
                   }`}
                 >
-                  <TableCell className="font-medium text-red-950">
-                    {item.personName}
+                  <TableCell className="font-medium">
+                    <Link to={`/people/${item.personId}`} className="text-red-900 hover:text-red-700 hover:underline">
+                      {item.personName}
+                    </Link>
                   </TableCell>
                   <TableCell>
                     <Badge variant="outline" className="border-red-300 text-red-800 text-xs">

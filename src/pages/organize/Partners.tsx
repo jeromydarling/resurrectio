@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table';
-import { Search, Building2, Home, Scale, Heart } from 'lucide-react';
+import { Search, Building2, Home, Scale, Heart, Inbox } from 'lucide-react';
 import { mockPartners } from '@/data/mockData';
 
 const typeColors: Record<string, string> = {
@@ -70,6 +70,14 @@ export default function Partners() {
                 <TableCell className="text-sm text-muted-foreground">{p.lastActivity}</TableCell>
               </TableRow>
             ))}
+            {filtered.length === 0 && (
+              <TableRow>
+                <TableCell colSpan={6} className="py-12 text-center text-muted-foreground">
+                  <Inbox className="mx-auto mb-2 h-8 w-8 text-muted-foreground/40" />
+                  No partners match your search.
+                </TableCell>
+              </TableRow>
+            )}
           </TableBody>
         </Table>
       </Card>

@@ -328,7 +328,7 @@ const categoryColorMap: Record<string, string> = {
   benefits: 'bg-green-100 text-green-800',
   family: 'bg-pink-100 text-pink-800',
   parole_probation: 'bg-slate-100 text-slate-800',
-  substance_recovery: 'bg-purple-100 text-purple-800',
+  substance_recovery: 'bg-red-100 text-red-800',
   mental_health: 'bg-indigo-100 text-indigo-800',
   education: 'bg-teal-100 text-teal-800',
   financial_literacy: 'bg-yellow-100 text-yellow-800',
@@ -367,15 +367,10 @@ export default function KnowledgeBase() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-serif font-bold text-red-950">
-          Knowledge Base
-        </h1>
-        <p className="text-muted-foreground mt-1">
-          A comprehensive resource library for case managers and returning
-          citizens — practical guidance for every step of the reentry journey.
-        </p>
-      </div>
+      <p className="text-muted-foreground">
+        A comprehensive resource library for case managers and returning
+        citizens -- practical guidance for every step of the reentry journey.
+      </p>
 
       {/* Search */}
       <div className="relative">

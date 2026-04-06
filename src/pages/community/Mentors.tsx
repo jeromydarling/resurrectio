@@ -35,10 +35,7 @@ export default function Mentors() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-serif font-bold text-red-950">Mentor Directory</h1>
-        <p className="text-muted-foreground mt-1">Community mentors walking alongside returning citizens</p>
-      </div>
+      <p className="text-muted-foreground">Community mentors walking alongside returning citizens</p>
 
       <div className="relative max-w-md">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />

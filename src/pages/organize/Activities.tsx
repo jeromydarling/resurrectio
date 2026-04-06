@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Phone, MapPin, Mail, Users, ArrowRight, FileText, Star, MessageSquare } from 'lucide-react';
+import { Phone, MapPin, Mail, Users, ArrowRight, FileText, Star, MessageSquare, Inbox } from 'lucide-react';
 import { mockActivities } from '@/data/mockData';
 
 const typeIcons: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -25,7 +25,7 @@ export default function Activities() {
     <div className="space-y-6">
       <div className="flex gap-2 flex-wrap">
         {types.map(t => (
-          <Button key={t} variant={typeFilter === t ? 'default' : 'outline'} size="sm" onClick={() => setTypeFilter(t)} className="capitalize">{t}</Button>
+          <Button key={t} variant={typeFilter === t ? 'default' : 'outline'} size="sm" onClick={() => setTypeFilter(t)} className={`capitalize ${typeFilter === t ? 'bg-red-800 hover:bg-red-900 text-white' : 'border-red-300 text-red-900'}`}>{t}</Button>
         ))}
       </div>
       <div className="space-y-3">
@@ -51,6 +51,12 @@ export default function Activities() {
             </Card>
           );
         })}
+        {filtered.length === 0 && (
+          <div className="py-12 text-center text-muted-foreground">
+            <Inbox className="mx-auto mb-2 h-8 w-8 text-muted-foreground/40" />
+            No activities match your filter.
+          </div>
+        )}
       </div>
     </div>
   );

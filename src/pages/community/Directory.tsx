@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Search, MapPin, Phone, Mail } from 'lucide-react';
+import { Search, MapPin, Phone, Mail, Building2 } from 'lucide-react';
 import { mockPartners } from '@/data/mockData';
 
 const typeColors: Record<string, string> = {
@@ -32,7 +32,7 @@ export default function Directory() {
         </div>
         <div className="flex gap-2 flex-wrap">
           {types.map(t => (
-            <Button key={t} variant={typeFilter === t ? 'default' : 'outline'} size="sm" onClick={() => setTypeFilter(t)} className="capitalize">{t}</Button>
+            <Button key={t} variant={typeFilter === t ? 'default' : 'outline'} size="sm" onClick={() => setTypeFilter(t)} className={`capitalize ${typeFilter === t ? 'bg-red-800 hover:bg-red-900 text-white' : 'border-red-300 text-red-900'}`}>{t}</Button>
           ))}
         </div>
       </div>
@@ -53,6 +53,12 @@ export default function Directory() {
             </CardContent>
           </Card>
         ))}
+        {filtered.length === 0 && (
+          <div className="col-span-full py-12 text-center text-muted-foreground">
+            <Building2 className="mx-auto mb-2 h-8 w-8 text-muted-foreground/40" />
+            No organizations match your search.
+          </div>
+        )}
       </div>
     </div>
   );

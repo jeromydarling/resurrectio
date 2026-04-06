@@ -42,10 +42,7 @@ const pipelineTotal = pipelineStages.reduce((sum, s) => sum + stats.pipeline[s],
 export default function CommunityDashboard() {
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-serif font-bold text-red-950">Community Dashboard</h1>
-        <p className="text-muted-foreground mt-1">Overview of the Resurrectio reentry community</p>
-      </div>
+      <p className="text-muted-foreground">Overview of the Resurrectio reentry community</p>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

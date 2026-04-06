@@ -27,13 +27,19 @@ export default function NriSignals() {
     <div className="space-y-6">
       <div className="flex gap-2 flex-wrap">
         {types.map(t => (
-          <Button key={t} variant={typeFilter === t ? 'default' : 'outline'} size="sm" onClick={() => setTypeFilter(t)} className="capitalize text-xs">
+          <Button key={t} variant={typeFilter === t ? 'default' : 'outline'} size="sm" onClick={() => setTypeFilter(t)} className={`capitalize text-xs ${typeFilter === t ? 'bg-red-800 hover:bg-red-900 text-white' : 'border-red-300 text-red-900'}`}>
             {t === 'all' ? 'All Signals' : (signalTypes as any)[t]?.label || t}
           </Button>
         ))}
       </div>
 
       <div className="space-y-3">
+        {filtered.length === 0 && (
+          <div className="py-12 text-center text-muted-foreground">
+            <Sparkles className="mx-auto mb-2 h-8 w-8 text-muted-foreground/40" />
+            No signals match your filter.
+          </div>
+        )}
         {filtered.map(signal => {
           const Icon = signalIcons[signal.type] || Sparkles;
           const config = (signalTypes as any)[signal.type];

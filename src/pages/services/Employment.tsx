@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { mockEmploymentRecords } from '@/data/mockData';
 import type { EmploymentRecord } from '@/types/resurrectio';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -49,15 +50,10 @@ export default function Employment() {
   }, []);
 
   return (
-    <div className="space-y-8 p-6">
-      <div>
-        <h1 className="font-serif text-3xl font-bold text-red-950">
-          Employment Tracking
-        </h1>
-        <p className="mt-1 text-red-800/70">
-          Monitor job placements, wages, and retention across participants
-        </p>
-      </div>
+    <div className="space-y-8">
+      <p className="text-muted-foreground">
+        Monitor job placements, wages, and retention across participants
+      </p>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -117,8 +113,10 @@ export default function Employment() {
             <TableBody>
               {mockEmploymentRecords.map((record) => (
                 <TableRow key={record.id} className="border-red-50 hover:bg-red-50/40">
-                  <TableCell className="font-medium text-red-950">
-                    {record.personName}
+                  <TableCell className="font-medium">
+                    <Link to={`/people/${record.personId}`} className="text-red-900 hover:text-red-700 hover:underline">
+                      {record.personName}
+                    </Link>
                   </TableCell>
                   <TableCell className="text-red-800">{record.employer}</TableCell>
                   <TableCell className="text-red-800">{record.role}</TableCell>

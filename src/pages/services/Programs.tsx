@@ -31,15 +31,10 @@ function typeBadge(type: Program['type']) {
 
 export default function Programs() {
   return (
-    <div className="space-y-8 p-6">
-      <div>
-        <h1 className="font-serif text-3xl font-bold text-red-950">
-          Programs
-        </h1>
-        <p className="mt-1 text-red-800/70">
-          Active program cohorts, completion rates, and upcoming sessions
-        </p>
-      </div>
+    <div className="space-y-8">
+      <p className="text-muted-foreground">
+        Active program cohorts, completion rates, and upcoming sessions
+      </p>
 
       {/* Summary Row */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">

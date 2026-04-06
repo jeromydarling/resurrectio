@@ -9,10 +9,7 @@ export default function Blog() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-serif font-bold text-red-950">Community Blog</h1>
-        <p className="text-muted-foreground mt-1">Reflections, insights, and updates from our community</p>
-      </div>
+      <p className="text-muted-foreground">Reflections, insights, and updates from our community</p>
 
       <div className="space-y-5">
         {mockBlogPosts.map((post) => {
