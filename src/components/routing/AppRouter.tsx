@@ -49,6 +49,16 @@ import ActivitiesPage from '@/pages/Activities';
 import CalendarPage from '@/pages/Calendar';
 import Campaigns from '@/pages/outreach/Campaigns';
 
+// New Resurrectio-specific pages
+import DocumentRecovery from '@/pages/DocumentRecovery';
+import TextCommunication from '@/pages/TextCommunication';
+import TransportCoordination from '@/pages/TransportCoordination';
+import EmployerNetwork from '@/pages/EmployerNetwork';
+import EmergencyFund from '@/pages/EmergencyFund';
+import PreRelease from '@/pages/PreRelease';
+import CrisisProtocol from '@/pages/CrisisProtocol';
+import FunderDashboard from '@/pages/FunderDashboard';
+
 // App pages — Services
 import ServiceCoordination from '@/pages/services/ServiceCoordination';
 import Housing from '@/pages/services/Housing';
@@ -201,6 +211,16 @@ export function AppRouter() {
       <Route path="/all-activities" element={<AppPage title="All Activities" subtitle="Complete timeline"><ActivitiesPage /></AppPage>} />
       <Route path="/calendar" element={<AppPage title="Calendar" subtitle="Schedule view"><CalendarPage /></AppPage>} />
       <Route path="/campaigns" element={<AppPage title="Campaigns" subtitle="Outreach & fundraising"><Campaigns /></AppPage>} />
+
+      {/* Resurrectio-specific features */}
+      <Route path="/documents" element={<AppPage title="Document Recovery" subtitle="ID, SSN, birth certificate tracking"><DocumentRecovery /></AppPage>} />
+      <Route path="/text" element={<AppPage title="Text Communication" subtitle="SMS outreach & reminders"><TextCommunication /></AppPage>} />
+      <Route path="/transport" element={<AppPage title="Transportation" subtitle="Ride coordination"><TransportCoordination /></AppPage>} />
+      <Route path="/employers" element={<AppPage title="Employer Network" subtitle="Second chance employers & WOTC"><EmployerNetwork /></AppPage>} />
+      <Route path="/emergency-fund" element={<AppPage title="Emergency Fund" subtitle="Benevolence fund management"><EmergencyFund /></AppPage>} />
+      <Route path="/pre-release" element={<AppPage title="Pre-Release" subtitle="Facility coordination"><PreRelease /></AppPage>} />
+      <Route path="/crisis" element={<AppPage title="Crisis Protocol" subtitle="Escalation & response"><CrisisProtocol /></AppPage>} />
+      <Route path="/funder-dashboard" element={<AppPage title="Impact Dashboard" subtitle="Aggregate metrics for funders"><FunderDashboard /></AppPage>} />
 
       {/* Settings & Help */}
       <Route path="/settings" element={<Settings />} />

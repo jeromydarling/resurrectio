@@ -42,6 +42,13 @@ import {
   Send,
   PlusCircle,
   Upload,
+  FileCheck,
+  MessageSquare,
+  Car,
+  Wallet,
+  Building,
+  AlertTriangle,
+  PieChart,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -74,6 +81,8 @@ const navGroups: NavGroup[] = [
       { label: 'Case Notes', href: '/case-notes', icon: FileText },
       { label: 'Milestones', href: '/milestones', icon: Award },
       { label: 'Family', href: '/family', icon: UserPlus },
+      { label: 'Documents', href: '/documents', icon: FileCheck },
+      { label: 'Pre-Release', href: '/pre-release', icon: Building },
       { label: 'New Intake', href: '/intake', icon: ClipboardList },
     ],
   },
@@ -88,6 +97,8 @@ const navGroups: NavGroup[] = [
       { label: 'Parole Scheduler', href: '/parole-scheduler', icon: CalendarDays },
       { label: 'Programs', href: '/programs', icon: GraduationCap },
       { label: 'Provisions', href: '/provisions', icon: Package },
+      { label: 'Transportation', href: '/transport', icon: Car },
+      { label: 'Emergency Fund', href: '/emergency-fund', icon: Wallet },
     ],
   },
   {
@@ -96,6 +107,8 @@ const navGroups: NavGroup[] = [
     items: [
       { label: 'Mentors', href: '/mentors', icon: HandHeart },
       { label: 'Mentor Matching', href: '/mentor-matching', icon: Users },
+      { label: 'Employer Network', href: '/employers', icon: Building2 },
+      { label: 'Text Communication', href: '/text', icon: MessageSquare },
       { label: 'Stories', href: '/stories', icon: BookOpen },
       { label: 'Volunteers', href: '/volunteers', icon: Users },
       { label: 'Events', href: '/events', icon: Calendar },
@@ -126,7 +139,9 @@ const navGroups: NavGroup[] = [
     icon: Brain,
     items: [
       { label: 'NRI Signals', href: '/signals', icon: Sparkles },
+      { label: 'Crisis Protocols', href: '/crisis', icon: AlertTriangle },
       { label: 'Reports', href: '/reports', icon: BarChart3 },
+      { label: 'Funder Dashboard', href: '/funder-dashboard', icon: PieChart },
       { label: 'Presentation Mode', href: '/presentation', icon: Presentation },
       { label: 'Garden Pulse', href: '/garden-pulse', icon: Sprout },
       { label: 'Testimonium', href: '/testimonium', icon: BookOpen },
