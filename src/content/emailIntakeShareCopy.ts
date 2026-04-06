@@ -7,7 +7,7 @@
  */
 
 export function getIntakeAddress(tenantSlug: string): string {
-  return `intake+${tenantSlug}@thecros.app`;
+  return `intake+${tenantSlug}@resurrectio.app`;
 }
 
 export function getEmailIntakeCopy(tenantSlug: string) {

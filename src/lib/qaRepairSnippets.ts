@@ -69,7 +69,7 @@ const FIX_TEMPLATES: Record<string, (step: QAStepFailure) => string[]> = {
     'Add missing route guard if the page was recently added',
   ],
   auth_failure: (step) => [
-    'Verify seeded QA user (qa-demo@thecros.app) exists and has correct password',
+    'Verify seeded QA user (qa-demo@resurrectio.app) exists and has correct password',
     'Check that tenant slug matches the demo tenant assignment',
     'Confirm login form has data-testid="login-submit" on the submit button',
     'Verify no auth redirect loop between /login and the target page',

@@ -426,7 +426,7 @@ function DemoDetails({ state, setState }: { state: DemoState; setState: React.Di
         <div className="space-y-2">
           <Label>URL Slug</Label>
           <div className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground whitespace-nowrap">thecros.app/</span>
+            <span className="text-sm text-muted-foreground whitespace-nowrap">resurrectio.app/</span>
             <Input value={state.orgSlug} onChange={(e) => setState(s => ({ ...s, orgSlug: e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, '') }))} placeholder="bridge-community" />
           </div>
         </div>
@@ -480,7 +480,7 @@ function DemoConfirm({ state }: { state: DemoState }) {
       <CardContent className="space-y-4">
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div><span className="text-muted-foreground">Organization</span><div className="font-medium">{state.orgName || 'Bridge Community'}</div></div>
-          <div><span className="text-muted-foreground">URL</span><div className="font-medium">thecros.app/{state.orgSlug || 'bridge-community'}</div></div>
+          <div><span className="text-muted-foreground">URL</span><div className="font-medium">resurrectio.app/{state.orgSlug || 'bridge-community'}</div></div>
           <div><span className="text-muted-foreground">Archetype</span><div className="font-medium">{archetypeName}</div></div>
           <div><span className="text-muted-foreground">Plan</span><div className="font-medium">CROS Core</div></div>
           <div><span className="text-muted-foreground">Home Metro</span><div className="font-medium">{metroName}</div></div>

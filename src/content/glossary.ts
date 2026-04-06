@@ -97,7 +97,7 @@ export function glossarySchema() {
       '@type': 'DefinedTerm',
       name: entry.term,
       description: entry.definition,
-      ...(entry.route && { url: `https://thecros.app${entry.route}` }),
+      ...(entry.route && { url: `https://resurrectio.app${entry.route}` }),
     })),
   };
 }
