@@ -24,7 +24,7 @@ export default function Templates() {
                     Updated {template.lastUpdated} &middot; Used {template.usageCount} times
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" className="flex-1">Use Template</Button>
+                    <Button size="sm" className="flex-1 bg-red-800 hover:bg-red-900 text-white">Use Template</Button>
                     <Button size="sm" variant="outline"><Eye className="h-3.5 w-3.5" /></Button>
                   </div>
                 </div>

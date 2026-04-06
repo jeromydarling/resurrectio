@@ -40,7 +40,7 @@ export default function Reports() {
                   </div>
                 ))}
               </div>
-              <Button className="w-full" size="sm">
+              <Button className="w-full bg-red-800 hover:bg-red-900 text-white" size="sm">
                 <Download className="h-3.5 w-3.5 mr-1" /> Generate Report
               </Button>
             </CardContent>

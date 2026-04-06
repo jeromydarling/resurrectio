@@ -19,7 +19,7 @@ export default function PresentationMode() {
           <h2 className="text-2xl font-serif">Ministry Impact Overview</h2>
           <p className="text-muted-foreground">Q1 2026 — Prepared for funder presentation</p>
         </div>
-        <Button size="lg">
+        <Button size="lg" className="bg-red-800 hover:bg-red-900 text-white">
           <Maximize className="h-4 w-4 mr-2" /> Enter Fullscreen
         </Button>
       </div>
