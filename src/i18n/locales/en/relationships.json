@@ -89,7 +89,7 @@
   },
   "people": {
     "title": "People",
-    "subtitle": "Partner contacts and community members",
+    "subtitle": "Program participants and community members",
     "searchPlaceholder": "Search people...",
     "import": "Import",
     "export": "Export",
@@ -102,7 +102,7 @@
     "sortNameDesc": "Last Name (Z-A)",
     "sortRecentlyUpdated": "Recently Updated",
     "filterByOrganization": "Filter by organization...",
-    "allMetros": "All Metros",
+    "allMetros": "All Territories",
     "resetFilters": "Reset filters",
     "countPeople": "{{count}} people",
     "countPerson": "{{count}} person",
@@ -139,7 +139,7 @@
   },
   "opportunities": {
     "title": "Opportunities",
-    "subtitle": "Partner development CRM",
+    "subtitle": "Placement development and partner tracking",
     "addOpportunity": "Add Opportunity",
     "editOpportunity": "Edit Opportunity",
     "noOpportunities": "No opportunities tracked",
@@ -162,7 +162,7 @@
     "filterSearch": "Search: \"{{value}}\"",
     "clearAll": "Clear all",
     "tableOrganization": "Organization",
-    "tableMetro": "Metro",
+    "tableMetro": "Territory",
     "tableStage": "Stage",
     "tableTier": "Tier",
     "tablePrimaryContact": "Primary Contact",
@@ -211,9 +211,9 @@
     "notFoundMessage": "The organization you're looking for could not be found.",
     "backToOpportunities": "Back to Opportunities",
     "enrichOrg": "Enrich Org",
-    "convertToAnchor": "Convert to Anchor",
+    "convertToAnchor": "Convert to Foundation Partner",
     "edit": "Edit",
-    "chapter": "Chapter",
+    "chapter": "Journey Stage",
     "nextActionDue": "Next Action Due: ",
     "daysOverdue": "{{count}} days overdue",
     "inDays": "in {{count}} days",
@@ -315,23 +315,23 @@
   },
   "pipeline": {
     "title": "Journey",
-    "subtitle": "Track partnerships through each chapter",
+    "subtitle": "Track partnerships through each stage",
     "searchPlaceholder": "Search journey...",
     "probability": "Probability",
     "perMonth": "{{value}}/mo",
     "daysCount": "{{count}} days",
-    "daysInChapter": "in chapter",
+    "daysInStage": "in stage",
     "unassigned": "Unassigned",
     "convert": "Convert",
     "noOpportunities": "No opportunities",
     "unknownOrganization": "Unknown Organization",
-    "noMetro": "No Metro",
+    "noMetro": "No Territory",
     "convertDialog": {
-      "title": "Convert to Anchor",
-      "description": "This will create a new Anchor record for {{org}} and remove it from the pipeline. The agreement signed date will be set to today.",
+      "title": "Convert to Foundation Partner",
+      "description": "This will create a new Foundation Partner record for {{org}} and remove it from the pipeline. The agreement signed date will be set to today.",
       "cancel": "Cancel",
       "converting": "Converting...",
-      "convertToAnchor": "Convert to Anchor"
+      "convertToAnchor": "Convert to Foundation Partner"
     }
   },
   "journeys": {
@@ -561,9 +561,9 @@
     }
   },
   "anchors": {
-    "title": "Anchors",
-    "subtitle": "Active anchor partners and production tracking",
-    "searchPlaceholder": "Search anchors...",
+    "title": "Foundation Partners",
+    "subtitle": "Active foundation partners and placement tracking",
+    "searchPlaceholder": "Search partners...",
     "filterByStatus": "Filter by status",
     "statuses": {
       "all": "All Statuses",
@@ -575,7 +575,7 @@
     "stats": {
       "totalVolume30d": "Total Volume (30d)",
       "avgMonthlyVolume": "Avg Monthly Volume",
-      "strategicPartners": "Strategic Partners",
+      "strategicPartners": "Strategic Foundation Partners",
       "growing": "Growing"
     },
     "card": {
@@ -588,10 +588,10 @@
       "strategicValue": "Strategic Value"
     },
     "empty": {
-      "noMatch": "No anchors found",
+      "noMatch": "No foundation partners found",
       "noMatchHint": "Try adjusting your filters",
-      "noAnchors": "No anchors with orders yet",
-      "noAnchorsHint": "Anchors will appear here once they start placing orders"
+      "noAnchors": "No foundation partners with placements yet",
+      "noAnchorsHint": "Foundation partners will appear here once they begin accepting placements"
     }
   }
 }
