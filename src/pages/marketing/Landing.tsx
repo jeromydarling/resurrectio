@@ -351,8 +351,8 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               Bring Everything With You
             </h2>
             <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
-              Your ministry already has years of relationships stored somewhere — spreadsheets, church
-              databases, donor platforms, CRMs you've outgrown. Resurrectio connects to 30+ platforms
+              Your organization already has years of relationships stored somewhere — spreadsheets,
+              donor platforms, CRMs you've outgrown. Resurrectio connects to 20+ platforms
               so you can migrate your history or run side-by-side. No data left behind.
             </p>
           </div>
@@ -361,39 +361,27 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {[
               {
-                category: 'Enterprise CRMs',
+                category: 'Case Management & CRMs',
                 desc: 'Full two-way sync with conflict detection',
                 platforms: ['Salesforce', 'HubSpot', 'Microsoft Dynamics 365', 'Blackbaud RE NXT', 'CiviCRM'],
                 badge: 'Two-Way Sync',
               },
               {
-                category: 'Church Management',
-                desc: 'Pull your congregation data directly',
-                platforms: ['Planning Center', 'Rock RMS', 'Breeze ChMS', 'ParishSoft', 'MinistryPlatform', 'FellowshipOne', 'Pushpay / CCB'],
-                badge: 'One-Way Sync',
-              },
-              {
                 category: 'Nonprofit & Donor',
-                desc: 'Donor history, giving records, campaigns',
+                desc: 'Funder records, giving history, grant tracking',
                 platforms: ['Bloomerang', 'NeonCRM', 'Little Green Light', 'DonorPerfect', 'Kindful', 'Virtuous CRM'],
                 badge: 'One-Way Sync',
               },
               {
-                category: 'Flexible Platforms',
-                desc: 'Databases, contacts, and custom setups',
+                category: 'Databases & Contacts',
+                desc: 'Flexible platforms and personal contact tools',
                 platforms: ['Airtable', 'Google Contacts', 'Outlook Contacts', 'Zoho CRM', 'Oracle CRM'],
                 badge: 'Flexible',
               },
               {
-                category: 'WordPress CRMs',
-                desc: 'Self-hosted WordPress contact plugins',
-                platforms: ['FluentCRM', 'Jetpack CRM', 'WP ERP'],
-                badge: 'One-Way Sync',
-              },
-              {
-                category: 'Manual Migration',
-                desc: 'Guided CSV export and field mapping',
-                platforms: ['ShelbyNext', 'Servant Keeper', 'Apple Contacts', 'Any CSV export'],
+                category: 'Spreadsheets & CSV',
+                desc: 'Guided export, field mapping, and safe import',
+                platforms: ['Excel', 'Google Sheets', 'Any CSV export', 'Bonterra Apricot', 'CorrectTech'],
                 badge: 'CSV Import',
               },
             ].map((cat) => (
