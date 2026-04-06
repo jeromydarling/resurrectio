@@ -654,44 +654,69 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-6">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
-              Capacity, Not Seats
+              Everyone Gets the Full Platform
             </h2>
             <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
-              We don't charge per user. Your whole team — case managers, mentors, volunteers,
-              leadership — gets full access. You pay by the capacity of your ministry,
-              not by how many people are doing the work.
+              NRI intelligence, email campaigns, storytelling, reporting — every feature is available
+              on every plan. No paywalled safety nets. No premium-only signals. You pay based on
+              how many staff and mentors are active, not which features you're allowed to use.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6 mt-10">
-            {/* Core */}
+          {/* What everyone gets */}
+          <div className="bg-white rounded-xl border border-red-100 p-6 sm:p-8 mb-10">
+            <h3 className="font-serif text-lg font-semibold text-red-950 mb-4 text-center">Every Plan Includes</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                'NRI Signal Detection (19 types)',
+                'People & Journey Tracking',
+                'Case Notes & Milestones',
+                'Service Coordination',
+                'Housing & Employment Tracking',
+                'Compliance Management',
+                'Mentor Matching',
+                'Events & Calendar',
+                'Drift Risk & Crisis Alerts',
+                'Email Campaigns & Outreach',
+                'Testimonium Storytelling',
+                'Impact Reporting',
+                'Grants Tracking',
+                'Presentation Mode',
+                'Garden Pulse Visualization',
+                'Communio Ecosystem Bridge',
+                'Impulsus Impact Journal',
+                'Knowledge Base & Resources',
+                'Provisions Tracking',
+                'Unlimited returning citizens',
+              ].map((f) => (
+                <div key={f} className="flex items-start gap-2 text-sm text-red-950/70">
+                  <Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />
+                  {f}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Tiers by scale */}
+          <div className="grid sm:grid-cols-3 gap-6">
             <Card className="border-red-100 bg-white">
               <CardHeader className="pb-2">
-                <CardTitle className="font-serif text-xl text-red-950">Core</CardTitle>
-                <p className="text-xs text-red-800/60 mb-2">The foundation</p>
+                <CardTitle className="font-serif text-xl text-red-950">Seedling</CardTitle>
+                <p className="text-xs text-red-800/60 mb-2">For new and small ministries</p>
                 <p className="text-3xl font-bold text-red-800 mt-1">
-                  $49<span className="text-base font-normal text-red-950/50">/mo</span>
+                  $29<span className="text-base font-normal text-red-950/50">/mo</span>
                 </p>
-                <p className="text-xs text-red-950/40 mt-1">Up to 50 active people &middot; Unlimited team members</p>
+                <p className="text-xs text-red-950/40 mt-1">Up to 5 active staff & mentors</p>
               </CardHeader>
               <CardContent className="pt-4">
-                <ul className="space-y-3 mb-6">
-                  {[
-                    'People & Journey Tracking',
-                    'Case Notes & Milestones',
-                    'Service Coordination',
-                    'Housing & Employment Tracking',
-                    'Compliance Management',
-                    'Mentor Matching',
-                    'Events & Calendar',
-                    'Basic Reports',
-                    'CSV Import',
-                  ].map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-red-950/70">
-                      <Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />
-                      {f}
-                    </li>
-                  ))}
+                <p className="text-sm text-red-950/60 mb-4">
+                  Full platform access for a parish program, a small volunteer team,
+                  or a ministry just getting started. Everything you need, nothing you don't.
+                </p>
+                <ul className="space-y-2 mb-6 text-sm text-red-950/60">
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />All features included</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />3 platform integrations</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />Email support</li>
                 </ul>
                 <Link to="/signup">
                   <Button className="w-full rounded-full border-red-300 text-red-900 hover:bg-red-50" variant="outline">
@@ -701,36 +726,28 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               </CardContent>
             </Card>
 
-            {/* Insight — recommended */}
             <Card className="border-2 border-red-800 bg-white relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                 <Badge className="bg-red-800 text-white text-xs px-3 py-0.5">Most Popular</Badge>
               </div>
               <CardHeader className="pb-2">
-                <CardTitle className="font-serif text-xl text-red-950">Insight</CardTitle>
-                <p className="text-xs text-red-800/60 mb-2">Intelligence layer</p>
+                <CardTitle className="font-serif text-xl text-red-950">Growing</CardTitle>
+                <p className="text-xs text-red-800/60 mb-2">For established programs</p>
                 <p className="text-3xl font-bold text-red-800 mt-1">
-                  $99<span className="text-base font-normal text-red-950/50">/mo</span>
+                  $79<span className="text-base font-normal text-red-950/50">/mo</span>
                 </p>
-                <p className="text-xs text-red-950/40 mt-1">Up to 150 active people &middot; Unlimited team members</p>
+                <p className="text-xs text-red-950/40 mt-1">Up to 25 active staff & mentors</p>
               </CardHeader>
               <CardContent className="pt-4">
-                <ul className="space-y-3 mb-6">
-                  {[
-                    'Everything in Core',
-                    'NRI Signal Detection (19 signal types)',
-                    'Drift Risk & Crisis Alerts',
-                    'Transformation Momentum Tracking',
-                    'Impact Reporting with narrative outcomes',
-                    'Testimonium storytelling',
-                    '5 platform integrations',
-                    'Grants tracking & discovery',
-                  ].map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-red-950/70">
-                      <Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />
-                      {f}
-                    </li>
-                  ))}
+                <p className="text-sm text-red-950/60 mb-4">
+                  For a reentry program with a team of case managers, a mentor network,
+                  and multiple partner organizations. Room to grow.
+                </p>
+                <ul className="space-y-2 mb-6 text-sm text-red-950/60">
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />All features included</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />10 platform integrations</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />Multi-territory support</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />Priority support</li>
                 </ul>
                 <Link to="/signup">
                   <Button className="w-full rounded-full bg-red-800 text-white hover:bg-red-900">
@@ -740,33 +757,26 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               </CardContent>
             </Card>
 
-            {/* Story */}
             <Card className="border-red-100 bg-white">
               <CardHeader className="pb-2">
-                <CardTitle className="font-serif text-xl text-red-950">Story</CardTitle>
-                <p className="text-xs text-red-800/60 mb-2">The full vision</p>
+                <CardTitle className="font-serif text-xl text-red-950">Coalition</CardTitle>
+                <p className="text-xs text-red-800/60 mb-2">For networks and large organizations</p>
                 <p className="text-3xl font-bold text-red-800 mt-1">
                   $149<span className="text-base font-normal text-red-950/50">/mo</span>
                 </p>
-                <p className="text-xs text-red-950/40 mt-1">Unlimited active people &middot; Unlimited team members</p>
+                <p className="text-xs text-red-950/40 mt-1">Unlimited staff & mentors</p>
               </CardHeader>
               <CardContent className="pt-4">
-                <ul className="space-y-3 mb-6">
-                  {[
-                    'Everything in Insight',
-                    'Presentation Mode for funder meetings',
-                    'Garden Pulse ecosystem visualization',
-                    'Unlimited integrations (20+ platforms)',
-                    'Communio cross-app bridge (Fabrica, Communis, Propria)',
-                    'Impulsus impact journal',
-                    'Campaigns & outreach',
-                    'Priority support',
-                  ].map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-red-950/70">
-                      <Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />
-                      {f}
-                    </li>
-                  ))}
+                <p className="text-sm text-red-950/60 mb-4">
+                  For statewide coalitions, diocesan networks, or organizations running
+                  multiple reentry programs across regions.
+                </p>
+                <ul className="space-y-2 mb-6 text-sm text-red-950/60">
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />All features included</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />Unlimited integrations</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />Unlimited territories</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />Dedicated support</li>
+                  <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />Custom onboarding</li>
                 </ul>
                 <Link to="/signup">
                   <Button className="w-full rounded-full border-red-300 text-red-900 hover:bg-red-50" variant="outline">
@@ -777,18 +787,51 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
             </Card>
           </div>
 
+          {/* Add-ons */}
+          <div className="mt-10">
+            <h3 className="font-serif text-lg font-semibold text-red-950 mb-4 text-center">Add When You Need It</h3>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {[
+                {
+                  name: 'Data Migration',
+                  price: '$49/mo',
+                  desc: 'Guided migration from Salesforce, HubSpot, Blackbaud, Apricot, or any existing system. Cancel after your data is moved.',
+                },
+                {
+                  name: 'Guided Activation',
+                  price: '$249 one-time',
+                  desc: '90-minute working session: migrate your data, set up your space, configure your first journeys. We do it with you.',
+                },
+                {
+                  name: 'Extra Capacity',
+                  price: 'from $29/mo',
+                  desc: 'Need more staff and mentors than your plan allows? Add capacity in blocks of 25, 75, or 200.',
+                },
+              ].map((addon) => (
+                <div key={addon.name} className="bg-white rounded-xl border border-red-100 p-5">
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="font-medium text-red-950 text-sm">{addon.name}</h4>
+                    <span className="text-xs font-semibold text-red-800">{addon.price}</span>
+                  </div>
+                  <p className="text-xs text-red-950/50 leading-relaxed">{addon.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="max-w-2xl mx-auto mt-10 space-y-3 text-center">
             <p className="text-sm text-red-950/50">
-              All plans include 30-day free trial, Supabase backend, and unlimited team members.
-              No per-seat fees, ever.
+              All plans include 30-day free trial. Returning citizens, volunteers, and imported contacts
+              are always free and unlimited — they never count against your plan.
             </p>
             <p className="text-sm text-red-950/50">
               <span className="font-medium text-red-800">Volunteer-run ministry?</span>{' '}
-              Contact us about our subsidized access program for organizations with annual budgets under $100K.
+              Contact us about subsidized access for organizations with annual budgets under $100K.
             </p>
           </div>
         </div>
       </section>
+
 
       {/* ── Voices of Restoration ── */}
       <section className="py-16 sm:py-24">
