@@ -706,39 +706,64 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
         </div>
       </section>
 
-      {/* ── Testimonials ── */}
+      {/* ── Voices of Restoration ── */}
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
-              Trusted by Ministry Leaders
+              Voices of Restoration
             </h2>
+            <p className="text-red-950/60 max-w-xl mx-auto">
+              The leaders who shaped how we think about reentry, dignity, and second chances
+            </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6">
             {[
               {
-                quote: 'Before Resurrectio, we tracked everything in spreadsheets. Now our case managers spend time with people instead of fighting with data.',
-                name: 'Maria Santos',
-                role: 'Program Director, Hope House Reentry Services',
+                quote: 'Each of us is more than the worst thing we\'ve ever done.',
+                name: 'Bryan Stevenson',
+                role: 'Founder, Equal Justice Initiative',
+                source: 'Just Mercy',
               },
               {
-                quote: 'The NRI signals caught a drift risk we would have missed. That early warning probably kept David from going back inside.',
-                name: 'Fr. James Okonkwo',
-                role: 'Chaplain, Kairos Prison Ministry - Illinois',
+                quote: 'There is no humane punishment without a horizon. No one can change their life if they don\'t see a horizon.',
+                name: 'Pope Francis',
+                role: 'Address to International Association of Penal Law, 2014',
+                source: '',
               },
               {
-                quote: "What sold us was the full pipeline. No other tool connects prison to ownership. That's not a feature \u2014 it's a vision.",
-                name: 'Deacon Robert Chen',
-                role: 'Executive Director, St. Dismas Ministry',
+                quote: 'I found myself increasingly drawn to the idea that God had put me in prison for a purpose and that I should do something for those I had left behind.',
+                name: 'Chuck Colson',
+                role: 'Founder, Prison Fellowship',
+                source: 'Born Again',
               },
-            ].map((t) => (
-              <Card key={t.name} className="border-red-100 bg-white border-l-4 border-l-red-300">
+              {
+                quote: 'Nobody can be defined by the worst act in their life. Human beings are always going to be worth more than the worst part of their life.',
+                name: 'Sister Helen Prejean',
+                role: 'Author, Dead Man Walking',
+                source: '',
+              },
+              {
+                quote: 'Forgiving is not forgetting; it\'s actually remembering — and not using your right to hit back. It\'s a second chance for a new beginning.',
+                name: 'Archbishop Desmond Tutu',
+                role: 'Nobel Laureate, Truth and Reconciliation Commission',
+                source: 'No Future Without Forgiveness',
+              },
+              {
+                quote: 'Deep in the hearts of many condemned and incarcerated people, I found the scattered traces of hope and humanity — seeds of restoration that come to astonishing life when nurtured by very simple interventions.',
+                name: 'Bryan Stevenson',
+                role: 'Founder, Equal Justice Initiative',
+                source: 'Just Mercy',
+              },
+            ].map((t, i) => (
+              <Card key={i} className="border-red-100 bg-white border-l-4 border-l-red-300">
                 <CardContent className="pt-6 pb-6">
                   <p className="text-sm text-red-950/70 leading-relaxed italic mb-4">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <p className="font-semibold text-red-950 text-sm">{t.name}</p>
                   <p className="text-xs text-red-950/50">{t.role}</p>
+                  {t.source && <p className="text-xs text-red-800/40 italic mt-1">{t.source}</p>}
                 </CardContent>
               </Card>
             ))}
