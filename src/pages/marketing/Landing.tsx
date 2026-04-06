@@ -652,30 +652,37 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
       {/* ── Pricing ── */}
       <section id="pricing" className="py-16 sm:py-24 bg-white/60">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
-              Simple, Transparent Pricing
+              Capacity, Not Seats
             </h2>
             <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
-              Choose the plan that fits your ministry. Scale up anytime.
+              We don't charge per user. Your whole team — case managers, mentors, volunteers,
+              leadership — gets full access. You pay by the capacity of your ministry,
+              not by how many people are doing the work.
             </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
+
+          <div className="grid sm:grid-cols-3 gap-6 mt-10">
             {/* Core */}
             <Card className="border-red-100 bg-white">
               <CardHeader className="pb-2">
                 <CardTitle className="font-serif text-xl text-red-950">Core</CardTitle>
-                <p className="text-3xl font-bold text-red-800 mt-2">
-                  $49<span className="text-base font-normal text-red-950/50">/mo per ministry</span>
+                <p className="text-xs text-red-800/60 mb-2">The foundation</p>
+                <p className="text-3xl font-bold text-red-800 mt-1">
+                  $49<span className="text-base font-normal text-red-950/50">/mo</span>
                 </p>
+                <p className="text-xs text-red-950/40 mt-1">Up to 50 active people &middot; Unlimited team members</p>
               </CardHeader>
               <CardContent className="pt-4">
                 <ul className="space-y-3 mb-6">
                   {[
                     'People & Journey Tracking',
                     'Case Notes & Milestones',
-                    'Service Coordination (Housing, Employment, Compliance)',
-                    'Mentor Management',
+                    'Service Coordination',
+                    'Housing & Employment Tracking',
+                    'Compliance Management',
+                    'Mentor Matching',
                     'Events & Calendar',
                     'Basic Reports',
                     'CSV Import',
@@ -688,7 +695,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                 </ul>
                 <Link to="/signup">
                   <Button className="w-full rounded-full border-red-300 text-red-900 hover:bg-red-50" variant="outline">
-                    Get Started
+                    Start Free Trial
                   </Button>
                 </Link>
               </CardContent>
@@ -701,19 +708,23 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               </div>
               <CardHeader className="pb-2">
                 <CardTitle className="font-serif text-xl text-red-950">Insight</CardTitle>
-                <p className="text-3xl font-bold text-red-800 mt-2">
-                  $99<span className="text-base font-normal text-red-950/50">/mo per ministry</span>
+                <p className="text-xs text-red-800/60 mb-2">Intelligence layer</p>
+                <p className="text-3xl font-bold text-red-800 mt-1">
+                  $99<span className="text-base font-normal text-red-950/50">/mo</span>
                 </p>
+                <p className="text-xs text-red-950/40 mt-1">Up to 150 active people &middot; Unlimited team members</p>
               </CardHeader>
               <CardContent className="pt-4">
                 <ul className="space-y-3 mb-6">
                   {[
                     'Everything in Core',
                     'NRI Signal Detection (19 signal types)',
-                    'Drift Risk & Transformation Momentum alerts',
+                    'Drift Risk & Crisis Alerts',
+                    'Transformation Momentum Tracking',
                     'Impact Reporting with narrative outcomes',
                     'Testimonium storytelling',
                     '5 platform integrations',
+                    'Grants tracking & discovery',
                   ].map((f) => (
                     <li key={f} className="flex items-start gap-2 text-sm text-red-950/70">
                       <Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />
@@ -723,7 +734,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                 </ul>
                 <Link to="/signup">
                   <Button className="w-full rounded-full bg-red-800 text-white hover:bg-red-900">
-                    Get Started
+                    Start Free Trial
                   </Button>
                 </Link>
               </CardContent>
@@ -733,9 +744,11 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
             <Card className="border-red-100 bg-white">
               <CardHeader className="pb-2">
                 <CardTitle className="font-serif text-xl text-red-950">Story</CardTitle>
-                <p className="text-3xl font-bold text-red-800 mt-2">
-                  $149<span className="text-base font-normal text-red-950/50">/mo per ministry</span>
+                <p className="text-xs text-red-800/60 mb-2">The full vision</p>
+                <p className="text-3xl font-bold text-red-800 mt-1">
+                  $149<span className="text-base font-normal text-red-950/50">/mo</span>
                 </p>
+                <p className="text-xs text-red-950/40 mt-1">Unlimited active people &middot; Unlimited team members</p>
               </CardHeader>
               <CardContent className="pt-4">
                 <ul className="space-y-3 mb-6">
@@ -744,8 +757,9 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                     'Presentation Mode for funder meetings',
                     'Garden Pulse ecosystem visualization',
                     'Unlimited integrations (20+ platforms)',
-                    'Communio cross-app bridge',
+                    'Communio cross-app bridge (Fabrica, Communis, Propria)',
                     'Impulsus impact journal',
+                    'Campaigns & outreach',
                     'Priority support',
                   ].map((f) => (
                     <li key={f} className="flex items-start gap-2 text-sm text-red-950/70">
@@ -756,15 +770,23 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                 </ul>
                 <Link to="/signup">
                   <Button className="w-full rounded-full border-red-300 text-red-900 hover:bg-red-50" variant="outline">
-                    Get Started
+                    Start Free Trial
                   </Button>
                 </Link>
               </CardContent>
             </Card>
           </div>
-          <p className="text-center mt-8 text-sm text-red-950/50">
-            All plans include Supabase backend, unlimited returning citizens, and 30-day free trial.
-          </p>
+
+          <div className="max-w-2xl mx-auto mt-10 space-y-3 text-center">
+            <p className="text-sm text-red-950/50">
+              All plans include 30-day free trial, Supabase backend, and unlimited team members.
+              No per-seat fees, ever.
+            </p>
+            <p className="text-sm text-red-950/50">
+              <span className="font-medium text-red-800">Volunteer-run ministry?</span>{' '}
+              Contact us about our subsidized access program for organizations with annual budgets under $100K.
+            </p>
+          </div>
         </div>
       </section>
 
