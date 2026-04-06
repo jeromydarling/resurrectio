@@ -45,7 +45,7 @@ const ecosystemApps = [
   },
   {
     name: 'CROS',
-    subtitle: 'The Community Relationship OS',
+    subtitle: 'The Communal Relationship OS',
     icon: Users,
     status: 'Active' as const,
     peopleReady: 0,

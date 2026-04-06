@@ -268,7 +268,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                 </div>
                 <div>
                   <h3 className="font-serif text-lg font-semibold text-red-950">CROS</h3>
-                  <p className="text-xs text-red-800/60 italic">The Community Relationship OS</p>
+                  <p className="text-xs text-red-800/60 italic">The Communal Relationship OS</p>
                 </div>
               </div>
               <p className="text-sm text-red-950/60 leading-relaxed mb-3">
