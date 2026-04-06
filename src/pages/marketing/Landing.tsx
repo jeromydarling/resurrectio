@@ -342,6 +342,105 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
         </div>
       </section>
 
+      {/* ── Integrations — Bring Everything With You ── */}
+      <section className="py-16 sm:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold uppercase tracking-widest text-red-800/60 mb-3">Relatio Integration Layer</p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
+              Bring Everything With You
+            </h2>
+            <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
+              Your ministry already has years of relationships stored somewhere — spreadsheets, church
+              databases, donor platforms, CRMs you've outgrown. Resurrectio connects to 30+ platforms
+              so you can migrate your history or run side-by-side. No data left behind.
+            </p>
+          </div>
+
+          {/* Integration categories */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {[
+              {
+                category: 'Enterprise CRMs',
+                desc: 'Full two-way sync with conflict detection',
+                platforms: ['Salesforce', 'HubSpot', 'Microsoft Dynamics 365', 'Blackbaud RE NXT', 'CiviCRM'],
+                badge: 'Two-Way Sync',
+              },
+              {
+                category: 'Church Management',
+                desc: 'Pull your congregation data directly',
+                platforms: ['Planning Center', 'Rock RMS', 'Breeze ChMS', 'ParishSoft', 'MinistryPlatform', 'FellowshipOne', 'Pushpay / CCB'],
+                badge: 'One-Way Sync',
+              },
+              {
+                category: 'Nonprofit & Donor',
+                desc: 'Donor history, giving records, campaigns',
+                platforms: ['Bloomerang', 'NeonCRM', 'Little Green Light', 'DonorPerfect', 'Kindful', 'Virtuous CRM'],
+                badge: 'One-Way Sync',
+              },
+              {
+                category: 'Flexible Platforms',
+                desc: 'Databases, contacts, and custom setups',
+                platforms: ['Airtable', 'Google Contacts', 'Outlook Contacts', 'Zoho CRM', 'Oracle CRM'],
+                badge: 'Flexible',
+              },
+              {
+                category: 'WordPress CRMs',
+                desc: 'Self-hosted WordPress contact plugins',
+                platforms: ['FluentCRM', 'Jetpack CRM', 'WP ERP'],
+                badge: 'One-Way Sync',
+              },
+              {
+                category: 'Manual Migration',
+                desc: 'Guided CSV export and field mapping',
+                platforms: ['ShelbyNext', 'Servant Keeper', 'Apple Contacts', 'Any CSV export'],
+                badge: 'CSV Import',
+              },
+            ].map((cat) => (
+              <div key={cat.category} className="bg-white rounded-xl border border-red-100 p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-serif text-base font-semibold text-red-950">{cat.category}</h3>
+                  <Badge className="bg-red-50 text-red-800 text-[10px]">{cat.badge}</Badge>
+                </div>
+                <p className="text-sm text-red-950/60 mb-4">{cat.desc}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {cat.platforms.map((p) => (
+                    <span key={p} className="inline-block text-[11px] bg-red-50/80 text-red-900/70 rounded-md px-2 py-0.5">
+                      {p}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* How it works strip */}
+          <div className="bg-white rounded-xl border border-red-100 p-6 sm:p-8">
+            <h3 className="font-serif text-xl font-semibold text-red-950 mb-6 text-center">How Migration Works</h3>
+            <div className="grid sm:grid-cols-4 gap-6 text-center">
+              {[
+                { step: '1', title: 'Choose Your Source', desc: 'Select where your data lives now' },
+                { step: '2', title: 'Connect or Upload', desc: 'API key, OAuth, or CSV — we guide every step' },
+                { step: '3', title: 'Map Your Fields', desc: 'We auto-map common fields, you adjust the rest' },
+                { step: '4', title: 'Import Safely', desc: 'Duplicate detection, audit trail, re-run anytime' },
+              ].map((s) => (
+                <div key={s.step}>
+                  <div className="w-10 h-10 rounded-full bg-red-800 text-white flex items-center justify-center mx-auto mb-3 text-sm font-bold">
+                    {s.step}
+                  </div>
+                  <h4 className="font-semibold text-red-950 text-sm mb-1">{s.title}</h4>
+                  <p className="text-xs text-red-950/50">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center mt-6 text-xs text-red-800/50 italic">
+              Your original data is never modified. Use Resurrectio as a companion alongside your
+              existing systems, or let it run the whole show.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── NRI Explainer ── */}
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
