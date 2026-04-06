@@ -27,35 +27,21 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
     <div ref={ref} className="bg-[#faf7f3]">
       {/* ── Hero ── */}
       <section className="relative overflow-hidden py-24 sm:py-32 min-h-[70vh] flex items-center">
-        {/* Atmospheric background — Route 66 dawn + aged paper texture */}
+        {/* Hero background — Route 66 at dawn */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Hero photograph */}
+          {/* The road */}
           <img
             src={heroImage}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.12]"
+            loading="eager"
+            fetchPriority="high"
+            className="absolute inset-0 w-full h-full object-cover object-bottom"
           />
-          {/* Base warm gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#faf7f3]/80 via-[#f5ede4]/60 to-[#faf7f3]/90" />
-          {/* Soft light bloom from upper right — dawn coming through a window */}
-          <div
-            className="absolute -top-20 -right-20 w-[600px] h-[600px] rounded-full opacity-30"
-            style={{ background: 'radial-gradient(circle, rgba(220,180,140,0.5) 0%, rgba(250,247,243,0) 70%)' }}
-          />
-          {/* Warm glow from center-left — aged paper feel */}
-          <div
-            className="absolute top-1/3 -left-20 w-[500px] h-[500px] rounded-full opacity-20"
-            style={{ background: 'radial-gradient(circle, rgba(185,130,100,0.4) 0%, transparent 70%)' }}
-          />
-          {/* Subtle paper texture overlay via noise */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-          }} />
-          {/* Faint horizontal lines — like ruled letter paper */}
-          <div className="absolute inset-0 opacity-[0.04]" style={{
-            backgroundImage: 'repeating-linear-gradient(transparent, transparent 31px, rgba(139,90,70,0.3) 31px, rgba(139,90,70,0.3) 32px)',
-          }} />
+          {/* Cream overlay for text readability — lighter on mobile so image shows through */}
+          <div className="absolute inset-0 bg-[#faf7f3]/60 sm:bg-[#faf7f3]/65" />
+          {/* Bottom fade to page background */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#faf7f3] to-transparent" />
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
