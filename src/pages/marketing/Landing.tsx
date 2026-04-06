@@ -515,19 +515,23 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               Government Reporting, Handled
             </h2>
             <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
-              Second Chance Act. HUD HMIS. SAMHSA SPARS. State DOC portals. Your case managers
-              shouldn't spend hours re-entering data into government systems. Resurrectio generates
-              compliant exports from the data you're already collecting — one click, exact format.
+              DOL's WIPS. REO-GPMS. HUD HMIS. SAMHSA SPARS. State DOC portals. Your case managers
+              shouldn't spend hours re-entering data into government systems built in 2008.
+              Resurrectio generates compliant exports from the data you're already collecting —
+              one click, exact format, ready to upload.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
+              { name: 'WIPS / PIRL', who: 'DOL REO grantees', desc: 'Generate PIRL-compliant CSV files (ETA-9172) and upload directly to WIPS for quarterly performance reports.' },
+              { name: 'REO-GPMS', who: 'DOL REO grantees', desc: 'Pre-formatted worksheets matching GPMS fields — intake, enrollment, services, outcomes. No more double-entry.' },
               { name: 'OJP PMT', who: 'Second Chance Act grantees', desc: 'Quarterly performance measures in PMT-ready CSV format.' },
-              { name: 'HMIS', who: 'HUD-funded housing programs', desc: 'Client demographics and housing data per HUD CSV standards.' },
-              { name: 'SPARS', who: 'SAMHSA grant recipients', desc: 'GPRA/NOMS intake, follow-up, and discharge templates.' },
-              { name: 'State DOC Reporting', who: 'State-contracted providers', desc: 'Enrollment, completion, and outcome metrics in state templates.' },
-              { name: 'CJIS Compliance', who: 'Criminal justice data users', desc: 'Security audit docs, access logs, and policy checklists.' },
-              { name: 'Custom Funder Reports', who: 'Any grant-funded org', desc: 'Map your data to any funder format with configurable templates.' },
+              { name: 'HMIS', who: 'HUD-funded housing programs', desc: 'Client demographics and housing data per HUD FY2026 CSV standards.' },
+              { name: 'SPARS', who: 'SAMHSA grant recipients', desc: 'GPRA/NOMS CSV batch upload — intake, follow-up, and discharge data.' },
+              { name: 'State DOC', who: 'State-contracted providers', desc: 'Configurable templates matching your state DOC reporting requirements.' },
+              { name: 'QPR / QNR', who: 'All DOL ETA grantees', desc: 'Auto-generated quarterly performance reports with WIOA indicators and narrative sections.' },
+              { name: 'CJIS Compliance', who: 'Criminal justice data users', desc: 'Security audit documentation and policy compliance checklists.' },
+              { name: 'Custom Reports', who: 'Any grant-funded org', desc: 'Map your data to any funder format with configurable CSV/PDF templates.' },
             ].map((item) => (
               <div key={item.name} className="rounded-xl border border-red-200/60 bg-white p-5 hover:shadow-md transition-shadow">
                 <h3 className="font-serif font-semibold text-red-950 mb-1">{item.name}</h3>

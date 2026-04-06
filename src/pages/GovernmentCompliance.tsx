@@ -13,6 +13,9 @@ import {
   ClipboardCheck,
   MousePointerClick,
   PenLine,
+  Briefcase,
+  Upload,
+  Database,
 } from 'lucide-react';
 
 const reports = [
@@ -54,6 +57,45 @@ const reports = [
     statusVariant: 'default' as const,
     buttonLabel: 'Generate SPARS Report',
     lastExported: 'March 28, 2026',
+  },
+  {
+    name: 'WIPS / PIRL',
+    fullName: 'Workforce Integrated Performance System — DOL ETA',
+    icon: Upload,
+    requiredBy: 'DOL Reentry Employment Opportunities (REO) grantees',
+    description:
+      'Generate PIRL-compliant CSV files (ETA-9172) with ~400 data elements — demographics, housing, employment, services, credentials, outcomes. Upload directly to WIPS for quarterly performance reports.',
+    format: 'PIRL CSV (ETA-9172) — direct upload to WIPS',
+    statusLabel: 'Direct Upload',
+    statusVariant: 'default' as const,
+    buttonLabel: 'Generate PIRL CSV',
+    lastExported: 'March 31, 2026',
+  },
+  {
+    name: 'REO-GPMS',
+    fullName: 'Reentry Employment Opportunities Grantee Performance Management System',
+    icon: Database,
+    requiredBy: 'DOL REO grantees (Growth Opportunities, Pathway Home, etc.)',
+    description:
+      'Pre-formatted participant data for GPMS entry — intake, enrollment, individual development plans, assessments, services delivered, and exit data. Print or copy-paste into GPMS fields.',
+    format: 'Printable field-matched worksheets for GPMS data entry',
+    statusLabel: 'Ready to Print',
+    statusVariant: 'default' as const,
+    buttonLabel: 'Generate GPMS Worksheets',
+    lastExported: 'March 31, 2026',
+  },
+  {
+    name: 'QPR / QNR',
+    fullName: 'Quarterly Performance Report & Quarterly Narrative Report',
+    icon: Briefcase,
+    requiredBy: 'All DOL ETA reentry grantees',
+    description:
+      'Auto-generated quarterly narrative reports with WIOA performance indicators — measurable skill gains, credential attainment, employment rate, median quarterly earnings.',
+    format: 'PDF narrative + PIRL data file for WIPS submission',
+    statusLabel: 'Ready to Export',
+    statusVariant: 'default' as const,
+    buttonLabel: 'Generate Quarterly Report',
+    lastExported: 'March 31, 2026',
   },
   {
     name: 'State DOC Reporting',
