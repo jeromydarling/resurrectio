@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { useToast } from '@/hooks/use-toast';
 import {
   FileSpreadsheet,
   Building2,
@@ -16,6 +18,8 @@ import {
   Briefcase,
   Upload,
   Database,
+  Copy,
+  Check,
 } from 'lucide-react';
 
 const reports = [
@@ -172,6 +176,68 @@ const steps = [
   },
 ];
 
+/** Click-to-copy field — the core UX for manual-entry systems */
+function CopyField({ label, value }: { label: string; value: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(value);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  return (
+    <div className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-red-50/50 group transition-colors border-b border-border/50 last:border-0">
+      <div className="min-w-0 flex-1">
+        <span className="text-xs text-muted-foreground block">{label}</span>
+        <span className="text-sm font-medium text-foreground">{value}</span>
+      </div>
+      <button
+        onClick={handleCopy}
+        className="ml-3 p-1.5 rounded-md text-muted-foreground hover:text-red-800 hover:bg-red-100 transition-colors shrink-0 opacity-0 group-hover:opacity-100 focus:opacity-100"
+        title={`Copy "${value}"`}
+      >
+        {copied ? <Check className="h-3.5 w-3.5 text-green-600" /> : <Copy className="h-3.5 w-3.5" />}
+      </button>
+    </div>
+  );
+}
+
+/** Sample worksheet fields for the preview (matches WF1/GPMS structure) */
+const sampleWorksheet = {
+  participant: [
+    { label: 'First Name', value: 'Marcus' },
+    { label: 'Last Name', value: 'Johnson' },
+    { label: 'Date of Birth', value: '03/15/1988' },
+    { label: 'SSN (Last 4)', value: '4827' },
+    { label: 'Gender', value: 'Male' },
+    { label: 'Race/Ethnicity', value: 'Black or African American' },
+    { label: 'Veteran Status', value: 'No' },
+    { label: 'Disability Status', value: 'No' },
+  ],
+  enrollment: [
+    { label: 'Enrollment Date', value: '01/14/2026' },
+    { label: 'Program', value: 'Adult Career Pathways — Reentry' },
+    { label: 'Referral Source', value: 'Cook County DOC' },
+    { label: 'Release Date', value: '01/08/2026' },
+    { label: 'Facility', value: 'Cook County Jail' },
+    { label: 'Parole Officer', value: 'Officer M. Davis' },
+    { label: 'Housing at Entry', value: 'Transitional Housing' },
+    { label: 'Employment at Entry', value: 'Unemployed' },
+  ],
+  services: [
+    { label: 'Service Type', value: 'Job Readiness Training' },
+    { label: 'Service Start Date', value: '01/21/2026' },
+    { label: 'Provider', value: 'St. Vincent de Paul Reentry Services' },
+    { label: 'Hours of Training', value: '40' },
+    { label: 'Credential Earned', value: 'OSHA 10-Hour Safety' },
+    { label: 'Credential Date', value: '02/28/2026' },
+    { label: 'Employment Placement', value: 'Rivera Construction LLC' },
+    { label: 'Placement Date', value: '03/04/2026' },
+    { label: 'Wage at Placement', value: '$16.00/hr' },
+  ],
+};
+
 export default function GovernmentCompliance() {
   return (
     <div className="space-y-8">
@@ -252,6 +318,48 @@ export default function GovernmentCompliance() {
             </div>
           ))}
         </div>
+      </div>
+
+      <Separator />
+
+      {/* Copy-Ready Worksheet Preview */}
+      <div>
+        <div className="mb-6">
+          <h2 className="font-serif text-2xl font-bold text-red-950 mb-2">Copy-Ready Worksheets</h2>
+          <p className="text-sm text-foreground/70 leading-relaxed max-w-2xl">
+            For systems that don't accept CSV uploads, Resurrectio generates worksheets with a
+            click-to-copy icon next to every field. Open the government portal in one tab, your
+            worksheet in another — click, paste, next field. No retyping.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            { title: 'Participant Information', fields: sampleWorksheet.participant },
+            { title: 'Program Enrollment', fields: sampleWorksheet.enrollment },
+            { title: 'Services & Outcomes', fields: sampleWorksheet.services },
+          ].map((section) => (
+            <Card key={section.title}>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-serif text-red-950">{section.title}</CardTitle>
+                <CardDescription className="text-xs">
+                  Hover any field to copy
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                {section.fields.map((field) => (
+                  <CopyField key={field.label} label={field.label} value={field.value} />
+                ))}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <p className="text-xs text-muted-foreground mt-4 max-w-xl">
+          Preview showing data for Marcus Johnson. In production, worksheets are generated for any
+          person in your system — select a person, choose a government system, and every field is
+          ready to copy.
+        </p>
       </div>
 
       <div className="flex justify-center pt-4">
