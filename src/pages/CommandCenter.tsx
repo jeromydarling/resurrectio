@@ -106,10 +106,10 @@ export default function CommandCenter() {
     if (!link) return;
     switch (link.type) {
       case 'opportunity':
-        navigate(`/opportunities?selected=${link.id}`);
+        navigate(`/people?selected=${link.id}`);
         break;
       case 'pipeline':
-        navigate(`/pipeline?selected=${link.id}`);
+        navigate(`/journey-map?selected=${link.id}`);
         break;
       case 'grant':
         navigate(`/grants?selected=${link.id}`);
@@ -280,7 +280,7 @@ export default function CommandCenter() {
             <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
               <Card 
                 className="cursor-pointer hover:bg-accent/50 transition-colors"
-                onClick={() => navigate('/opportunities?filter=stale')}
+                onClick={() => navigate('/people?filter=stale')}
               >
                 <CardContent className="p-3 sm:p-4 text-center">
                   <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2 text-warning" />
@@ -293,7 +293,7 @@ export default function CommandCenter() {
 
               <Card
                 className="cursor-pointer hover:bg-accent/50 transition-colors"
-                onClick={() => navigate('/pipeline?filter=near')}
+                onClick={() => navigate('/journey-map')}
               >
                 <CardContent className="p-3 sm:p-4 text-center">
                   <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2 text-success" />
@@ -423,7 +423,7 @@ export default function CommandCenter() {
                       variant="outline"
                       size="sm"
                       className="w-full"
-                      onClick={() => navigate('/anchors')}
+                      onClick={() => navigate('/journey-map')}
                     >
                       {t('commandCenter.anchorVelocity.viewAnchors')}
                       <ArrowRight className="w-4 h-4 ml-2" />

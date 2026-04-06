@@ -146,7 +146,7 @@
     "empty": "No intelligence signals yet. Run searches and enrichments to generate insights."
   },
   "commandCenter": {
-    "title": "Regional Command Center",
+    "title": "Ministry Command Center",
     "mobileTitle": "Command Center",
     "subtitleTemplate": "Welcome back{{name}} — here's your focus for the week",
     "storyTitle": "Your Day",
@@ -154,24 +154,24 @@
     "storySubtitle": "A gentle snapshot of what's unfolding around you.",
     "focusItems": {
       "title": "Top Focus Items",
-      "description": "Priority actions based on urgency and impact",
+      "description": "People and tasks needing your attention",
       "items": "{{count}} items",
       "allCaughtUp": "All caught up!",
       "noUrgent": "No urgent items require attention right now."
     },
     "quickActions": {
-      "staleOpportunities": "Stale Opportunities",
-      "nearConversion": "Near Conversion",
+      "staleOpportunities": "Needs Outreach",
+      "nearConversion": "Approaching Milestones",
       "grantDeadlines": "Grant Deadlines",
       "overdueFollowups": "Overdue Follow-ups"
     },
     "anchorVelocity": {
-      "title": "Anchor Velocity",
-      "noAnchors": "No anchors yet",
-      "daysSinceLastAnchor": "Days since last anchor",
-      "inRamp": "In Ramp",
-      "atScale": "At Scale",
-      "viewAnchors": "View Anchors"
+      "title": "Reentry Momentum",
+      "noAnchors": "No milestones yet",
+      "daysSinceLastAnchor": "Days since last milestone",
+      "inRamp": "Stabilizing",
+      "atScale": "Flourishing",
+      "viewAnchors": "View Journey Map"
     },
     "adminTasks": {
       "title": "Admin Tasks",
@@ -180,7 +180,7 @@
     },
     "badges": {
       "stale": "Stale",
-      "nearWin": "Near Win",
+      "nearWin": "Milestone",
       "grant": "Grant",
       "overdue": "Overdue",
       "task": "Task"

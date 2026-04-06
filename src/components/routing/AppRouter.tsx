@@ -106,6 +106,9 @@ import Terms from '@/pages/legal/Terms';
 import Privacy from '@/pages/legal/Privacy';
 import DataSecurity from '@/pages/legal/DataSecurity';
 
+// Command Center (power-user alternative to Dashboard)
+import CommandCenter from '@/pages/CommandCenter';
+
 // Settings & Help
 import Settings from '@/pages/Settings';
 import Help from '@/pages/Help';
@@ -229,6 +232,9 @@ export function AppRouter() {
       <Route path="/resume-builder" element={<AppPage title="Resume Builder" subtitle="AI-powered resume creation"><ResumeBuilder /></AppPage>} />
       <Route path="/staff-wellness" element={<AppPage title="Staff Wellness" subtitle="Burnout detection & team health"><StaffWellness /></AppPage>} />
       <Route path="/document-hub" element={<AppPage title="Document Hub" subtitle="Cloud-connected document management"><DocumentHub /></AppPage>} />
+
+      {/* Command Center (power-user alternative to Dashboard) */}
+      <Route path="/command-center" element={<CommandCenter />} />
 
       {/* Settings & Help */}
       <Route path="/settings" element={<Settings />} />
