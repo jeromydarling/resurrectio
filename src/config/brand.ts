@@ -1,113 +1,102 @@
-// CROS Brand Constants
-// UI rebrand layer — database tables retain original Profunda names
+// Resurrectio Brand Constants
+// Reentry/Restorative Justice Platform powered by CROS/NRI
 
 export const brand = {
-  appName: 'CROS',
-  fullName: 'Communal Relationship Operating System',
+  appName: 'Resurrectio',
+  fullName: 'Resurrectio — The Rising',
   assistantName: 'Neary',
   assistantFullName: 'NRI — Narrative Relational Intelligence',
-  tagline: 'The Community Relationship OS',
-  positioning: 'CROS is the Community Relationship OS — a human system for remembering, noticing, and serving people well.',
-  domain: 'thecros.app',
+  tagline: 'From incarceration to restoration',
+  positioning: 'Resurrectio is a CROS/NRI-powered platform for prison ministries and reentry organizations — walking with returning citizens from release to flourishing.',
+  domain: 'resurrectio.app',
 } as const;
 
 export const modules = {
-  civitas: { label: 'Civitas', description: 'Community layer — metros, pulse, narrative' },
-  signum: { label: 'Signum', description: 'Signals & discovery intelligence' },
-  testimonium: { label: 'Testimonium', description: 'Narrative storytelling & insight layer' },
-  impulsus: { label: 'Impulsus', description: 'Private impact scrapbook journal' },
-  relatio: { label: 'Relatio', description: 'Integrations & migration bridges' },
-  voluntarium: { label: 'Voluntārium', description: 'Volunteer management & hours tracking' },
-  provisio: { label: 'Prōvīsiō', description: 'Technology provisions & orders' },
+  journeys: { label: 'Journeys', description: 'Track restoration arcs — people, milestones, family reconnection' },
+  services: { label: 'Services', description: 'Coordinate housing, employment, compliance, and programs' },
+  community: { label: 'Community', description: 'Mentors, stories, events, and the relational layer' },
+  organize: { label: 'Organize', description: 'Partners, activities, territories, and templates' },
+  intelligence: { label: 'Intelligence', description: 'NRI signals, reports, and ecosystem visualization' },
 } as const;
 
 export const tiers = {
   core: {
-    name: 'CROS Core',
-    tagline: 'The foundation for relationship-centered community work.',
+    name: 'Resurrectio Core',
+    tagline: 'The foundation for relationship-centered reentry work.',
     includes: [
-      'Profunda (Relationship OS)',
-      'Civitas (Community Awareness)',
-      'Relationships & People',
-      'Journey Chapters',
-      'Reflections',
-      'Volunteers (Voluntārium)',
+      'People & Journey Tracking',
+      'Case Notes & Milestones',
+      'Service Coordination',
+      'Housing & Employment Tracking',
+      'Compliance Management',
+      'Mentor Matching',
       'Events & Calendar',
-      'Signum (Local Pulse baseline)',
-      'Basic Narrative',
-      'Communio (opt-in shared network)',
+      'Basic Reports',
     ],
   },
   insight: {
-    name: 'CROS Insight',
-    tagline: 'Understand how your city is changing.',
+    name: 'Resurrectio Insight',
+    tagline: 'Understand patterns across your ministry.',
     includes: [
       'Everything in Core',
-      'Testimonium storytelling',
-      'Drift Detection',
-      'Heat Map Narrative Overlays',
-      'Story Signals (Signum Intelligence)',
+      'NRI Signal Detection',
+      'Drift Risk Alerts',
+      'Transformation Momentum Tracking',
+      'Family Reconnection Signals',
+      'Impact Reporting',
     ],
   },
   story: {
-    name: 'CROS Story',
-    tagline: 'Turn daily work into lasting impact narratives.',
+    name: 'Resurrectio Story',
+    tagline: 'Turn daily ministry into lasting impact narratives.',
     includes: [
       'Everything in Insight',
-      'Impulsus impact journal',
-      'Executive storytelling exports',
-      'Narrative reporting',
+      'Presentation Mode',
+      'Funder Report Generation',
+      'Transformation Stories',
+      'Garden Pulse Visualization',
+      'Cross-app Pipeline (Fabrica, Communis, Propria)',
     ],
   },
 } as const;
 
 export const archetypes = {
-  church: {
-    name: 'Church / Faith Community',
-    tagline: 'Often led by Shepherds, sustained by Companions, and lived out through Visitors.',
+  volunteer: {
+    name: 'Volunteer',
+    tagline: 'I visit or write to incarcerated people.',
   },
-  digital_inclusion: {
-    name: 'Digital Inclusion Nonprofit',
-    tagline: 'Companions and Visitors carry most of the daily relationship work — Shepherds guide the strategy.',
+  mentor: {
+    name: 'Mentor',
+    tagline: 'I walk with returning citizens through reentry.',
   },
-  social_enterprise: {
-    name: 'Social Enterprise',
-    tagline: 'Shepherds guide growth while Companions maintain community trust.',
+  case_manager: {
+    name: 'Case Manager',
+    tagline: 'I coordinate services for multiple people.',
   },
-  workforce: {
-    name: 'Workforce Development',
-    tagline: 'Stay close to employers, learners, and local shifts that change demand.',
+  program_lead: {
+    name: 'Program Lead',
+    tagline: 'I run a ministry or reentry organization.',
   },
-  refugee_support: {
-    name: 'Refugee Support Organization',
-    tagline: 'Welcome and integrate refugee communities with gentle continuity.',
+  gardener: {
+    name: 'Gardener',
+    tagline: 'I manage the Resurrectio platform.',
   },
-  education_access: {
-    name: 'Education Access Program',
-    tagline: 'Expand equitable access to learning across your region.',
-  },
-  library_system: {
-    name: 'Library System',
-    tagline: 'Companions and Visitors carry most of the daily relationship work.',
-  },
-  caregiver_solo: {
-    name: 'Caregiver (Solo)',
-    tagline: 'A private space for independent caregivers to remember, reflect, and stay present.',
-  },
-  caregiver_agency: {
-    name: 'Caregiver Agency',
-    tagline: 'Dignified visibility into care patterns — without surveillance.',
-  },
-  missionary_org: {
-    name: 'Missionary Organization',
-    tagline: 'Serve cross-cultural fields with country-level awareness and relationship memory.',
-  },
-  retreat_center: {
-    name: 'Retreat Center',
-    tagline: 'Hold the thread of every retreat journey — remember the people who return.',
-  },
+} as const;
+
+export const signalTypes = {
+  transformation_momentum: { label: 'Transformation Momentum', color: '#059669', description: 'Person consistently meeting milestones' },
+  drift_risk: { label: 'Drift Risk', color: '#ef4444', description: 'Missed meetings, engagement dropping, compliance deadlines approaching' },
+  fabrica_ready: { label: 'Fabrica Ready', color: '#7c3aed', description: 'Stability + motivation aligned for guild training warm handoff' },
+  retention_risk: { label: 'Retention Risk', color: '#f59e0b', description: 'Employer or housing signals suggest instability' },
+  family_reconnection: { label: 'Family Reconnection', color: '#059669', description: 'Positive family contact patterns emerging' },
+  community_growing: { label: 'Community Growing', color: '#6b21a8', description: 'New mentors, referrals increasing, enrollment trending up' },
+  compliance_upcoming: { label: 'Compliance Upcoming', color: '#f59e0b', description: 'Parole review, court date approaching' },
+  employment_milestone: { label: 'Employment Milestone', color: '#059669', description: 'Job tenure, promotion, wage increase' },
+  communis_ready: { label: 'Communis Ready', color: '#7c3aed', description: 'Full pipeline completion approaching (cooperative membership)' },
+  pre_release_intake: { label: 'Pre-Release Intake', color: '#6b21a8', description: 'Release date approaching, intake process needed' },
 } as const;
 
 export type ArchetypeKey = keyof typeof archetypes;
 export type TierKey = keyof typeof tiers;
 export type ModuleKey = keyof typeof modules;
+export type SignalTypeKey = keyof typeof signalTypes;

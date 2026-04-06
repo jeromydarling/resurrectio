@@ -1,56 +1,58 @@
-/**
- * Signup page — now redirects to invite-only message.
- *
- * WHAT: Shows a "contact your organization" message instead of a signup form.
- * WHERE: /signup (public route).
- * WHY: CROS is invite-only — accounts can only be created via steward invite links (/join?token=xxx).
- */
-import { Link } from 'react-router-dom';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Users, ArrowRight } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Sprout } from 'lucide-react';
 import { brand } from '@/config/brand';
-import { useTranslation } from 'react-i18next';
 
 export default function Signup() {
-  const { t } = useTranslation('common');
+  const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignup = (e: React.FormEvent) => {
+    e.preventDefault();
+    navigate('/onboarding');
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
-        <CardHeader className="text-center space-y-4">
-          <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-            <Users className="h-8 w-8 text-primary" />
+        <CardHeader className="text-center">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Sprout className="h-6 w-6 text-primary" />
+            </div>
           </div>
-          <CardTitle className="text-2xl">{t('auth.signup.title')}</CardTitle>
-          <CardDescription className="text-base leading-relaxed">
-            {t('auth.signup.subtitle', { appName: brand.appName })}
-          </CardDescription>
+          <CardTitle className="text-2xl font-serif">{brand.appName}</CardTitle>
+          <CardDescription>Start your ministry's journey</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="rounded-lg bg-muted/50 p-4 space-y-3">
-            <p className="text-sm text-foreground font-medium">{t('auth.signup.howToGetAccess')}</p>
-            <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-              <li>{t('auth.signup.step1')}</li>
-              <li>{t('auth.signup.step2')}</li>
-              <li>{t('auth.signup.step3')}</li>
-            </ol>
-          </div>
-
-          <p className="text-sm text-muted-foreground text-center">
-            {t('auth.signup.notOnPlatform', { appName: brand.appName })}{' '}
-            <Link to="/contact" className="text-primary hover:underline">
-              {t('auth.signup.getInTouch')}
-            </Link>{' '}
-            {t('auth.signup.toLearnHow')}
-          </p>
-
-          <Link to="/login" className="block">
-            <Button variant="outline" className="w-full">
-              {t('auth.signup.alreadyHaveAccount')}
-              <ArrowRight className="h-4 w-4 ml-1" />
-            </Button>
-          </Link>
-        </CardContent>
+        <form onSubmit={handleSignup}>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="name">Ministry Name</Label>
+              <Input id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="St. Vincent de Paul Reentry" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@ministry.org" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="password">Password</Label>
+              <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Create a password" />
+            </div>
+          </CardContent>
+          <CardFooter className="flex flex-col gap-3">
+            <Button type="submit" className="w-full">Create Account</Button>
+            <p className="text-sm text-muted-foreground">
+              Already have an account?{' '}
+              <Link to="/login" className="text-primary hover:underline">Sign in</Link>
+            </p>
+          </CardFooter>
+        </form>
       </Card>
     </div>
   );

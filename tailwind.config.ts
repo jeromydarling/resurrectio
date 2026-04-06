@@ -14,9 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
-        'serif-body': ['Source Serif 4', 'Georgia', 'serif'],
+        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+        serif: ['Georgia', 'Times New Roman', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -81,18 +80,27 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
-        ignatian: {
-          deep: "hsl(var(--ignatian-deep))",
-          brown: "hsl(var(--ignatian-brown))",
-          gold: "hsl(var(--ignatian-gold))",
-          "gold-light": "hsl(var(--ignatian-gold-light))",
-          muted: "hsl(var(--ignatian-muted))",
-          tan: "hsl(var(--ignatian-tan))",
-          border: "hsl(var(--ignatian-border))",
-          cream: "hsl(var(--ignatian-cream))",
-          "cream-dark": "hsl(var(--ignatian-cream-dark))",
-          bg: "hsl(var(--ignatian-bg))",
-          "bg-end": "hsl(var(--ignatian-bg-end))",
+        resurrectio: {
+          purple: {
+            DEFAULT: "#6b21a8",
+            50: "#faf5ff",
+            100: "#f3e8ff",
+            200: "#e9d5ff",
+            300: "#c4b5fd",
+            400: "#a78bfa",
+            500: "#7c3aed",
+            600: "#6b21a8",
+            700: "#581c87",
+            800: "#4c1d95",
+            900: "#3b0764",
+          },
+          cream: "#faf7f3",
+          warm: {
+            dark: "#292524",
+            body: "#57534e",
+            muted: "#78716c",
+            subtle: "#a8a29e",
+          },
         },
       },
       borderRadius: {
