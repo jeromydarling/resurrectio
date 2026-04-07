@@ -184,7 +184,7 @@ export default function DataSecurity() {
       </div>
 
       <div className="mt-8 text-center text-xs text-red-950/40">
-        <p>&copy; {new Date().getFullYear()} CROS LLC. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Resurrectio. All rights reserved.</p>
       </div>
     </div>
   );

@@ -60,7 +60,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
                 size="lg"
                 className="rounded-full bg-red-800 text-white hover:bg-red-900 px-8 h-12 text-base"
               >
-                Start Your Ministry <ArrowRight className="ml-2 h-4 w-4" />
+                Get Started <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
             <Link to="/demo">
@@ -181,7 +181,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
             </h2>
             <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
               Resurrectio sees returning citizens as people on journeys, not case numbers.
-              Built on CROS (Communal Relationship Operating System) philosophy, it centers
+              Built on relationship memory and narrative intelligence, it centers
               human dignity and relational intelligence at every step.
             </p>
           </div>
@@ -375,7 +375,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
-              Everything Your Ministry Needs
+              Everything Your Organization Needs
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -398,7 +398,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               {
                 icon: FolderOpen,
                 title: 'Organize',
-                desc: 'Partners, activities, territories, and templates for your ministry.',
+                desc: 'Partners, activities, territories, and templates for your organization.',
               },
               {
                 icon: Brain,
@@ -600,7 +600,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               {
                 layer: '1',
                 title: 'Narrative Signals Layer',
-                desc: 'Watches activity streams, detects emerging patterns across your ministry.',
+                desc: 'Watches activity streams, detects emerging patterns across your organization.',
                 icon: Sparkles,
               },
               {
@@ -853,7 +853,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
             <Card className="border-red-100 bg-white">
               <CardHeader className="pb-2">
                 <CardTitle className="font-serif text-xl text-red-950">Seedling</CardTitle>
-                <p className="text-xs text-red-800/60 mb-2">For new and small ministries</p>
+                <p className="text-xs text-red-800/60 mb-2">For new and small organizations</p>
                 <p className="text-3xl font-bold text-red-800 mt-1">
                   $29<span className="text-base font-normal text-red-950/50">/mo</span>
                 </p>
@@ -862,7 +862,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               <CardContent className="pt-4">
                 <p className="text-sm text-red-950/60 mb-4">
                   Full platform access for a parish program, a small volunteer team,
-                  or a ministry just getting started. Everything you need, nothing you don't.
+                  or an organization just getting started. Everything you need, nothing you don't.
                 </p>
                 <ul className="space-y-2 mb-6 text-sm text-red-950/60">
                   <li className="flex items-start gap-2"><Check className="h-4 w-4 text-red-800 mt-0.5 flex-shrink-0" />All features included</li>
@@ -976,7 +976,7 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               are always free and unlimited — they never count against your plan.
             </p>
             <p className="text-sm text-red-950/50">
-              <span className="font-medium text-red-800">Volunteer-run ministry?</span>{' '}
+              <span className="font-medium text-red-800">Volunteer-run organization?</span>{' '}
               Contact us about subsidized access for organizations with annual budgets under $100K.
             </p>
           </div>
@@ -1073,11 +1073,11 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
               },
               {
                 q: 'How long does setup take?',
-                a: 'Most ministries are up and running in under a week. CSV import takes minutes. API integrations typically connect in 5-20 minutes with our guided setup wizard.',
+                a: 'Most organizations are up and running in under a week. CSV import takes minutes. API integrations typically connect in 5-20 minutes with our guided setup wizard.',
               },
               {
                 q: 'Do you support faith-based organizations specifically?',
-                a: "Resurrectio was designed for the reentry ministry community. Our archetype onboarding, vocabulary, and signal types are tuned for the way prison ministries actually work \u2014 mentoring relationships, spiritual formation, family reunification, and restoration journeys.",
+                a: "Absolutely. Resurrectio was designed for reentry organizations of all kinds \u2014 faith-based ministries, secular nonprofits, and government agencies. Our archetype onboarding, vocabulary, and signal types are tuned for how reentry work actually happens \u2014 mentoring relationships, family reunification, and restoration journeys.",
               },
             ].map((item) => (
               <Card key={item.q} className="border-red-100 bg-white">
@@ -1095,14 +1095,14 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
       <section className="py-20 sm:py-28 text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-6">
-            Ready to Transform Your Ministry?
+            Ready to Transform Your Reentry Work?
           </h2>
           <Link to="/signup">
             <Button
               size="lg"
               className="rounded-full bg-red-800 text-white hover:bg-red-900 px-10 h-12 text-base"
             >
-              Start Your Ministry <ArrowRight className="ml-2 h-4 w-4" />
+              Get Started <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
         </div>

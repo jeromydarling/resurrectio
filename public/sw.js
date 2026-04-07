@@ -1,12 +1,12 @@
 /**
- * CROS Service Worker — Push notifications + offline caching for field workers.
+ * Resurrectio Service Worker — Push notifications + offline caching for field workers.
  *
  * WHAT: Handles push notifications with deep linking AND caches app shell for offline access.
  * WHERE: Registered from index.html, runs in browser background.
  * WHY: Visitors and Companions doing relationship work in low-connectivity areas need offline support.
  */
 
-const CACHE_NAME = 'cros-shell-v1';
+const CACHE_NAME = 'resurrectio-shell-v1';
 const SHELL_ASSETS = [
   '/',
   '/manifest.json',
@@ -80,13 +80,13 @@ self.addEventListener('push', (event) => {
     return;
   }
 
-  const { title = 'CROS', body = '', deepLink = '/' } = payload;
+  const { title = 'Resurrectio', body = '', deepLink = '/' } = payload;
 
   const options = {
     body,
     icon: '/favicon.ico',
     badge: '/favicon.ico',
-    tag: 'cros-notification',
+    tag: 'resurrectio-notification',
     renotify: true,
     data: { deepLink },
     vibrate: [100, 50, 100],

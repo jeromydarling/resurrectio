@@ -6,7 +6,7 @@ const sections = [
     icon: FileText,
     title: '1. Acceptance of Terms',
     content:
-      'By accessing or using the Resurrectio platform, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you may not use the platform. Resurrectio is operated by CROS LLC ("we," "us," or "our"). These terms constitute a legally binding agreement between you and CROS LLC.',
+      'By accessing or using the Resurrectio platform, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you may not use the platform. Resurrectio is operated by Resurrectio LLC ("we," "us," or "our"). These terms constitute a legally binding agreement between you and Resurrectio LLC.',
   },
   {
     icon: BookOpen,
@@ -66,7 +66,7 @@ const sections = [
     icon: AlertTriangle,
     title: '11. Limitation of Liability',
     content:
-      'To the maximum extent permitted by law, CROS LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the platform. Resurrectio is a tool designed to support human judgment in reentry case management. It is not a substitute for professional case management, legal advice, medical advice, or clinical assessment. Users are responsible for exercising professional judgment in all decisions affecting the individuals they serve.',
+      'To the maximum extent permitted by law, Resurrectio LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the platform. Resurrectio is a tool designed to support human judgment in reentry case management. It is not a substitute for professional case management, legal advice, medical advice, or clinical assessment. Users are responsible for exercising professional judgment in all decisions affecting the individuals they serve.',
   },
   {
     icon: RefreshCw,
@@ -120,7 +120,7 @@ export default function Terms() {
       </div>
 
       <div className="mt-12 text-center text-xs text-red-950/40">
-        <p>&copy; {new Date().getFullYear()} CROS LLC. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Resurrectio. All rights reserved.</p>
       </div>
     </div>
   );

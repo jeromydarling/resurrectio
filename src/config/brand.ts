@@ -1,5 +1,5 @@
 // Resurrectio Brand Constants
-// Reentry/Restorative Justice Platform powered by CROS/NRI
+// Reentry/Restorative Justice Platform powered by NRI
 
 export const brand = {
   appName: 'Resurrectio',
@@ -7,7 +7,7 @@ export const brand = {
   assistantName: 'Neary',
   assistantFullName: 'NRI — Narrative Relational Intelligence',
   tagline: 'From incarceration to restoration',
-  positioning: 'Resurrectio is a CROS/NRI-powered platform for prison ministries and reentry organizations — walking with returning citizens from release to flourishing.',
+  positioning: 'Resurrectio is a reentry platform powered by Narrative Relational Intelligence — walking with returning citizens from release to flourishing.',
   domain: 'resurrectio.app',
 } as const;
 
@@ -22,7 +22,7 @@ export const modules = {
 export const tiers = {
   seedling: {
     name: 'Seedling',
-    tagline: 'For new and small ministries.',
+    tagline: 'For new and small organizations.',
     capacity: 'Up to 5 active staff & mentors',
     price: '$29/mo',
     includes: [

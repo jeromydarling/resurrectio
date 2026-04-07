@@ -25,13 +25,13 @@ const helpSections = [
   {
     icon: MessageCircle,
     title: 'Community Forum',
-    description: 'Connect with other prison ministries and reentry organizations using Resurrectio.',
+    description: 'Connect with other reentry organizations and ministries using Resurrectio.',
     action: 'Join Forum',
   },
   {
     icon: Mail,
     title: 'Contact Support',
-    description: 'Need help? Our team is here to support your ministry.',
+    description: 'Need help? Our team is here to support your organization.',
     action: 'Email Support',
   },
 ];

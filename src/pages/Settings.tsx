@@ -39,12 +39,12 @@ export default function Settings() {
 
         <Card>
           <CardHeader>
-            <CardTitle className="font-serif">Ministry</CardTitle>
+            <CardTitle className="font-serif">Organization</CardTitle>
             <CardDescription>Your organization settings</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <Label>Ministry Name</Label>
+              <Label>Organization Name</Label>
               <Input defaultValue="St. Vincent de Paul Reentry Services" />
             </div>
             <div className="space-y-2">
@@ -61,7 +61,7 @@ export default function Settings() {
             <CardDescription>How you receive alerts and updates</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
-            <p className="text-sm text-muted-foreground">NRI signal alerts, compliance reminders, and ministry updates will be sent to your email address.</p>
+            <p className="text-sm text-muted-foreground">NRI signal alerts, compliance reminders, and organization updates will be sent to your email address.</p>
             <Button variant="outline">Manage Notifications</Button>
           </CardContent>
         </Card>

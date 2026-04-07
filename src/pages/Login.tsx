@@ -25,7 +25,7 @@ export default function Login() {
             <ResurrectioLogo size={36} color="hsl(0, 72%, 35%)" />
           </div>
           <CardTitle className="text-2xl font-serif">{brand.appName}</CardTitle>
-          <CardDescription>Sign in to your ministry account</CardDescription>
+          <CardDescription>Sign in to your account</CardDescription>
         </CardHeader>
         <form onSubmit={handleLogin}>
           <CardContent className="space-y-4">

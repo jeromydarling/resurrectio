@@ -26,12 +26,12 @@ export default function Signup() {
             <ResurrectioLogo size={36} color="hsl(0, 72%, 35%)" />
           </div>
           <CardTitle className="text-2xl font-serif">{brand.appName}</CardTitle>
-          <CardDescription>Start your ministry's journey</CardDescription>
+          <CardDescription>Start your reentry journey</CardDescription>
         </CardHeader>
         <form onSubmit={handleSignup}>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Ministry Name</Label>
+              <Label htmlFor="name">Organization Name</Label>
               <Input id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="St. Vincent de Paul Reentry" />
             </div>
             <div className="space-y-2">
