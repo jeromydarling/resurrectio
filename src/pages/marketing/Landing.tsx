@@ -641,6 +641,62 @@ const Landing = React.forwardRef<HTMLDivElement>(function Landing(_props, ref) {
         </div>
       </section>
 
+      {/* ── Email Intelligence ── */}
+      <section className="py-16 sm:py-24 bg-white/60">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold uppercase tracking-widest text-red-800/60 mb-3">Gmail &amp; Outlook Integration</p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-red-950 mb-4">
+              Your Email Already Knows Things
+            </h2>
+            <p className="text-red-950/60 max-w-2xl mx-auto leading-relaxed">
+              Connect your Gmail or Outlook account and NRI quietly watches your sent folder — surfacing
+              contacts you should add, commitments you made, and follow-ups you might have missed.
+              Forward-only. Never reads past email. You approve everything before it acts.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Contact Discovery',
+                desc: 'You emailed a landlord about a housing referral. NRI suggests adding them to your provider directory — with name, email, and organization already filled in.',
+                example: '"You contacted Maria Rivera at Rivera Construction 3 times this month. Add to employer network?"',
+              },
+              {
+                title: 'Commitment Extraction',
+                desc: 'You wrote "I\'ll send the housing referral by Friday." NRI turns that into a task with a deadline — so promises don\'t fall through the cracks.',
+                example: '"You committed to calling Marcus\'s parole officer Monday. Add to your task list?"',
+              },
+              {
+                title: 'Follow-Up Intelligence',
+                desc: 'You sent a referral to Kolbe House two weeks ago. No response. NRI surfaces it as a follow-up signal before someone falls through.',
+                example: '"No response from Kolbe House on Denise\'s housing referral (sent 14 days ago). Follow up?"',
+              },
+            ].map((item) => (
+              <Card key={item.title} className="border-red-100 bg-white">
+                <CardContent className="pt-6 pb-6">
+                  <h3 className="font-semibold text-red-950 text-lg mb-2 font-serif">{item.title}</h3>
+                  <p className="text-sm text-red-950/60 leading-relaxed mb-4">{item.desc}</p>
+                  <div className="bg-red-50 rounded-lg p-3 border border-red-100">
+                    <p className="text-xs text-red-800 italic">{item.example}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="max-w-2xl mx-auto mt-8 space-y-2 text-center">
+            <p className="text-sm text-red-950/50">
+              Also includes email campaign sending directly from your Gmail or Outlook — relationship-based
+              outreach to employers, funders, and partners without a third-party mail service.
+            </p>
+            <p className="text-xs text-red-800/40 italic">
+              Privacy-first: forward-only analysis, crisis guardrails, rate-limited, tenant-scoped. NRI never
+              reads email you sent before enabling the feature.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── Signal Examples ── */}
       <section className="py-16 sm:py-24 bg-white/60">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
