@@ -1,5 +1,5 @@
 /**
- * OnboardingFlowGuide — Visual documentation + interactive demo of the CROS tenant onboarding journey.
+ * OnboardingFlowGuide — Visual documentation + interactive demo of the Resurrectio tenant onboarding journey.
  *
  * WHAT: Step-by-step reference guide with an embedded interactive demo of each onboarding screen.
  * WHERE: /operator/onboarding-guide
@@ -78,7 +78,7 @@ function exportPDF() {
     const checkSpace = (n: number) => { if (y + n > doc.internal.pageSize.getHeight() - margin) { doc.addPage(); y = margin; } };
 
     doc.setFont('helvetica', 'bold'); doc.setFontSize(28);
-    doc.text('CROS™ Onboarding', margin, y + 30);
+    doc.text('Resurrectio™ Onboarding', margin, y + 30);
     doc.setFontSize(16); doc.setFont('helvetica', 'normal'); doc.setTextColor(120, 120, 120);
     doc.text('Flow Guide', margin, y + 42);
     doc.setFontSize(10);
@@ -94,7 +94,7 @@ function exportPDF() {
       doc.text('See the interactive demo on the guide page for a visual walkthrough of this step.', margin, y);
     });
 
-    doc.save('CROS-Onboarding-Flow-Guide.pdf');
+    doc.save('Resurrectio-Onboarding-Flow-Guide.pdf');
     toast.success('PDF exported successfully');
   });
 }
