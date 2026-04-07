@@ -108,6 +108,7 @@ import DataSecurity from '@/pages/legal/DataSecurity';
 
 // Command Center (power-user alternative to Dashboard)
 import CommandCenter from '@/pages/CommandCenter';
+import ReentryCommandCenter from '@/pages/ReentryCommandCenter';
 
 // Settings & Help
 import Settings from '@/pages/Settings';
@@ -150,7 +151,8 @@ export function AppRouter() {
 
       {/* App routes — flat paths */}
       {/* Dashboard */}
-      <Route path="/dashboard" element={<AppPage title="Dashboard" subtitle="Ministry overview"><Dashboard /></AppPage>} />
+      <Route path="/dashboard" element={<AppPage title="Command Center" subtitle="Your daily focus"><ReentryCommandCenter /></AppPage>} />
+      <Route path="/community-dashboard" element={<AppPage title="Community Dashboard" subtitle="Ministry overview"><Dashboard /></AppPage>} />
 
       {/* Journeys */}
       <Route path="/people" element={<AppPage title="People" subtitle="Returning citizens directory"><People /></AppPage>} />
@@ -233,8 +235,11 @@ export function AppRouter() {
       <Route path="/staff-wellness" element={<AppPage title="Staff Wellness" subtitle="Burnout detection & team health"><StaffWellness /></AppPage>} />
       <Route path="/document-hub" element={<AppPage title="Document Hub" subtitle="Cloud-connected document management"><DocumentHub /></AppPage>} />
 
-      {/* Command Center (power-user alternative to Dashboard) */}
-      <Route path="/command-center" element={<CommandCenter />} />
+      {/* Command Center (people-centered reentry dashboard) */}
+      <Route path="/command-center" element={<AppPage title="Command Center" subtitle="Your daily focus"><ReentryCommandCenter /></AppPage>} />
+
+      {/* Legacy CROS Command Center */}
+      <Route path="/command-center-legacy" element={<CommandCenter />} />
 
       {/* Settings & Help */}
       <Route path="/settings" element={<Settings />} />
