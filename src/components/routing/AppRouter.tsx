@@ -209,9 +209,9 @@ export function AppRouter() {
       <Route path="/projects/:id" element={<AppPage title="Project Detail" subtitle="Program detail"><ProjectDetail /></AppPage>} />
       <Route path="/provisions" element={<AppPage title="Provisions" subtitle="Resource distribution"><Provisions /></AppPage>} />
       <Route path="/provisions/:id" element={<AppPage title="Provision Detail" subtitle="Provision tracking"><ProvisionDetail /></AppPage>} />
-      <Route path="/opportunities" element={<AppPage title="Opportunities" subtitle="Partner pipeline"><Opportunities /></AppPage>} />
-      <Route path="/opportunities/:id" element={<AppPage title="Opportunity Detail" subtitle="Partnership detail"><OpportunityDetail /></AppPage>} />
-      <Route path="/pipeline" element={<AppPage title="Pipeline" subtitle="Journey chapters"><Pipeline /></AppPage>} />
+      <Route path="/opportunities" element={<AppPage title="Partner Opportunities" subtitle="Collaboration pipeline"><Opportunities /></AppPage>} />
+      <Route path="/opportunities/:id" element={<AppPage title="Partner Detail" subtitle="Collaboration detail"><OpportunityDetail /></AppPage>} />
+      <Route path="/pipeline" element={<AppPage title="Partner Pipeline" subtitle="Partnership stages"><Pipeline /></AppPage>} />
       <Route path="/quick-add" element={<AppPage title="Quick Add" subtitle="Add a person or note"><QuickAdd /></AppPage>} />
       <Route path="/import" element={<AppPage title="Import Center" subtitle="Data migration"><ImportCenter /></AppPage>} />
       <Route path="/impulsus" element={<AppPage title="Impact Journal" subtitle="Private reflections"><Impulsus /></AppPage>} />
