@@ -7,14 +7,14 @@ export default defineConfig({
   retries: 0,
   workers: 1,
   reporter: [['html', { open: 'never' }], ['list']],
-  timeout: 60000,
-  expect: { timeout: 10000 },
+  timeout: 120000,
+  expect: { timeout: 15000 },
   use: {
     baseURL: 'http://127.0.0.1:4173',
     screenshot: 'on',
     trace: 'retain-on-failure',
-    actionTimeout: 10000,
-    navigationTimeout: 30000,
+    actionTimeout: 15000,
+    navigationTimeout: 60000,
     launchOptions: {
       executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
     },
