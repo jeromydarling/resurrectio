@@ -26,7 +26,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'node e2e/serve.mjs',
+    command: 'PLAYWRIGHT=1 npx vite build && node e2e/serve.mjs',
     url: 'http://127.0.0.1:4173',
     reuseExistingServer: true,
     timeout: 10000,
