@@ -1,174 +1,333 @@
-# Resurrectio — Lovable Import & Activation Prompt
+# Resurrectio — Lovable Activation Guide
 
-## What This Is
+## Read This First
 
-Resurrectio is a reentry/restorative justice platform for prison ministries and organizations serving returning citizens. It was built by restructuring a CROS (Communal Relationship Operating System) clone. The frontend is complete with 95 routes, realistic mock data, and a full marketing site. It needs Supabase backend activation.
+This repo contains a **complete frontend** for a reentry/restorative justice platform. 95 routes, 1,335 source files, 101 E2E tests, 424 Supabase migrations, 278 edge functions. The UI is done. The design system is done. The mock data is done. **Do not rebuild any pages.**
 
-**Repo:** github.com/jeromydarling/resurrectio
-**Branch:** main
-**Live preview:** jeromydarling.github.io/resurrectio
+Your job is to **connect the existing frontend to Supabase** so the app works with real data instead of mock data.
 
-## Critical First Steps
+**Repo:** `github.com/jeromydarling/resurrectio`  
+**Branch:** `main`
 
-### 1. Remove GitHub Pages config
-The app was deployed to GitHub Pages for preview. Remove before Lovable deployment:
-- `vite.config.ts`: delete `base: "/resurrectio/"` line (Lovable uses root `/`)
-- `src/App.tsx`: remove `basename="/resurrectio"` from `<BrowserRouter>`
-- `public/404.html`: can be deleted (was for GitHub Pages SPA routing)
-- `index.html`: remove the GitHub Pages redirect script in `<body>`
+---
 
-### 2. Restore Auth & Tenant Providers
-`src/App.tsx` was simplified for the static demo. Restore the full provider stack:
-```tsx
-<QueryClientProvider client={queryClient}>
-  <DemoModeProvider>
-  <AuthProvider>
-    <ViewModeProvider>
-    <TenantProvider>
-    <TooltipProvider>
-      <EmailInsightsPanelProvider>
-      <GlobalModalProvider>
-      <ImpersonationProvider>
-        // ... toasters, router, etc
-      </ImpersonationProvider>
-      </GlobalModalProvider>
-      </EmailInsightsPanelProvider>
-    </TooltipProvider>
-    </TenantProvider>
-    </ViewModeProvider>
-  </AuthProvider>
-  </DemoModeProvider>
-</QueryClientProvider>
+## Step 1: Fix Base Path (Do This Immediately)
+
+The app was deployed to GitHub Pages for preview. Lovable serves from root `/`, so:
+
+**`vite.config.ts`** — Change the base line:
+```ts
+// BEFORE (GitHub Pages):
+base: process.env.PLAYWRIGHT ? "/" : "/resurrectio/",
+// AFTER (Lovable):
+base: "/",
 ```
-All context providers still exist in `src/contexts/`. They were removed from App.tsx only because the demo doesn't have Supabase connected.
 
-### 3. Connect Supabase
+**`src/App.tsx`** — Remove the basename:
+```tsx
+// BEFORE:
+<BrowserRouter basename="/resurrectio">
+// AFTER:
+<BrowserRouter>
+```
+
+**`public/404.html`** — Delete this file (GitHub Pages SPA workaround, not needed).
+
+**`index.html`** — Remove the GitHub Pages redirect `<script>` block in `<body>` (the one that checks `l.search[1] === '/'`).
+
+---
+
+## Step 2: Restore Auth Providers
+
+`src/App.tsx` was simplified for the static demo. The contexts all exist in `src/contexts/` — they just need to be re-added to the provider stack.
+
+Replace the current App component with:
+
+```tsx
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "@/contexts/AuthContext";
+import { ViewModeProvider } from "@/contexts/ViewModeContext";
+import { TenantProvider } from "@/contexts/TenantContext";
+import { EmailInsightsPanelProvider } from "@/contexts/EmailInsightsPanelContext";
+import { GlobalModalProvider } from "@/contexts/GlobalModalContext";
+import { ImpersonationProvider } from "@/contexts/ImpersonationContext";
+import { DemoModeProvider } from "@/contexts/DemoModeContext";
+import { DemoBanner } from "@/components/demo/DemoBanner";
+import { AppRouter } from "@/components/routing/AppRouter";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      staleTime: 30_000,
+      gcTime: 5 * 60_000,
+      retry: 1,
+    },
+  },
+});
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <DemoModeProvider>
+    <AuthProvider>
+      <ViewModeProvider>
+      <TenantProvider>
+      <TooltipProvider>
+        <EmailInsightsPanelProvider>
+        <GlobalModalProvider>
+        <ImpersonationProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <DemoBanner />
+            <AppRouter />
+          </BrowserRouter>
+        </ImpersonationProvider>
+        </GlobalModalProvider>
+        </EmailInsightsPanelProvider>
+      </TooltipProvider>
+      </TenantProvider>
+      </ViewModeProvider>
+    </AuthProvider>
+    </DemoModeProvider>
+  </QueryClientProvider>
+);
+
+export default App;
+```
+
+---
+
+## Step 3: Connect Supabase
+
 The Supabase project already exists:
-- Project ID: `zmeawjhxbgvtcfcfcygf` (in `supabase/config.toml`)
-- Client: `src/integrations/supabase/client.ts`
-- Types: `src/integrations/supabase/types.ts`
-- 424 migrations in `supabase/migrations/`
-- 278 edge functions in `supabase/functions/`
+- **Project ID:** `zmeawjhxbgvtcfcfcygf` (in `supabase/config.toml`)
+- **Client:** `src/integrations/supabase/client.ts` (already configured)
+- **Types:** `src/integrations/supabase/types.ts` (auto-generated from schema)
+- **424 migrations** in `supabase/migrations/`
+- **278 edge functions** in `supabase/functions/`
 
-Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in environment.
+Set environment variables:
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_PUBLISHABLE_KEY`
 
-## What's Already Built (Don't Rebuild)
+---
 
-### Frontend (1,335 source files, 95 routes)
-- **Marketing homepage** with 13 sections (hero, stats, narrative, ecosystem, features, integrations, government compliance, email intelligence, NRI, testimonials, pricing, FAQ, built-for)
-- **28 Resurrectio-specific pages** (journeys, services, community, organize, intelligence)
-- **11 specialized reentry tools** (Document Recovery, Text Communication, Transportation, Employer Network, Emergency Fund, Pre-Release, Crisis Protocols, Funder Dashboard, Resume Builder, Family Support, Staff Wellness)
-- **12 Gardener Console pages** (operator admin)
-- **All CROS infrastructure pages** (PersonDetail, EventDetail, GrantDetail, etc.)
-- **Legal pages** (Terms, Privacy, Data Security)
-- **5-step onboarding** flow for reentry organizations
-- **Document Hub** with Google Drive/Dropbox integration concept
-- **Government Compliance** page with 10 export systems and click-to-copy worksheets
+## Step 4: Create the Journey Data Model
+
+**This is the critical difference from CROS.** Read `docs/DATA_MODEL_MIGRATION.md` for the full plan.
+
+In CROS, the pipeline tracks **opportunities** (partner relationships). In Resurrectio, journeys track **people** (returning citizens through restoration stages).
+
+Create these tables:
+
+```sql
+CREATE TABLE journeys (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  contact_id uuid REFERENCES contacts(id) ON DELETE CASCADE,
+  tenant_id uuid REFERENCES tenants(id),
+  current_stage text NOT NULL CHECK (current_stage IN (
+    'pre_release', 'stabilization', 'growth', 'flourishing', 'alumni'
+  )),
+  stage_entered_at timestamptz DEFAULT now(),
+  release_date date,
+  facility text,
+  parole_officer text,
+  parole_officer_phone text,
+  parole_end_date date,
+  housing_status text,
+  employment_status text,
+  mentor_id uuid REFERENCES contacts(id),
+  created_at timestamptz DEFAULT now(),
+  updated_at timestamptz DEFAULT now()
+);
+
+CREATE TABLE journey_stage_history (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  journey_id uuid REFERENCES journeys(id) ON DELETE CASCADE,
+  from_stage text,
+  to_stage text NOT NULL,
+  changed_at timestamptz DEFAULT now(),
+  changed_by uuid REFERENCES profiles(id),
+  notes text
+);
+
+-- RLS policies
+ALTER TABLE journeys ENABLE ROW LEVEL SECURITY;
+ALTER TABLE journey_stage_history ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Tenants see own journeys" ON journeys
+  FOR ALL USING (tenant_id = (SELECT tenant_id FROM tenant_users WHERE user_id = auth.uid() LIMIT 1));
+
+CREATE POLICY "Tenants see own history" ON journey_stage_history
+  FOR ALL USING (journey_id IN (SELECT id FROM journeys WHERE tenant_id = (SELECT tenant_id FROM tenant_users WHERE user_id = auth.uid() LIMIT 1)));
+```
+
+Create a hook `src/hooks/useJourneys.ts` that queries this table — parallel to `useOpportunities.ts` but for people.
+
+---
+
+## Step 5: Wire Pages to Real Data
+
+The new Resurrectio pages in these directories use mock data from `src/data/mockData.ts`:
+- `src/pages/journeys/` (People, JourneyMap, CaseNotes, Milestones, Family)
+- `src/pages/services/` (ServiceCoordination, Housing, Employment, Compliance, Programs)
+- `src/pages/community/` (Dashboard, Mentors, Stories, Events, etc.)
+- `src/pages/organize/` (Partners, Activities, Territories, Templates)
+- `src/pages/intelligence/` (NriSignals, Reports, PresentationMode, GardenPulse)
+
+Each page imports from `@/data/mockData`. When wiring to Supabase:
+1. Create the corresponding hook (e.g., `useJourneyPeople()`)
+2. Import the hook in the page
+3. Use real data when available, fall back to mock data when empty
+4. **Keep the mock data imports as fallback** — don't delete them
+
+The CROS infrastructure pages (`src/pages/PersonDetail.tsx`, `src/pages/Grants.tsx`, etc.) already use Supabase hooks — they'll work automatically once auth and tenant are connected.
+
+---
+
+## What Already Exists (Do Not Rebuild)
 
 ### Design System
-- Color: Deep oxblood red (`--primary: 0 72% 35%`, hex #991b1b)
-- Background: Warm cream (#faf7f3)
-- Headings: Cormorant Garamond (Google Fonts)
-- Body: DM Sans (Google Fonts)
-- Components: shadcn/Radix UI (52 base components in `src/components/ui/`)
-- CSS tokens in `src/index.css`, Tailwind config in `tailwind.config.ts`
+- **Color:** Deep oxblood red (primary `#991b1b`, CSS var `--primary: 0 72% 35%`)
+- **Background:** Warm cream `#faf7f3`
+- **Headings:** Cormorant Garamond (Google Fonts, `font-serif` class)
+- **Body:** DM Sans (Google Fonts, `font-sans` class)
+- **Components:** 52 shadcn/Radix UI base components in `src/components/ui/`
+- **Tokens:** `src/index.css` (CSS custom properties), `tailwind.config.ts`
+
+### Pages (95 routes in `src/components/routing/AppRouter.tsx`)
+
+**Marketing:** 13-section landing page with hero, stats, narrative, CROS ecosystem, features, integrations, government compliance (10 systems), email intelligence, NRI explainer, real quotes (Stevenson/Pope Francis/Colson/Prejean/Tutu), pricing, FAQ
+
+**App — Journeys:** People, Journey Map, Case Notes, Milestones, Family, Family Support, Document Recovery, Pre-Release, Intake Form
+
+**App — Services:** Service Coordination, Housing, Employment, Resume Builder, Compliance, Parole Scheduler, Programs, Provisions, Transportation, Emergency Fund
+
+**App — Community:** Mentors, Mentor Matching, Employer Network (with WOTC calculator), Text Communication, Stories, Volunteers, Events, Calendar, Blog, Knowledge Base (12 categories), Communio, Directory, Resources
+
+**App — Organize:** Partners, Activities, Territories, Templates, Document Hub (Google Drive/Dropbox + NRI voice learning), Grants, Projects, Campaigns, Import Center
+
+**App — Intelligence:** NRI Signals (19 types), Staff Wellness (burnout detection), Crisis Protocols (3-level escalation), Reports, Funder Dashboard, Presentation Mode, Garden Pulse, Testimonium, Impact Journal, Government Compliance (click-to-copy worksheets)
+
+**Auth:** Login, Signup, 5-step Onboarding, Demo Gate
+
+**Legal:** Terms, Privacy (42 CFR Part 2, CJIS, HIPAA), Data Security (honest Active/Partial/In Progress badges)
+
+**Operator Console:** 12 Gardener pages with dark red sidebar
 
 ### Mock Data
-`src/data/mockData.ts` has 21 mock people, case notes, signals, partners, mentors, events, stories, etc. This data powers the demo pages. When Supabase is connected, these pages should switch to real data via the existing hooks in `src/hooks/`.
+`src/data/mockData.ts` — 21 people, 23 case notes, 19 NRI signals, 8 mentors, 12 partners, 6 programs, events, stories, blog posts, knowledge base articles, resources, templates, territories, compliance items, housing/employment records, activities
 
-### Infrastructure Preserved from CROS
-- **Relatio integration layer**: 21 connectors (Salesforce, HubSpot, Blackbaud, CiviCRM, etc.), import wizard, setup guides
-- **Gmail intelligence engine**: Profunda-AI (2,500+ lines), email sync, contact/task/follow-up extraction
-- **Campaign sending**: Gmail/Outlook direct send with merge tags
-- **Generosity/fundraising/giving** tracking
-- **Testimonium** storytelling, **Impulsus** impact journal
-- **Voluntarium** volunteer management, **Provisio** provisions
+### Infrastructure from CROS
+- **Relatio:** 21 integration connectors, import wizard, setup guides
+- **Gmail Intelligence:** Profunda-AI engine (2,500+ lines), contact/task/follow-up extraction
+- **Campaign Sending:** Gmail/Outlook direct send
+- **Generosity/Fundraising/Giving** tracking
 - **260 hooks**, **8 contexts**, **137 lib utilities**
-- **Vitest** test infrastructure with existing test files
+- **Vitest** test config + existing unit tests
 
-## Key Architecture Decisions
+### E2E Tests
+101 Playwright tests across 9 spec files in `e2e/`:
+- Page render tests (67 tests)
+- Interaction tests (13 tests — form fills, search, expand/collapse, filters)
+- Workflow tests (21 tests — intake submit, mentor matching, parole scheduling, resume builder, crisis escalate/resolve, WOTC calculator, onboarding flow, login→dashboard)
 
-### People-Centered Journeys (NOT Opportunity-Centered)
-This is the most important architectural difference from CROS.
-
-**In CROS:** The journey/pipeline system tracks OPPORTUNITIES (partner relationships through sales stages).
-**In Resurrectio:** Journeys track PEOPLE (returning citizens through restoration stages: Pre-Release → Stabilization → Growth → Flourishing → Alumni).
-
-**Read `docs/DATA_MODEL_MIGRATION.md`** for the full migration plan. Key points:
-- Create a `journeys` table (or add `journey_stage` to contacts)
-- Create `journey_stage_history` for tracking transitions
-- The CROS `opportunities` table STAYS for partner relationships
-- NRI signals should fire on journey records, not opportunity records
-- Both models coexist: opportunities = org partnerships, journeys = people
+Run with: `PLAYWRIGHT=1 npx vite build && PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers npx playwright test`
 
 ### Pricing Model
-Tiers defined in `src/config/brand.ts`:
-- **Seedling** ($29/mo) — up to 5 active staff & mentors
-- **Growing** ($79/mo) — up to 25 active staff & mentors
-- **Coalition** ($149/mo) — unlimited staff & mentors
+Defined in `src/config/brand.ts`:
+- **Seedling** ($29/mo) — up to 5 staff & mentors
+- **Growing** ($79/mo) — up to 25 staff & mentors
+- **Coalition** ($149/mo) — unlimited
 - Everyone gets every feature. No paywalled safety nets.
-- Returning citizens, volunteers, imported contacts = always free, unlimited
-- Stripe config in `src/config/stripe.ts` (product names already updated to Resurrectio tiers)
+- Stripe config in `src/config/stripe.ts`
 
 ### NRI Signal Types
-19 signal types defined in `src/config/brand.ts` including reentry-specific: substance relapse risk, mental health crisis, parole violation risk, housing eviction warning, employment termination risk, program dropout risk, benefit enrollment window, mentor burnout risk, re-incarceration risk composite score.
+19 types in `src/config/brand.ts` including reentry-specific: substance relapse risk, mental health crisis, parole violation risk, housing eviction warning, employment termination risk, program dropout risk, benefit enrollment window, mentor burnout risk, re-incarceration risk composite score.
 
-## What Needs Supabase Work
+---
 
-### Priority 1: Auth & Basic Data Flow
-1. Connect Supabase environment variables
-2. Restore provider stack in App.tsx
-3. Verify auth flow works (Login → Supabase Auth → redirect to dashboard)
-4. Verify tenant creation on signup
-5. Test demo mode (DemoGatePage at /demo)
+## Key Architecture Rules
 
-### Priority 2: Journey Data Model
-1. Create `journeys` table per `docs/DATA_MODEL_MIGRATION.md`
-2. Create `journey_stage_history` table
-3. Create `useJourneys` hook parallel to `useOpportunities`
-4. Wire JourneyMap, People, CaseNotes pages to real data
-5. Keep mock data as fallback when Supabase returns empty
+1. **Journeys = People, Opportunities = Partners.** Both exist. The `journeys` table tracks returning citizens through restoration stages. The `opportunities` table tracks partner/employer/funder relationships. Never conflate them.
 
-### Priority 3: Core Feature Activation
-1. People/contacts CRUD (PersonDetail already exists with full UI)
-2. Case notes CRUD
-3. Events, Calendar, Volunteers
-4. Activities timeline
-5. Grants tracking
+2. **Capacity billing counts staff/mentors, not returning citizens.** People being served are always free and unlimited.
 
-### Priority 4: Integrations
-1. Gmail OAuth + sync (infrastructure exists in `supabase/functions/gmail-sync/`)
-2. Stripe checkout (infrastructure exists in `src/config/stripe.ts`)
-3. Relatio import wizard (infrastructure exists)
+3. **NRI is bounded.** It suggests, surfaces, and alerts. It never acts autonomously. Every signal includes evidence and a "Why am I seeing this?" explanation.
 
-## Testing
-- Vitest config: `vitest.config.ts`
-- Test setup: `src/test/setup.ts`
-- Existing tests in `src/test/` and `src/hooks/__tests__/`
-- Run: `npx vitest run`
+4. **Tenant-scoped everything.** Row-level security. The Gardener (platform operator) sees aggregate metrics but never modifies tenant data.
+
+5. **Mock data is fallback, not placeholder.** Keep `src/data/mockData.ts` imports in pages — use real data when available, mock when the database is empty.
+
+---
 
 ## Files to Know
+
 | File | Purpose |
 |------|---------|
-| `src/App.tsx` | Root component — restore providers here |
+| `src/App.tsx` | Root — restore providers here |
 | `src/components/routing/AppRouter.tsx` | All 95 routes |
-| `src/components/layout/Sidebar.tsx` | Navigation (5 groups + extras) |
+| `src/components/layout/Sidebar.tsx` | Navigation (5 groups) |
 | `src/config/brand.ts` | App name, tiers, archetypes, 19 signal types |
 | `src/config/stripe.ts` | Stripe product/price IDs |
 | `src/data/mockData.ts` | Demo data for all pages |
-| `src/types/resurrectio.ts` | Person, CaseNote, Milestone, etc. types |
+| `src/types/resurrectio.ts` | Person, CaseNote, Milestone types |
 | `src/index.css` | CSS design tokens (red palette) |
-| `docs/DATA_MODEL_MIGRATION.md` | Journey data model migration plan |
+| `tailwind.config.ts` | Tailwind theme (fonts, colors) |
+| `docs/DATA_MODEL_MIGRATION.md` | Journey data model spec |
 | `src/lib/seo/contentPipeline.ts` | SEO keywords & content strategy |
 | `src/lib/connectors/chmsRegistry.ts` | 21 integration connectors |
 | `src/lib/relatio/setupGuides.ts` | Integration setup guides |
 | `public/llms.txt` | LLM-readable app description |
+| `playwright.config.ts` | E2E test config |
+
+---
+
+## Priority Order for Supabase Activation
+
+### Phase 1: Auth (get login working)
+1. Set Supabase env vars
+2. Restore provider stack in App.tsx
+3. Test login → Supabase Auth → redirect to /dashboard
+4. Test tenant creation on signup
+5. Test demo mode (/demo gate page)
+
+### Phase 2: Journey Data Model
+1. Run the SQL from Step 4 above
+2. Create `useJourneys` hook
+3. Wire JourneyMap and People pages to real data
+4. Wire CaseNotes, Milestones to real data
+
+### Phase 3: Core CRUD
+1. PersonDetail — already has full UI, just needs data
+2. Case notes create/read
+3. Events, Calendar
+4. Volunteers/Mentors
+5. Activities timeline
+6. Grants tracking
+
+### Phase 4: Integrations
+1. Gmail OAuth + sync (edge functions exist)
+2. Stripe checkout (config exists)
+3. Relatio import wizard (UI exists)
+
+---
 
 ## Do NOT
-- Don't rebuild any existing pages — they're complete with styling and mock data
-- Don't change the color scheme, fonts, or design tokens
-- Don't remove mock data — keep it as fallback for empty states
-- Don't restructure the routing — 95 routes are already wired
-- Don't delete CROS infrastructure files — they power integrations, AI, and features
-- Don't rename the Supabase project or tables — 424 migrations depend on the schema
-- Don't change the pricing model or tier names
+
+- Rebuild any existing page — they are complete with styling and mock data
+- Change the color scheme, fonts, or design tokens
+- Remove mock data — keep as fallback for empty database states
+- Restructure the 95 routes — they are all wired correctly
+- Delete any CROS infrastructure files — they power integrations, Gmail AI, and platform features
+- Rename Supabase tables — 424 migrations depend on the existing schema
+- Change pricing tier names or model
+- Remove the `font-serif` (Cormorant Garamond) from headings
+- Add new dependencies without checking if an existing one already does the job
+- Rewrite the Sidebar navigation structure
